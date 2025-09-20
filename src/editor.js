@@ -18,7 +18,7 @@ import SpaceToolModule from 'diagram-js/lib/features/space-tool/index.js';
 import 'diagram-js/assets/diagram-js.css';
 
 import ProvidersModule from './providers/index.js';
-
+import CustomRendererModule from './draw/index.js';
 
 /**
  * A module that changes the default diagram look.
@@ -70,7 +70,8 @@ export default function Editor(options) {
   // our own modules, contributing controls, customizations, and more
   const customModules = [
     ProvidersModule,
-    ElementStyleModule
+    ElementStyleModule,
+    CustomRendererModule
   ];
 
   return new Diagram({

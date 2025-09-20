@@ -55,6 +55,22 @@ export default class ExamplePalleteProvider {
           }
         }
       }, 
+      "create-circle": {
+        group: "create",
+        className: "palette-icon-create-circle",
+        title: "Create Shape",
+        action: {
+          click: () => {
+            const circleShape = elementFactory.createShape({
+              width: 80,
+              height: 80,
+              type: "petri:circle"
+            });
+
+            create.start(event, circleShape);
+          }
+        }
+      }, 
 
       "create-frame": {
         group: "create",
