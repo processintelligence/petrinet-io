@@ -48,7 +48,8 @@ export default class ExamplePalleteProvider {
           click: () => {
             const shape = elementFactory.createShape({
               width: 100,
-              height: 80
+              height: 80,
+              type: "petri:transition"
             }); 
 
             create.start(event, shape);
@@ -64,7 +65,7 @@ export default class ExamplePalleteProvider {
             const circleShape = elementFactory.createShape({
               width: 80,
               height: 80,
-              type: "petri:circle"
+              type: "petri:place"
             });
 
             create.start(event, circleShape);
@@ -82,6 +83,7 @@ export default class ExamplePalleteProvider {
             const shape = elementFactory.createShape({
               width: 300,
               height: 200, 
+              type: "petri:frame",
               isFrame: true
             }); 
 

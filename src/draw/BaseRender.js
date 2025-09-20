@@ -19,19 +19,33 @@ export default class CustomRenderer extends BaseRenderer{
 
 
     canRender(element){
-        return element.type === "petri:circle";
+        console.log("canRender")
+        return element.type === "petri:place" || element.type === "petri:transition" || element.type === "petri:frame" ;
     }
 
     drawShape(parentGfx, element){
-        const { width, height, type} = element;
         
-        if(type === "petri:circle"){
-            return drawcircle(parentGfx, width, height,this.styles, undefined)
+        const {type} = element; 
+
+        if(type === "petri:place"){
+            const { width, height} = element;
+            console.log("circle")
+            return drawcircle(parentGfx, width, height,this.styles, undefined);
         }
 
-    
-        
+        if ( type=== "petri:transition"){
+            const { width, height} = element;
+            const r = 10;
+            console.log("rect")
+            return drawrect(parentGfx, width,height,r,this.styles, undefined);
+        }
 
+        if ( type=== "petri:frame"){
+            const { width, height} = element;
+            const r = 10;
+            console.log("frame")
+            return drawframe(parentGfx, width,height,r,this.styles, undefined);
+        }
     }
 
 }
@@ -67,5 +81,72 @@ function drawcircle(parentGfx, width, height, styles, attrs){
     svgAppend(parentGfx, circle);
 
     return circle;
+
+}
+
+function drawrect(parentGfx, width, height, r, styles, attrs){
+
+    attrs= styles.computeStyle(attrs || {},{
+        stroke: "black",
+        strokeWidth: 2, 
+        fill: "white"
+    })
+
+
+    if (attrs.fill === "none"){
+        delete attrs.fillOpacity
+    }
+
+    const rect= svgCreate("rect");
+
+    svgAttr(rect,{
+        x: 0,
+        y: 0, 
+        width: width,
+        height: height, 
+        rx: r, 
+        ry: r
+    });
+
+    svgAttr(rect,attrs);
+
+    svgAppend(parentGfx, rect);
+
+    return rect 
+
+}
+
+
+
+function drawframe(parentGfx, width, height, r, styles, attrs){
+
+    attrs= styles.computeStyle(attrs || {},{
+        stroke: "black",
+        strokeWidth: 2, 
+        fill: "none",
+        strokeDasharray: "4,4"
+    })
+
+
+    if (attrs.fill === "none"){
+        delete attrs.fillOpacity
+    }
+
+    const frame= svgCreate("rect");
+
+    svgAttr(frame,{
+        x: 0,
+        y: 0, 
+        width: width,
+        height: height, 
+        rx: r, 
+        ry: r
+    });
+
+    svgAttr(frame,attrs);
+
+    svgAppend(parentGfx, frame);
+
+    return frame
 
 }
