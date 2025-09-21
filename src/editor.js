@@ -20,6 +20,8 @@ import 'diagram-js/assets/diagram-js.css';
 import ProvidersModule from './providers/index.js';
 import CustomRendererModule from './draw/index.js';
 
+
+
 /**
  * A module that changes the default diagram look.
  */
@@ -71,7 +73,7 @@ export default function Editor(options) {
   const customModules = [
     ProvidersModule,
     ElementStyleModule,
-    CustomRendererModule
+    CustomRendererModule,
   ];
 
   return new Diagram({

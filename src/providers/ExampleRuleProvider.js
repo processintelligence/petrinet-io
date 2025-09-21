@@ -21,10 +21,13 @@ export default class ExampleRuleProvider extends RuleProvider{
         }); 
         this.addRule("connection.create", (context) => {
 
-            const target = context.target; 
-            const source= context.source; 
+            const {source, target} = context;
 
-            return target.parent === source.parent; 
+            if (!source || !target) { return false; }
+
+            if (target.parent === source.parent) {
+                return { type: 'petri:connection' };  
+              }
         }); 
         this.addRule("shape.resize", (context) => {
             const shape = context.shape; 

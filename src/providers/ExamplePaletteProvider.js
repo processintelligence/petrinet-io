@@ -28,7 +28,7 @@ export default class ExamplePalleteProvider {
       'space-tool': {
         group: 'tools',
         className: 'palette-icon-space-tool',
-        title: 'Activate the create/remove space tool',
+        title: 'Space Tool',
         action: {
           click: (event) => {
             spaceTool.activateSelection(event);
@@ -40,10 +40,10 @@ export default class ExamplePalleteProvider {
         group: "tools"
       }, 
 
-      "create-shape": {
+      "create-transition": {
         group: "create",
-        className: "palette-icon-create-shape",
-        title: "Create Shape",
+        className: "palette-icon-create-transition",
+        title: "Transition",
         action: {
           click: () => {
             const shape = elementFactory.createShape({
@@ -56,10 +56,27 @@ export default class ExamplePalleteProvider {
           }
         }
       }, 
+
+      "create-empty-transition": {
+        group: "create",
+        className: "palette-icon-create-empty-transition",
+        title: "Transition",
+        action: {
+          click: () => {
+            const shape = elementFactory.createShape({
+              width: 14,
+              height: 80,
+              type: "petri:empty_transition"
+            }); 
+
+            create.start(event, shape);
+          }
+        }
+      }, 
       "create-circle": {
         group: "create",
         className: "palette-icon-create-circle",
-        title: "Create Shape",
+        title: "Place",
         action: {
           click: () => {
             const circleShape = elementFactory.createShape({
@@ -76,7 +93,7 @@ export default class ExamplePalleteProvider {
       "create-frame": {
         group: "create",
         className: "palette-icon-create-frame",
-        title: "Create Frame",
+        title: "Frame",
         action: {
           click: () => {
 
@@ -94,8 +111,5 @@ export default class ExamplePalleteProvider {
       }
 
     }
-
-
   }
-
 }
