@@ -19,6 +19,7 @@ import 'diagram-js/assets/diagram-js.css';
 
 import ProvidersModule from './providers/index.js';
 import CustomRendererModule from './draw/index.js';
+import CroppingConnectionDocking from 'diagram-js/lib/layout/CroppingConnectionDocking.js';
 
 
 
@@ -74,6 +75,10 @@ export default function Editor(options) {
     ProvidersModule,
     ElementStyleModule,
     CustomRendererModule,
+    {
+      __init__: [ 'connectionDocking' ],
+      connectionDocking: [ 'type', CroppingConnectionDocking ]
+    }
   ];
 
   return new Diagram({

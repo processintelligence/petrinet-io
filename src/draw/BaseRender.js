@@ -10,12 +10,13 @@ const HIGH_PRIORITY = 1500;
 
 export default class CustomRenderer extends BaseRenderer{
 
-    static $inject = ["eventBus", "styles"]
+    static $inject = ["eventBus", "styles", "connectionDocking"]
     
 
-    constructor(eventBus, styles){
+    constructor(eventBus, styles, connectionDocking){
         super(eventBus, HIGH_PRIORITY );
         this.styles = styles
+        this.connectionDocking = connectionDocking;
     }
 
 
@@ -66,11 +67,15 @@ export default class CustomRenderer extends BaseRenderer{
           strokeWidth: 2,
           markerEnd: createArrowMarker(parentGfx, "my-arrow", "black")
         });
-      
+
+        // crop waypoints to shape boundaries if docking is available
+        if (this.connectionDocking && (element.source || element.target)) {
+            element.waypoints = this.connectionDocking.getCroppedWaypoints(element);
+        }
+
         const line = createLine(element.waypoints, attrs, 5);
         svgAppend(parentGfx, line);
         console.log(`${element.type}`)
-      
         return line;
       }
     
