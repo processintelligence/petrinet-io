@@ -7,6 +7,11 @@ const diagram = new Editor({
     container: document.querySelector('#container')
   });
   
+    const injector = diagram.get('injector');
+    const services = Object.keys(injector._providers || {}).sort();
+    console.log('[diagram-js] Available services (injectables):', services);
+
+  
   
   // (2) draw diagram elements (i.e. import)
   
@@ -14,12 +19,13 @@ const diagram = new Editor({
   const elementFactory = diagram.get('elementFactory');
   
   // add root
-  var root = elementFactory.createRoot();
+  const root = elementFactory.createRoot();
   
   canvas.setRootElement(root);
   
   // add shapes
-  var shape1 = elementFactory.createShape({
+  const shape1 = elementFactory.createShape({
+    type: 'petri:place',
     x: 150,
     y: 100,
     width: 100,
@@ -28,7 +34,8 @@ const diagram = new Editor({
   
   canvas.addShape(shape1, root);
   
-  var shape2 = elementFactory.createShape({
+  const shape2 = elementFactory.createShape({
+    type: 'petri:transition',
     x: 290,
     y: 220,
     width: 100,
@@ -38,7 +45,8 @@ const diagram = new Editor({
   canvas.addShape(shape2, root);
   
   
-  var connection1 = elementFactory.createConnection({
+  const connection1 = elementFactory.createConnection({
+    type: 'petri:connection',
     waypoints: [
       { x: 250, y: 180 },
       { x: 290, y: 220 }
@@ -50,7 +58,8 @@ const diagram = new Editor({
   canvas.addConnection(connection1, root);
   
   
-  var shape3 = elementFactory.createShape({
+  const shape3 = elementFactory.createShape({
+    type: 'petri:place',
     x: 450,
     y: 80,
     width: 100,
@@ -59,7 +68,8 @@ const diagram = new Editor({
   
   canvas.addShape(shape3, root);
   
-  var shape4 = elementFactory.createShape({
+  const shape4 = elementFactory.createShape({
+    type: 'petri:frame',
     x: 425,
     y: 50,
     width: 300,

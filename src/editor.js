@@ -37,6 +37,10 @@ const ElementStyleModule = {
   ]
 };
 
+const ConnectionDockingModule = {
+  __init__: [ 'connectionDocking' ],
+  connectionDocking: [ 'type', CroppingConnectionDocking ]
+}
 
 /**
  * Our editor constructor
@@ -75,10 +79,8 @@ export default function Editor(options) {
     ProvidersModule,
     ElementStyleModule,
     CustomRendererModule,
-    {
-      __init__: [ 'connectionDocking' ],
-      connectionDocking: [ 'type', CroppingConnectionDocking ]
-    }
+    ConnectionDockingModule
+
   ];
 
   return new Diagram({

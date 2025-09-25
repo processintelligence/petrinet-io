@@ -36,6 +36,25 @@ export default class ExampleContextPadProvider{
                 click: startConnect,
                 dragstart: startConnect
               }
+            }, 
+            transition: {
+              group: 'edit',
+              className: 'context-pad-icon-transition',
+              title: 'Add transition connection',
+              action: {
+                click: startConnect,
+                dragstart: startConnect
+              }
+            },
+            place: {
+              group: 'edit',
+              className: 'context-pad-icon-place',
+              title: 'Add place connection',
+              action: {
+                click: startConnect,
+                dragstart: startConnect
+              }
             }
-          };
-        }}
+        }
+    }
+}

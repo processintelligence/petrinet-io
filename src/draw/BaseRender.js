@@ -79,8 +79,7 @@ export default class CustomRenderer extends BaseRenderer{
         return line;
       }
     
-      getShapePath(shape){
-        console.log('Cropping shape path for', shape.type, shape);
+    getShapePath(shape){
         const {type} = shape;
         if(type === "petri:place"){
             return getCirclePath(shape);

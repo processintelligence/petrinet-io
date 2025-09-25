@@ -5,11 +5,13 @@ import { isFrameElement } from 'diagram-js/lib/util/Elements.js';
 
 export default class ExampleRuleProvider extends RuleProvider{
 
-    static $inject = ["eventBus"];
+    static $inject = ["eventBus", "elementRegistry"];
 
-    constructor(eventBus){
+    constructor(eventBus, elementRegistry){
 
-    super(eventBus)}
+    super(eventBus)
+    this.elementRegistry = elementRegistry;
+    }
 
     init(){
         this.addRule("shape.create", (context) => {
@@ -25,9 +27,37 @@ export default class ExampleRuleProvider extends RuleProvider{
 
             if (!source || !target) { return false; }
 
+            // disallow same-type connections
+            if (source.type === "petri:place" && target.type === "petri:place"){
+                return false;
+            }
+            if (source.type === "petri:transition" && target.type === "petri:transition"){
+                return false;
+            }
+            if (source.type === "petri:frame"){
+                return false;
+            }
+            if (source.type === "petri:empty_transition" && target.type === "petri:empty_transition"){
+                return false;
+            }
+            if (source.type === "petri:transition" && target.type === "petri:empty_transition"){
+                return false;
+            }
+            if (source.type === "petri:empty_transition" && target.type === "petri:transition"){
+                return false;
+            }
+
+            // prevent duplicate connections
+            const hasDuplicateDirectedConnection = Array.isArray(source.outgoing) && source.outgoing.some((connection) => connection.target === target);
+            if (hasDuplicateDirectedConnection) {
+                return false;
+            }
+
             if (target.parent === source.parent) {
                 return { type: 'petri:connection' };  
-              }
+            }
+
+            return false;
         }); 
         this.addRule("shape.resize", (context) => {
             const shape = context.shape; 
