@@ -67,17 +67,7 @@ const diagram = new Editor({
   });
   
   canvas.addShape(shape3, root);
-  
-  const shape4 = elementFactory.createShape({
-    type: 'petri:frame',
-    x: 425,
-    y: 50,
-    width: 300,
-    height: 200,
-    isFrame: true
-  });
-  
-  canvas.addShape(shape4, root);
+
   
   
   // (3) interact with the diagram via API

@@ -25,17 +25,6 @@ export default class ExamplePalleteProvider {
           click: (event) => lassoTool.activateSelection(event)
         }
       },     
-      'space-tool': {
-        group: 'tools',
-        className: 'palette-icon-space-tool',
-        title: 'Space Tool',
-        action: {
-          click: (event) => {
-            spaceTool.activateSelection(event);
-          }
-        }
-      },
-
       "tool-separator": {
         group: "tools"
       }, 
@@ -86,26 +75,6 @@ export default class ExamplePalleteProvider {
             });
 
             create.start(event, circleShape);
-          }
-        }
-      }, 
-
-      "create-frame": {
-        group: "create",
-        className: "palette-icon-create-frame",
-        title: "Frame",
-        action: {
-          click: () => {
-
-            const shape = elementFactory.createShape({
-              width: 300,
-              height: 200, 
-              type: "petri:frame",
-              isFrame: true
-            }); 
-
-            create.start(event, shape); 
-
           }
         }
       }
