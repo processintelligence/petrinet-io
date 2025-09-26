@@ -34,9 +34,6 @@ export default class ExampleRuleProvider extends RuleProvider{
             if (source.type === "petri:transition" && target.type === "petri:transition"){
                 return false;
             }
-            if (source.type === "petri:frame"){
-                return false;
-            }
             if (source.type === "petri:empty_transition" && target.type === "petri:empty_transition"){
                 return false;
             }

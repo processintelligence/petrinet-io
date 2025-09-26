@@ -34,12 +34,12 @@ export default class ExampleContextPadProvider{
             // choose side based on connections: right if outgoing present (or none), left if only incoming
             const hasOutgoing = Array.isArray(element.outgoing) && element.outgoing.length > 0;
             const hasIncoming = Array.isArray(element.incoming) && element.incoming.length > 0;
-            const placeRight = hasOutgoing || !hasIncoming;
+            const placeRight = !hasOutgoing || hasIncoming;
 
             // compute CENTER coordinates for createShape position
             const centerY = element.y + element.height / 2;
             const centerX = placeRight
-                ? element.x + element.width + 30 + size.width / 2
+                ? element.x + element.width + 50 + size.width / 2
                 : element.x - 30 - size.width / 2;
 
             // create shape without preset x/y; modeling will position it by center
@@ -55,7 +55,7 @@ export default class ExampleContextPadProvider{
             modeling.createConnection(element, created, { type: 'petri:connection' }, parent);
         };
 
-        return {
+        const entries = {
             delete: {
               group: 'edit',
               className: 'context-pad-icon-remove',
@@ -73,23 +73,29 @@ export default class ExampleContextPadProvider{
                 click: startConnect,
                 dragstart: startConnect
               }
-            }, 
-            transition: {
+            }
+        };
+
+        if (element.type === 'petri:place') {
+            entries.transition = {
               group: 'edit',
               className: 'context-pad-icon-transition',
               title: 'Create transition',
               action: {
                 click: () => createAdjacent('petri:transition')
               }
-            },
-            place: {
+            };
+        } else if (element.type === 'petri:transition' || element.type === 'petri:empty_transition') {
+            entries.place = {
               group: 'edit',
               className: 'context-pad-icon-place',
               title: 'Create place',
               action: {
                 click: () => createAdjacent('petri:place')
               }
-            }
+            };
         }
+
+        return entries;
     }
 }

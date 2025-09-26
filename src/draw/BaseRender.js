@@ -33,32 +33,40 @@ export default class CustomRenderer extends BaseRenderer{
         
         const {type} = element; 
 
-        if(type === "petri:place"){
-            const { width, height} = element;
-            console.log("circle")
-            return draw_circle(parentGfx, width, height,this.styles, undefined);
-        }
+      if(type === "petri:place"){
+          const { width, height} = element;
+          console.log("circle")
+          const shape = draw_circle(parentGfx, width, height,this.styles, undefined);
+          draw_label(parentGfx, element, this.styles);
+          return shape;
+      }
 
-        if ( type=== "petri:transition"){
-            const { width, height} = element;
-            const r = 10;
-            console.log("rect")
-            return draw_rect(parentGfx, width,height,r,this.styles, undefined);
-        }
+      if ( type=== "petri:transition"){
+          const { width, height} = element;
+          const r = 10;
+          console.log("rect")
+          const shape = draw_rect(parentGfx, width,height,r,this.styles, undefined);
+          draw_label(parentGfx, element, this.styles);
+          return shape;
+      }
 
-        if ( type=== "petri:frame"){
-            const { width, height} = element;
-            const r = 10;
-            console.log("frame")
-            return draw_frame(parentGfx, width,height,r,this.styles, undefined);
-        }
+      if ( type=== "petri:frame"){
+          const { width, height} = element;
+          const r = 10;
+          console.log("frame")
+          const shape = draw_frame(parentGfx, width,height,r,this.styles, undefined);
+          draw_label(parentGfx, element, this.styles);
+          return shape;
+      }
 
-        if ( type=== "petri:empty_transition"){
-            const { width, height} = element;
-            const r = 0;
-            console.log("empty_transition")
-            return draw_empty_transition(parentGfx, width,height,r,this.styles, undefined);
-        }
+      if ( type=== "petri:empty_transition"){
+          const { width, height} = element;
+          const r = 0;
+          console.log("empty_transition")
+          const shape = draw_empty_transition(parentGfx, width,height,r,this.styles, undefined);
+          // do not render a label for empty transition
+          return shape;
+      }
     }
 
     drawConnection(parentGfx, element) {
@@ -292,4 +300,30 @@ function getRectPath(shape) {
   
     return componentsToPath(rectPath);
   }
+
+function draw_label(parentGfx, element, styles){
+  const textValue = element.businessObject?.name || element.label || element.name;
+  if (!textValue) { return; }
+
+  const attrs = styles.computeStyle({}, {
+    fill: 'black',
+    fontSize: 12
+  });
+
+  const text = svgCreate('text');
+
+  const x = element.width / 2;
+  const y = element.height / 2;
+
+  svgAttr(text, {
+    x,
+    y,
+    'text-anchor': 'middle',
+    'dominant-baseline': 'middle'
+  });
+
+  svgAttr(text, attrs);
+  text.textContent = String(textValue);
+  svgAppend(parentGfx, text);
+}
 

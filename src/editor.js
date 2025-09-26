@@ -14,13 +14,14 @@ import RulesModule from 'diagram-js/lib/features/rules/index.js';
 import SelectionModule from 'diagram-js/lib/features/selection/index.js';
 import ZoomScrollModule from 'diagram-js/lib/navigation/zoomscroll/index.js';
 import SpaceToolModule from 'diagram-js/lib/features/space-tool/index.js';
-
+import InteractionEventsModule from 'diagram-js/lib/features/interaction-events/index.js';
+import DirectEditingModule from 'diagram-js-direct-editing';
 import 'diagram-js/assets/diagram-js.css';
 
 import ProvidersModule from './providers/index.js';
 import CustomRendererModule from './draw/index.js';
 import CroppingConnectionDocking from 'diagram-js/lib/layout/CroppingConnectionDocking.js';
-
+import LabelsModule from './labels/index.js';
 
 
 /**
@@ -71,7 +72,9 @@ export default function Editor(options) {
     RulesModule,
     SelectionModule,
     ZoomScrollModule,
-    SpaceToolModule
+    InteractionEventsModule,
+    SpaceToolModule,
+    DirectEditingModule
   ];
 
   // our own modules, contributing controls, customizations, and more
@@ -79,8 +82,8 @@ export default function Editor(options) {
     ProvidersModule,
     ElementStyleModule,
     CustomRendererModule,
-    ConnectionDockingModule
-
+    ConnectionDockingModule,
+    LabelsModule
   ];
 
   return new Diagram({
