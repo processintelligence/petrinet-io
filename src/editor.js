@@ -22,6 +22,7 @@ import ProvidersModule from './providers/index.js';
 import CustomRendererModule from './draw/index.js';
 import CroppingConnectionDocking from 'diagram-js/lib/layout/CroppingConnectionDocking.js';
 import LabelsModule from './labels/index.js';
+import KeyboardModule from './keyboard/index.js';
 
 
 /**
@@ -83,7 +84,8 @@ export default function Editor(options) {
     ElementStyleModule,
     CustomRendererModule,
     ConnectionDockingModule,
-    LabelsModule
+    LabelsModule,
+    KeyboardModule
   ];
 
   return new Diagram({
