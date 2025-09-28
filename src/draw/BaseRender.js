@@ -302,8 +302,7 @@ function getRectPath(shape) {
   }
 
 function draw_label(parentGfx, element, styles){
-  const textValue = element.businessObject?.name || element.label || element.name;
-  if (!textValue) { return; }
+  const textValue = element.businessObject?.name??""
 
   const attrs = styles.computeStyle({}, {
     fill: 'black',
@@ -311,19 +310,85 @@ function draw_label(parentGfx, element, styles){
   });
 
   const text = svgCreate('text');
-
-  const x = element.width / 2;
-  const y = element.height / 2;
+  let x, y, textAnchor, baseline;
+  if (element.type === 'petri:place') {
+    
+    // place label just outside the circle boundary
+    const r = Math.min(element.width, element.height) / 2;
+    const cx = element.width / 2;
+    const cy = element.height / 2;
+    const margin = 4;
+    const offset = r / Math.SQRT2; // ~45°
+    x = cx + offset + margin;
+    y = cy + offset + margin;
+    textAnchor = 'start';
+    baseline = 'hanging';
+  } else {
+    // default: centered
+    x = element.width / 2;
+    y = element.height / 2;
+    textAnchor = 'middle';
+    baseline = 'middle';
+  }
 
   svgAttr(text, {
     x,
     y,
-    'text-anchor': 'middle',
-    'dominant-baseline': 'middle'
+    'text-anchor': textAnchor,
+    'dominant-baseline': baseline
   });
 
   svgAttr(text, attrs);
   text.textContent = String(textValue);
   svgAppend(parentGfx, text);
+
+  // Render tokens for places if defined on businessObject
+  if (element.type === 'petri:place') {
+    const tokens = Number.isFinite(element.businessObject?.tokens) ? element.businessObject.tokens : 0;
+    if (tokens > 0) {
+      draw_tokens(parentGfx, element, tokens, styles);
+    }
+  }
+}
+
+function draw_tokens(parentGfx, element, tokens, styles) {
+  const cx = element.width / 2;
+  const cy = element.height / 2;
+  const r = Math.min(element.width, element.height) / 2;
+  const dotR = Math.max(2, Math.min(6, r / 6));
+  const fillAttrs = styles.computeStyle({}, { fill: 'black' });
+
+  const placeDot = (dx, dy, label) => {
+    if (label != null) {
+      const text = svgCreate('text');
+      svgAttr(text, { x: cx, y: cy, 'text-anchor': 'middle', 'dominant-baseline': 'middle' });
+      svgAttr(text, styles.computeStyle({}, { fill: 'black', fontSize: 12 }));
+      text.textContent = String(label);
+      svgAppend(parentGfx, text);
+      return;
+    }
+    const dot = svgCreate('circle');
+    svgAttr(dot, { cx: cx + dx, cy: cy + dy, r: dotR });
+    svgAttr(dot, fillAttrs);
+    svgAppend(parentGfx, dot);
+  };
+
+  if (tokens === 1) {
+    placeDot(0, 0);
+  } else if (tokens === 2) {
+    placeDot(-dotR * 2, 0);
+    placeDot(dotR * 2, 0);
+  } else if (tokens === 3) {
+    placeDot(0, -dotR * 2);
+    placeDot(-dotR * 2, dotR * 2);
+    placeDot(dotR * 2, dotR * 2);
+  } else if (tokens === 4) {
+    placeDot(-dotR * 2, -dotR * 2);
+    placeDot(dotR * 2, -dotR * 2);
+    placeDot(-dotR * 2, dotR * 2);
+    placeDot(dotR * 2, dotR * 2);
+  } else if (tokens > 4) {
+    placeDot(0, 0, tokens);
+  }
 }
 
