@@ -22,18 +22,12 @@ export default class KeyboardShortcuts {
   }
 
   _init() {
-    // Listen for keyboard events directly on the document
-    document.addEventListener('keydown', this._handleKeyDown.bind(this));
+    // Use diagram-js eventBus for keyboard events
+    this.eventBus.on('keyboard.keydown', this._handleKeyDown.bind(this));
   }
 
   _handleKeyDown(event) {
-    // Only handle keyboard shortcuts when the canvas is focused
-    const canvasContainer = this.canvas.getContainer();
-    if (!canvasContainer.contains(document.activeElement) && 
-        document.activeElement !== canvasContainer &&
-        document.activeElement !== document.body) {
-      return;
-    }
+    // eventBus already handles focus management
 
     // Delete key
     if (event.key === 'Delete' || event.key === 'Backspace') {
