@@ -1,12 +1,13 @@
 export default class ExampleContextPadProvider{
 
-    static $inject =["connect", "contextPad", "modeling", "elementFactory", "create"]
+    static $inject =["connect", "contextPad", "modeling", "elementFactory", "create", "popupMenu"]
 
-    constructor(connect, contextPad, modeling, elementFactory, create){
+    constructor(connect, contextPad, modeling, elementFactory, create, popupMenu){
         this.connect= connect;
         this.modeling= modeling;
         this.elementFactory= elementFactory;
         this.create= create;
+        this.popupMenu = popupMenu;
 
         contextPad.registerProvider(this);
     }
@@ -68,12 +69,12 @@ export default class ExampleContextPadProvider{
             connect: {
               group: 'edit',
               className: 'context-pad-icon-connect',
-              title: 'Connect',
+              title: 'Connect', 
               action: {
                 click: startConnect,
                 dragstart: startConnect
               }
-            }
+            },
         };
 
         if (element.type === 'petri:place') {
@@ -95,6 +96,44 @@ export default class ExampleContextPadProvider{
               }
             };
         }
+
+        // Add tool icon for all element types
+        entries.tool = {
+          group: 'tools',
+          className: 'context-pad-icon-tool',
+          title: 'Tool action',
+          action: {
+            click: (event) => {
+              const menuEntries = {
+                'tokens': {
+                  label: 'Set Tokens',
+                  action: () => {
+                    const tokens = window.prompt('Enter number of tokens:', '0');
+                    if (tokens !== null) {
+                      console.log(`Setting ${tokens} tokens on ${element.type}`);
+                      if (!element.businessObject) element.businessObject = {};
+                      element.businessObject.tokens = parseInt(tokens) || 0;
+                    }
+                  }
+                },
+                'properties': {
+                  label: 'Properties',
+                  action: () => {
+                    console.log('Opening properties for', element.type);
+                    alert(`Properties for ${element.type}\nID: ${element.id}\nType: ${element.type}`);
+                  }
+                }
+              };
+              
+              const position = {
+                x: event.x || event.clientX,
+                y: event.y || event.clientY
+              };
+              
+              this.popupMenu.open(element, menuEntries, position);
+            }
+          }
+        };
 
         return entries;
     }

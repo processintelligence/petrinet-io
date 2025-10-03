@@ -22,12 +22,18 @@ export default class KeyboardShortcuts {
   }
 
   _init() {
-    // Use diagram-js eventBus for keyboard events
-    this.eventBus.on('keyboard.keydown', this._handleKeyDown.bind(this));
+    // Listen for keyboard events directly on the document
+    document.addEventListener('keydown', this._handleKeyDown.bind(this));
   }
 
   _handleKeyDown(event) {
-    // eventBus already handles focus management
+    // Only handle keyboard shortcuts when the canvas is focused
+    const canvasContainer = this.canvas.getContainer();
+    if (!canvasContainer.contains(document.activeElement) && 
+        document.activeElement !== canvasContainer &&
+        document.activeElement !== document.body) {
+      return;
+    }
 
     // Delete key
     if (event.key === 'Delete' || event.key === 'Backspace') {
@@ -134,7 +140,17 @@ export default class KeyboardShortcuts {
   }
 
   _getPastePosition() {
-    // Get current viewport center as paste position
+    // Get the first selected element to position paste relative to it
+    const selectedElements = this.selection.get();
+    if (selectedElements.length > 0) {
+      const referenceElement = selectedElements[0];
+      return {
+        x: referenceElement.x + 100,
+        y: referenceElement.y + 50
+      };
+    }
+    
+    // Fallback to viewport center if no selection
     const viewbox = this.canvas.viewbox();
     return {
       x: viewbox.x + viewbox.width / 2,

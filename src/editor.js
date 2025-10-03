@@ -15,6 +15,7 @@ import SelectionModule from 'diagram-js/lib/features/selection/index.js';
 import ZoomScrollModule from 'diagram-js/lib/navigation/zoomscroll/index.js';
 import SpaceToolModule from 'diagram-js/lib/features/space-tool/index.js';
 import InteractionEventsModule from 'diagram-js/lib/features/interaction-events/index.js';
+// PopupMenuModule not available in this version, removing
 import DirectEditingModule from 'diagram-js-direct-editing';
 import 'diagram-js/assets/diagram-js.css';
 
@@ -23,6 +24,7 @@ import CustomRendererModule from './draw/index.js';
 import CroppingConnectionDocking from 'diagram-js/lib/layout/CroppingConnectionDocking.js';
 import LabelsModule from './labels/index.js';
 import KeyboardModule from './keyboard/index.js';
+import PopupModule from './popup/index.js';
 
 
 /**
@@ -85,7 +87,8 @@ export default function Editor(options) {
     CustomRendererModule,
     ConnectionDockingModule,
     LabelsModule,
-    KeyboardModule
+    KeyboardModule,
+    PopupModule
   ];
 
   return new Diagram({
