@@ -130,7 +130,7 @@ export default class ExampleContextPadProvider{
                 y: event.y || event.clientY
               };
               
-              this.popupMenu.open(element, menuEntries, position);
+              this.popupMenu.open(element, 'menu', position); 
             }
           }
         };

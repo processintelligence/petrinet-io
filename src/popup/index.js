@@ -1,6 +1,6 @@
-import PopupMenu from './PopupMenu.js';
+import MenuProvider from './MenuProvider.js';
 
 export default {
-  __init__: [ 'popupMenu' ],
-  popupMenu: [ 'type', PopupMenu ]
+  __init__: [ 'menuProvider' ],
+  menuProvider: [ 'type', MenuProvider ]
 };
