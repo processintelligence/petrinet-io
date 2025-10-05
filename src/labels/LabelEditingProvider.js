@@ -1,44 +1,52 @@
-export default class LabelEditingProvider{
+export default class LabelEditingProvider {
 
-    static $inject = [ 'eventBus', 'directEditing', 'modeling' ];
-
-    constructor(eventBus, directEditing, modeling){
-        this.eventBus = eventBus;
-        this.directEditing = directEditing;
-        this.modeling = modeling;
-
-        // simple, fallback label editing via prompt + refresh
-        eventBus.on('element.dblclick', 1000, (event) => {
-            const element = event && event.element;
-            if (!element) { return; }
-
-            if (element.type !== "petri:place" && element.type !== "petri:transition") {
-                return; 
-            }
-
-            const current = element.businessObject?.name || '';
-            // fallback editing UI; replace later with proper direct-editing
-            const updated = window.prompt('Edit label', current);
-            if (updated === null) { return; }
-
-            // Update the business object if it exists, otherwise create one
-            if (!element.businessObject) {
-                element.businessObject = {};
-            }
-            element.businessObject.name = updated;
-
-            // If place, also prompt for tokens
-            if (element.type === 'petri:place') {
-                const currentTokens = Number.isFinite(element.businessObject.tokens) ? element.businessObject.tokens : 0;
-                const tokenInput = window.prompt('Set tokens (0+)', String(currentTokens));
-                if (tokenInput !== null) {
-                    const parsed = parseInt(tokenInput, 10);
-                    element.businessObject.tokens = Number.isFinite(parsed) && parsed >= 0 ? parsed : currentTokens;
-                }
-            }
-
-            // Trigger re-render by firing element changed event
-            this.eventBus.fire('element.changed', { element });
-        });
+    static $inject = [ 'eventBus', 'directEditing', 'canvas' ];
+  
+    constructor(eventBus, directEditing, canvas) {
+      this.eventBus = eventBus;
+      this.directEditing = directEditing;
+      this.canvas = canvas;
+  
+      directEditing.registerProvider(this);
+  
+      eventBus.on('element.dblclick', 1000, (event) => {
+        const element = event && event.element;
+  
+        if (!element) return;
+  
+        directEditing.activate(element);
+      });
     }
-}
+  
+    activate(element) {
+      if (element.type !== 'petri:place' && element.type !== 'petri:transition') {
+        return null;
+      }
+  
+      const text = element.businessObject?.name || '';
+  
+      const viewbox = this.canvas.viewbox();
+      const zoom = viewbox.scale || 1;
+  
+      return {
+        bounds: {
+          x: element.x * zoom - viewbox.x * zoom,
+          y: element.y * zoom - viewbox.y * zoom,
+          width: element.width * zoom,
+          height: element.height * zoom
+        },
+        text: text
+      };
+    }
+  
+    update(element, newText, oldText, bounds) {
+      if (!element.businessObject) {
+        element.businessObject = {};
+      }
+  
+      element.businessObject.name = newText;
+  
+      this.eventBus.fire('element.changed', { element });
+    }
+  }
+  
