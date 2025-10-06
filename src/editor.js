@@ -25,6 +25,7 @@ import CroppingConnectionDocking from 'diagram-js/lib/layout/CroppingConnectionD
 import LabelsModule from './labels/index.js';
 import KeyboardModule from './keyboard/index.js';
 import PopupModule from './popup/index.js';
+import SimulationModule from './simulation/index.js';
 
 
 
@@ -90,7 +91,8 @@ export default function Editor(options) {
     ConnectionDockingModule,
     LabelsModule,
     KeyboardModule,
-    PopupModule
+    PopupModule,
+    SimulationModule
   ];
 
   return new Diagram({

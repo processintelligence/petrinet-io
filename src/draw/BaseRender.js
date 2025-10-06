@@ -10,13 +10,14 @@ const HIGH_PRIORITY = 1500;
 
 export default class CustomRenderer extends BaseRenderer{
 
-    static $inject = ["eventBus", "styles", "connectionDocking"]
+    static $inject = ["eventBus", "styles", "connectionDocking", "simulationService"]
     
 
-    constructor(eventBus, styles, connectionDocking){
+    constructor(eventBus, styles, connectionDocking, simulationService){
         super(eventBus, HIGH_PRIORITY );
         this.styles = styles
         this.connectionDocking = connectionDocking;
+        this.simulationService = simulationService;
     }
 
 
@@ -45,7 +46,8 @@ export default class CustomRenderer extends BaseRenderer{
           const { width, height} = element;
           const r = 10;
           console.log("rect")
-          const shape = draw_rect(parentGfx, width,height,r,this.styles, undefined);
+          const isEnabled = this.simulationService.isTransitionEnabled(element);
+          const shape = draw_rect(parentGfx, width, height, r, this.styles, undefined, isEnabled);
           draw_label(parentGfx, element, this.styles);
           return shape;
       }
@@ -63,7 +65,8 @@ export default class CustomRenderer extends BaseRenderer{
           const { width, height} = element;
           const r = 0;
           console.log("empty_transition")
-          const shape = draw_empty_transition(parentGfx, width,height,r,this.styles, undefined);
+          const isEnabled = this.simulationService.isTransitionEnabled(element);
+          const shape = draw_empty_transition(parentGfx, width, height, r, this.styles, undefined, isEnabled);
           // do not render a label for empty transition
           return shape;
       }
@@ -138,12 +141,12 @@ function draw_circle(parentGfx, width, height, styles, attrs){
 
 }
 
-function draw_rect(parentGfx, width, height, r, styles, attrs){
+function draw_rect(parentGfx, width, height, r, styles, attrs, isEnabled){
 
     attrs= styles.computeStyle(attrs || {},{
         stroke: "black",
         strokeWidth: 2, 
-        fill: "white"
+        fill: isEnabled ? "lightgreen" : "white"
     })
 
 
@@ -206,12 +209,12 @@ function draw_frame(parentGfx, width, height, r, styles, attrs){
 }
 
 
-function draw_empty_transition(parentGfx, width, height, r, styles, attrs){
+function draw_empty_transition(parentGfx, width, height, r, styles, attrs, isEnabled){
 
     attrs= styles.computeStyle(attrs || {},{
         stroke: "black",
         strokeWidth: 2, 
-        fill: "black",
+        fill: isEnabled ? "lightgreen" : "black",
         fillOpacity: 1
     })
 

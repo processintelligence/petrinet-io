@@ -29,7 +29,10 @@ const diagram = new Editor({
     x: 150,
     y: 100,
     width: 100,
-    height: 80
+    height: 80,
+    businessObject: {
+      tokens: 2
+    }
   });
   
   canvas.addShape(shape1, root);
@@ -63,7 +66,10 @@ const diagram = new Editor({
     x: 450,
     y: 80,
     width: 100,
-    height: 80
+    height: 80,
+    businessObject: {
+      tokens: 0
+    }
   });
   
   canvas.addShape(shape3, root);
