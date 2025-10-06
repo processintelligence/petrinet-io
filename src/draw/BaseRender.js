@@ -169,6 +169,11 @@ function draw_rect(parentGfx, width, height, r, styles, attrs, isEnabled){
 
     svgAppend(parentGfx, rect);
 
+    // Add play triangle if enabled
+    if (isEnabled) {
+        draw_play_triangle(parentGfx, width, height, styles);
+    }
+
     return rect 
 
 }
@@ -233,8 +238,49 @@ function draw_empty_transition(parentGfx, width, height, r, styles, attrs, isEna
 
     svgAppend(parentGfx, rect);
 
+    // Add play triangle if enabled
+    if (isEnabled) {
+        draw_play_triangle(parentGfx, width, height, styles);
+    }
+
     return rect 
 
+}
+
+
+function draw_play_triangle(parentGfx, width, height, styles) {
+
+    const cx = width / 2;
+    const cy = height / 2;
+    
+
+    const size = Math.min(width, height) * 0.25;
+    
+
+    const x1 = cx - size / 3;
+    const y1 = cy - size / 2;
+    const x2 = cx - size / 3;
+    const y2 = cy + size / 2;
+    const x3 = cx + size / 2;
+    const y3 = cy;
+    
+
+    const path = svgCreate('path');
+    
+    const attrs = styles.computeStyle({}, {
+        fill: 'darkgreen',
+        stroke: 'darkgreen',
+        strokeWidth: 1
+    });
+    
+    svgAttr(path, {
+        d: `M ${x1} ${y1} L ${x2} ${y2} L ${x3} ${y3} Z`
+    });
+    
+    svgAttr(path, attrs);
+    svgAppend(parentGfx, path);
+    
+    return path;
 }
 
 
