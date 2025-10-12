@@ -22,7 +22,6 @@ export default class CustomRenderer extends BaseRenderer{
 
 
     canRender(element){
-        console.log("canRender")
         return element.type === "petri:place" ||
          element.type === "petri:transition" ||
           element.type === "petri:frame" ||
@@ -47,7 +46,8 @@ export default class CustomRenderer extends BaseRenderer{
           const r = 10;
           console.log("rect")
           const isEnabled = this.simulationService.isTransitionEnabled(element);
-          const shape = draw_rect(parentGfx, width, height, r, this.styles, undefined, isEnabled);
+          const isFired = this.simulationService.isTransitionFired(element);
+          const shape = draw_rect(parentGfx, width, height, r, this.styles, undefined, isEnabled, isFired);
           draw_label(parentGfx, element, this.styles);
           return shape;
       }
@@ -66,7 +66,8 @@ export default class CustomRenderer extends BaseRenderer{
           const r = 0;
           console.log("empty_transition")
           const isEnabled = this.simulationService.isTransitionEnabled(element);
-          const shape = draw_empty_transition(parentGfx, width, height, r, this.styles, undefined, isEnabled);
+          const isFired = this.simulationService.isTransitionFired(element);
+          const shape = draw_empty_transition(parentGfx, width, height, r, this.styles, undefined, isEnabled, isFired);
           // do not render a label for empty transition
           return shape;
       }
@@ -141,12 +142,20 @@ function draw_circle(parentGfx, width, height, styles, attrs){
 
 }
 
-function draw_rect(parentGfx, width, height, r, styles, attrs, isEnabled){
+function draw_rect(parentGfx, width, height, r, styles, attrs, isEnabled, isFired){
+
+    // Determine fill color based on state
+    let fillColor = "white"; // default
+    if (isEnabled) {
+        fillColor = "lightgreen"; // can fire now
+    } else if (isFired && !isEnabled) {
+        fillColor = "plum"; // has fired but can't fire now
+    }
 
     attrs= styles.computeStyle(attrs || {},{
         stroke: "black",
         strokeWidth: 2, 
-        fill: isEnabled ? "lightgreen" : "white"
+        fill: fillColor
     })
 
 
@@ -214,12 +223,20 @@ function draw_frame(parentGfx, width, height, r, styles, attrs){
 }
 
 
-function draw_empty_transition(parentGfx, width, height, r, styles, attrs, isEnabled){
+function draw_empty_transition(parentGfx, width, height, r, styles, attrs, isEnabled, isFired){
+
+    // Determine fill color based on state
+    let fillColor = "black"; // default
+    if (isEnabled) {
+        fillColor = "lightgreen"; // can fire now
+    } else if (isFired && !isEnabled) {
+        fillColor = "plum"; // has fired but can't fire now
+    }
 
     attrs= styles.computeStyle(attrs || {},{
         stroke: "black",
         strokeWidth: 2, 
-        fill: isEnabled ? "lightgreen" : "black",
+        fill: fillColor,
         fillOpacity: 1
     })
 

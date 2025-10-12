@@ -81,3 +81,21 @@ const diagram = new Editor({
   const selection = diagram.get('selection');
   
   selection.select(shape3);
+
+
+  // (4) Setup SVG Export button
+  
+  const svgExporter = diagram.get('svgExporter');
+  const exportButton = document.getElementById('export-button');
+  
+  if (exportButton && svgExporter) {
+    exportButton.addEventListener('click', () => {
+      svgExporter.exportSvg('petri-net.svg')
+        .then(result => {
+          console.log('SVG exported successfully');
+        })
+        .catch(error => {
+          console.error('SVG export failed:', error);
+        });
+    });
+  }

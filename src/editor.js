@@ -26,6 +26,7 @@ import LabelsModule from './labels/index.js';
 import KeyboardModule from './keyboard/index.js';
 import PopupModule from './popup/index.js';
 import SimulationModule from './simulation/index.js';
+import ExportModule from './export/index.js';
 
 
 
@@ -92,7 +93,8 @@ export default function Editor(options) {
     LabelsModule,
     KeyboardModule,
     PopupModule,
-    SimulationModule
+    SimulationModule,
+    ExportModule
   ];
 
   return new Diagram({
