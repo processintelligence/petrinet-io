@@ -156,32 +156,11 @@ export default class ExampleContextPadProvider{
           title: 'Tool action',
           action: {
             click: (event) => {
-              const menuEntries = {
-                'tokens': {
-                  label: 'Set Tokens',
-                  action: () => {
-                    const tokens = window.prompt('Enter number of tokens:', '0');
-                    if (tokens !== null) {
-                      console.log(`Setting ${tokens} tokens on ${element.type}`);
-                      if (!element.businessObject) element.businessObject = {};
-                      element.businessObject.tokens = parseInt(tokens) || 0;
-                    }
-                  }
-                },
-                'properties': {
-                  label: 'Properties',
-                  action: () => {
-                    console.log('Opening properties for', element.type);
-                    alert(`Properties for ${element.type}\nID: ${element.id}\nType: ${element.type}`);
-                  }
-                }
-              };
-              
               const position = {
                 x: event.x || event.clientX,
                 y: event.y || event.clientY
               };
-              
+   
               this.popupMenu.open(element, 'menu', position); 
             }
           }

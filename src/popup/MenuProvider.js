@@ -10,17 +10,27 @@ export default class MenuProvider {
     }
 
     getPopupMenuEntries(element){
+      const entries = {};
+
+      // Add "Set Tokens" option for places
       if(element.type === "petri:place"){
-        return {
-          'Tokens': {
-            label: 'Tokens',
-            action: () => {
-              this.getTokens(element);
-            }
+        entries.tokens = {
+          label: 'Set Tokens',
+          action: () => {
+            this.getTokens(element);
           }
         };
       }
-      return {};
+
+      // Add "Properties" option for all elements
+      entries.properties = {
+        label: 'Properties',
+        action: () => {
+          this.showProperties(element);
+        }
+      };
+
+      return entries;
     }
 
     getTokens(element){
@@ -55,6 +65,36 @@ export default class MenuProvider {
           alert("Please enter a valid number of tokens (0 or greater)");
         }
       }
+    }
+
+    showProperties(element){
+      if(!element){
+        return;
+      }
+
+      // Build properties info
+      let info = `Element Properties\n\n`;
+      info += `Type: ${element.type}\n`;
+      info += `ID: ${element.id}\n`;
+      
+      if(element.width && element.height){
+        info += `Size: ${element.width} x ${element.height}\n`;
+      }
+      
+      if(element.x !== undefined && element.y !== undefined){
+        info += `Position: (${element.x}, ${element.y})\n`;
+      }
+
+      if(element.businessObject){
+        if(element.businessObject.name){
+          info += `Name: ${element.businessObject.name}\n`;
+        }
+        if(element.businessObject.tokens !== undefined){
+          info += `Tokens: ${element.businessObject.tokens}\n`;
+        }
+      }
+
+      alert(info);
     }
 }
 
