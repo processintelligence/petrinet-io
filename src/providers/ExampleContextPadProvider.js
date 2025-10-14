@@ -56,6 +56,58 @@ export default class ExampleContextPadProvider{
             modeling.createConnection(element, created, { type: 'petri:connection' }, parent);
         };
 
+
+        const replaceElement = () => {
+          const parent = element.parent;
+          if (!parent) return;
+
+          let newType;
+          let newSize;
+
+          // Replace transition with empty_transition or vice versa
+          if (element.type === "petri:transition") {
+            newType = "petri:empty_transition";
+            newSize = { width: 14, height: 80 };
+          } else if (element.type === "petri:empty_transition") {
+            newType = "petri:transition";
+            newSize = { width: 100, height: 80 };
+          } else {
+            // Not a transition type, do nothing
+            return;
+          }
+
+          // Create new shape at the same position
+          const shape = elementFactory.createShape({
+            type: newType,
+            width: newSize.width,
+            height: newSize.height
+          });
+
+          // Calculate center position to maintain same center point
+          const centerX = element.x + element.width / 2;
+          const centerY = element.y + element.height / 2;
+
+          // Preserve connections
+          const incomingConnections = element.incoming ? [...element.incoming] : [];
+          const outgoingConnections = element.outgoing ? [...element.outgoing] : [];
+
+          // Create new element at the same center position
+          const newElement = modeling.createShape(shape, { x: centerX, y: centerY }, parent);
+
+          // Reconnect incoming connections
+          incomingConnections.forEach(connection => {
+            modeling.reconnectEnd(connection, newElement, connection.waypoints[connection.waypoints.length - 1]);
+          });
+
+          // Reconnect outgoing connections
+          outgoingConnections.forEach(connection => {
+            modeling.reconnectStart(connection, newElement, connection.waypoints[0]);
+          });
+
+          // Remove old element
+          modeling.removeElements([element]);
+        }
+
         const entries = {
             delete: {
               group: 'edit',
@@ -135,6 +187,28 @@ export default class ExampleContextPadProvider{
           }
         };
 
+        // Add replace option only for transitions
+        if (element.type === 'petri:transition') {
+          entries.replace = {
+            group: 'edit',
+            className: 'context-pad-icon-replace',
+            title: 'Replace with empty transition',
+            action: {
+              click: replaceElement
+            }
+          };
+        } else if (element.type === 'petri:empty_transition') {
+          entries.replace = {
+            group: 'edit',
+            className: 'context-pad-icon-replace',
+            title: 'Replace with transition',
+            action: {
+              click: replaceElement
+            }
+          };
+        }
+
         return entries;
     }
 }
+
