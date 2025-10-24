@@ -1,11 +1,11 @@
 export default class MenuProvider {
 
-    static $inject = ['eventBus', 'popupMenu'];
+    static $inject = ['eventBus', 'popupMenu', "simulationService"];
 
-    constructor(eventBus, popupMenu){
+    constructor(eventBus, popupMenu, simulationService){
         this.eventBus = eventBus;
         this.popupMenu = popupMenu;
-
+        this.simulationService = simulationService;
         popupMenu.registerProvider("menu", this);
     }
 
@@ -61,6 +61,9 @@ export default class MenuProvider {
         if(!isNaN(tokenCount) && tokenCount >= 0){
           element.businessObject.tokens = tokenCount;
           this.eventBus.fire('element.changed', { element });
+          if(this.simulationService.isActive){
+            this.simulationService.updateEnabledTransitions();
+          }
         } else {
           alert("Please enter a valid number of tokens (0 or greater)");
         }

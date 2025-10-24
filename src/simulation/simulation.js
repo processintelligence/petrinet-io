@@ -30,6 +30,9 @@ export default class SimulationService {
 
     toggleSimulation() {
         this.isActive = !this.isActive;
+
+        const elements = this.elementRegistry.getAll();
+        console.log(elements); 
         
         if (this.isActive) {
             this.firedTransitions.clear(); // Reset fired transitions when starting

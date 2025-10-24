@@ -13,10 +13,16 @@
           height: 100%;
           margin: 0;
       }
-      .svg-button {
+      .button-container {
         position: fixed;
         bottom: 20px;
         left: 20px;
+        display: flex;
+        gap: 12px;
+        z-index: 9999;
+      }
+
+      .svg-button {
         background-color: #007bff; 
         color: white; 
         border-radius: 8px;
@@ -26,7 +32,6 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         transition: background-color 0.3s ease, transform 0.3s ease;
         border: none;
-        z-index: 9999;
       }
 
       .svg-button:hover {
@@ -34,6 +39,22 @@
         transform: scale(1.05);
       }
 
+      .pnml-button {
+        background-color: #28a745;
+        color: white; 
+        border-radius: 8px;
+        padding: 12px 20px; 
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        border: none;
+      }
+
+      .pnml-button:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+      }
 
       .palette-icon-lasso-tool {
         background: url('data:image/svg+xml,%3Csvg%0A%20%20%20%20%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%0A%20%20%20%20%20fill%3D%22none%22%0A%20%20%20%20%20stroke%3D%22%23000%22%0A%20%20%20%20%20stroke-width%3D%221.5%22%0A%20%20%20%20%20width%3D%2246%22%0A%20%20%20%20%20height%3D%2246%22%3E%0A%20%20%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%2216%22%20height%3D%2216%22%20stroke-dasharray%3D%225%2C%205%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%2216%22%20y1%3D%2226%22%20x2%3D%2236%22%20y2%3D%2226%22%20stroke%3D%22black%22%20%2F%3E%0A%20%20%3Cline%20x1%3D%2226%22%20y1%3D%2216%22%20x2%3D%2226%22%20y2%3D%2236%22%20stroke%3D%22black%22%20%2F%3E%0A%3C%2Fsvg%3E');
@@ -102,7 +123,11 @@
 </head>
 <body>
     <div id="container"></div>
-    <button class="svg-button" id="export-button">SVG Export</button>
+    <div class="button-container">
+      <button class="svg-button" id="export-button">SVG Export</button>
+      <button class="pnml-button" id="export-pnml-button">PNML Export</button>
+      <button class="pnml-button" id="import-pnml-button">PNML Import</button>
+    </div>
     <script src="vendor/editor.js"></script>
     <script src="index.js"></script>
 </body>

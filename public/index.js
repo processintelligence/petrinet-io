@@ -99,3 +99,25 @@ const diagram = new Editor({
         });
     });
   }
+
+  // (5) Setup PNML Export button
+  
+  const pnmlExporter = diagram.get('pnmlExporter');
+  const pnmlExportButton = document.getElementById('export-pnml-button');
+  
+  if (pnmlExportButton && pnmlExporter) {
+    pnmlExportButton.addEventListener('click', () => {
+      pnmlExporter.exportPnml('petri-net.pnml');
+    });
+  }
+
+  // (6) Setup PNML Import button
+  
+  const pnmlImporter = diagram.get('pnmlImporter');
+  const pnmlImportButton = document.getElementById('import-pnml-button');
+  
+  if (pnmlImportButton && pnmlImporter) {
+    pnmlImportButton.addEventListener('click', () => {
+      pnmlImporter.loadFromFile();
+    });
+  }
