@@ -8,17 +8,16 @@ export default class PnmlExporter {
     }
 
     exportPnml(filename = 'petri-net.pnml'){
-        // Get only actual Petri net elements (not labels or root)
-        const allElements = this.elementRegistry.getAll();
-        console.log('All elements in registry:', allElements.map(e => ({ id: e.id, type: e.type })));
+        // Get root element
+        const root = this.canvas.getRootElement();
         
-        const elements = allElements.filter(element => 
-            element.type !== 'root' && 
-            element.type !== 'label' &&
-            element.parent  // Only include elements that have a parent (are actually in the canvas)
+        // Get only elements that are children of root (actually on the canvas)
+        const elements = this.elementRegistry.filter(element => 
+            element.parent === root &&
+            element.type !== 'label'
         );
         
-        console.log('Filtered elements to export:', elements.map(e => ({ id: e.id, type: e.type })));
+        console.log('Elements to export:', elements.length, elements.map(e => ({ id: e.id, type: e.type })));
 
         // Start building PNML with opening tags
         let pnml = `<?xml version="1.0" encoding="UTF-8"?>
