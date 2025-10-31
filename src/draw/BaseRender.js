@@ -87,6 +87,7 @@ export default class CustomRenderer extends BaseRenderer{
 
         const line = createLine(element.waypoints, attrs, 5);
         svgAppend(parentGfx, line);
+        draw_label(parentGfx, element, this.styles);
         console.log(`${element.type}`)
         return line;
       }
@@ -377,7 +378,16 @@ function draw_label(parentGfx, element, styles){
 
   const text = svgCreate('text');
   let x, y, textAnchor, baseline;
-  if (element.type === 'petri:place') {
+  if(element.type === "petri:connection"){
+    const waypoints = element.waypoints;
+    const start = waypoints[0];
+    const end = waypoints[1];
+    x = ((start.x + end.x) / 2);
+    y = ((start.y + end.y) / 2)-15;
+    textAnchor = 'middle';
+    baseline = 'middle';
+  }
+  else if (element.type === 'petri:place') {
     
     // place label just outside the circle boundary
     const r = Math.min(element.width, element.height) / 2;
@@ -456,5 +466,5 @@ function draw_tokens(parentGfx, element, tokens, styles) {
   } else if (tokens > 4) {
     placeDot(0, 0, tokens);
   }
-}
 
+}

@@ -22,6 +22,15 @@ export default class MenuProvider {
         };
       }
 
+      if(element.type === "petri:connection"){
+        entries.label = {
+          label: 'Set Label',
+          action: () => {
+            this.setLabel(element);
+          }
+        };
+      }
+
       // Add "Properties" option for all elements
       entries.properties = {
         label: 'Properties',
@@ -99,7 +108,21 @@ export default class MenuProvider {
 
       alert(info);
     }
+
+    setLabel(element){
+      if(!element){
+        return; 
+      }
+      if(element.businessObject === undefined){
+        element.businessObject = {};
+      }
+
+      let updateLabel = window.prompt("Enter the new label", element.businessObject.name);
+
+      if(updateLabel !== null){
+        element.businessObject.name = updateLabel;
+        this.eventBus.fire('element.changed', { element });
+      }
+    }
+
 }
-
-
-
