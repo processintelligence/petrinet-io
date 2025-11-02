@@ -43,7 +43,7 @@ export default class CustomRenderer extends BaseRenderer{
 
       if ( type=== "petri:transition"){
           const { width, height} = element;
-          const r = 10;
+          const r = 0;
           console.log("rect")
           const isEnabled = this.simulationService.isTransitionEnabled(element);
           const isFired = this.simulationService.isTransitionFired(element);
@@ -54,7 +54,7 @@ export default class CustomRenderer extends BaseRenderer{
 
       if ( type=== "petri:frame"){
           const { width, height} = element;
-          const r = 10;
+          const r = 0;
           console.log("frame")
           const shape = draw_frame(parentGfx, width,height,r,this.styles, undefined);
           draw_label(parentGfx, element, this.styles);
@@ -188,40 +188,6 @@ function draw_rect(parentGfx, width, height, r, styles, attrs, isEnabled, isFire
 
 }
 
-
-
-function draw_frame(parentGfx, width, height, r, styles, attrs){
-
-    attrs= styles.computeStyle(attrs || {},{
-        stroke: "black",
-        strokeWidth: 2, 
-        fill: "none",
-        strokeDasharray: "4,4"
-    })
-
-
-    if (attrs.fill === "none"){
-        delete attrs.fillOpacity
-    }
-
-    const frame= svgCreate("rect");
-
-    svgAttr(frame,{
-        x: 0,
-        y: 0, 
-        width: width,
-        height: height, 
-        rx: r, 
-        ry: r
-    });
-
-    svgAttr(frame,attrs);
-
-    svgAppend(parentGfx, frame);
-
-    return frame
-
-}
 
 
 function draw_empty_transition(parentGfx, width, height, r, styles, attrs, isEnabled, isFired){
@@ -373,36 +339,96 @@ function draw_label(parentGfx, element, styles){
 
   const attrs = styles.computeStyle({}, {
     fill: 'black',
-    fontSize: 12
+    fontSize: 12, 
+    fontFamily: 'Arial, sans-serif'
   });
 
   const text = svgCreate('text');
   let x, y, textAnchor, baseline;
   if(element.type === "petri:connection"){
     const waypoints = element.waypoints;
-    const start = waypoints[0];
-    const end = waypoints[1];
-    x = ((start.x + end.x) / 2);
-    y = ((start.y + end.y) / 2)-15;
+    
+    // Calculate the reference point (middle of the arc)
+    let refX, refY;
+    if (waypoints.length === 2) {
+      // Simple case: straight line between two points
+      const start = waypoints[0];
+      const end = waypoints[1];
+      refX = (start.x + end.x) / 2;
+      refY = (start.y + end.y) / 2;
+    } else {
+      // Multiple waypoints: use the middle waypoint
+      const middleIndex = Math.floor(waypoints.length / 2);
+      const middlePoint = waypoints[middleIndex];
+      refX = middlePoint.x;
+      refY = middlePoint.y;
+    }
+    
+    // Use stored offset if available (relative to arc middle), otherwise calculate
+    if (element.businessObject?.labelOffset) {
+      // Offset is relative to arc middle
+      x = refX + element.businessObject.labelOffset.x;
+      y = refY + element.businessObject.labelOffset.y;
+    } else {
+      // Default: slightly above the line
+      x = refX;
+      y = refY - 10;
+      
+      // Store offset RELATIVE TO ARC MIDDLE for PNML export
+      if (!element.businessObject) element.businessObject = {};
+      element.businessObject.labelOffset = { x: 0, y: -10 };
+    }
+    
     textAnchor = 'middle';
     baseline = 'middle';
   }
   else if (element.type === 'petri:place') {
-    
-    // place label just outside the circle boundary
     const r = Math.min(element.width, element.height) / 2;
     const cx = element.width / 2;
     const cy = element.height / 2;
-    const margin = 4;
-    const offset = r / Math.SQRT2; // ~45°
-    x = cx + offset + margin;
-    y = cy + offset + margin;
+    
+    // Use stored offset if available (relative to center), otherwise calculate default
+    if (element.businessObject?.labelOffset) {
+      // Offset is relative to center
+      x = cx + element.businessObject.labelOffset.x;
+      y = cy + element.businessObject.labelOffset.y;
+    } else {
+      // place label just outside the circle boundary
+      const margin = 4;
+      const offset = r / Math.SQRT2; // ~45°
+      x = cx + offset + margin;
+      y = cy + offset + margin;
+      
+      // Store offset RELATIVE TO CENTER for PNML export
+      if (!element.businessObject) element.businessObject = {};
+      element.businessObject.labelOffset = { 
+        x: offset + margin,  // relative to center
+        y: offset + margin 
+      };
+    }
+    
     textAnchor = 'start';
     baseline = 'hanging';
   } else {
-    // default: centered
-    x = element.width / 2;
-    y = element.height / 2;
+    // default: centered (for transitions, frames, etc.)
+    const cx = element.width / 2;
+    const cy = element.height / 2;
+    
+    // Use stored offset if available (relative to center), otherwise calculate default
+    if (element.businessObject?.labelOffset) {
+      // Offset is relative to center
+      x = cx + element.businessObject.labelOffset.x;
+      y = cy + element.businessObject.labelOffset.y;
+    } else {
+      // Centered label
+      x = cx;
+      y = cy;
+      
+      // Store offset RELATIVE TO CENTER for PNML export (0,0 = centered)
+      if (!element.businessObject) element.businessObject = {};
+      element.businessObject.labelOffset = { x: 0, y: 0 };
+    }
+    
     textAnchor = 'middle';
     baseline = 'middle';
   }

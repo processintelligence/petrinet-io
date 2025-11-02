@@ -26,11 +26,11 @@ export default class ExampleContextPadProvider{
             if (!parent) return;
 
             const defaultSizes = {
-                "petri:transition": { width: 100, height: 80 },
-                "petri:place": { width: 80, height: 80 }
+                "petri:transition": { width: 70, height: 70 },
+                "petri:place": { width: 50, height: 50 }
             };
 
-            const size = defaultSizes[type] || { width: 80, height: 60 };
+            const size = defaultSizes[type] || { width: 70, height: 70 };
 
             // choose side based on connections: right if outgoing present (or none), left if only incoming
             const hasOutgoing = Array.isArray(element.outgoing) && element.outgoing.length > 0;
@@ -67,10 +67,10 @@ export default class ExampleContextPadProvider{
           // Replace transition with empty_transition or vice versa
           if (element.type === "petri:transition") {
             newType = "petri:empty_transition";
-            newSize = { width: 14, height: 80 };
+            newSize = { width: 14, height: 70 };
           } else if (element.type === "petri:empty_transition") {
             newType = "petri:transition";
-            newSize = { width: 100, height: 80 };
+            newSize = { width: 70, height: 70 };
           } else {
             // Not a transition type, do nothing
             return;

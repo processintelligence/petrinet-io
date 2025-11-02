@@ -13,11 +13,9 @@ export default class PnmlExporter {
         
         // Get only elements that are children of root (actually on the canvas)
         const elements = this.elementRegistry.filter(element => 
-            element.parent === root &&
-            element.type !== 'label'
+            element.parent === root
         );
-        
-        console.log('Elements to export:', elements.length, elements.map(e => ({ id: e.id, type: e.type })));
+    
 
         // Start building PNML with opening tags
         let pnml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -29,9 +27,9 @@ export default class PnmlExporter {
         // Add all place elements
         elements.forEach(element => {
             if(element.type === "petri:place"){
-               // Calculate relative offset for label (default to center of element)
-               const labelOffsetX = element.label?.x ? element.label.x - element.x : 0;
-               const labelOffsetY = element.label?.y ? element.label.y - element.y : 0;
+               // Get label offset from businessObject
+               const labelOffsetX = element.businessObject?.labelOffset?.x ?? 0;
+               const labelOffsetY = element.businessObject?.labelOffset?.y ?? 0;
                
                const place_element = `            <place id="${element.id}">
                 <graphics>
@@ -55,10 +53,10 @@ export default class PnmlExporter {
 
         // Add all transition elements (regular and empty)
         elements.forEach(element => {
-            if(element.type === "petri:transition" || element.type === "petri:empty_transition"){
-               // Calculate relative offset for label (default to center of element)
-               const labelOffsetX = element.label?.x ? element.label.x - element.x : 0;
-               const labelOffsetY = element.label?.y ? element.label.y - element.y : 0;
+            if(element.type === "petri:transition"){
+               // Get label offset from businessObject
+               const labelOffsetX = element.businessObject?.labelOffset?.x ?? 0;
+               const labelOffsetY = element.businessObject?.labelOffset?.y ?? 0;
                
                const transition_element = `            <transition id="${element.id}">
                 <graphics>
@@ -77,25 +75,55 @@ export default class PnmlExporter {
             }
         });
 
+        elements.forEach(element => {
+            if(element.type === "petri:empty_transition"){
+
+               
+               const transition_element = `            <transition id="${element.id}">
+                <graphics>
+                    <position x="${element.x}" y="${element.y}" />
+                    <size width="${element.width}" height="${element.height}" />
+                </graphics>
+                <toolspecific tool="petrinet.io" version="1.0">
+                    <property key="transitionType" value="empty" />
+                </toolspecific>
+            </transition>
+`;
+               pnml += transition_element;
+            }
+        });
+
         // Add all arc elements (connections)
         elements.forEach(element => {
             if(element.type === "petri:connection"){
                 let positions = '';
                 // Add each waypoint as a position element
                 if(element.waypoints && element.waypoints.length > 0){
-                    element.waypoints.forEach(waypoint => {
+                    for(let i=1; i<element.waypoints.length -1 ; i++){
+                        const waypoint = element.waypoints[i];
                         positions += `                    <position x="${waypoint.x}" y="${waypoint.y}" />\n`;
-                    });
-                }
+                    }
+    
+                
+                // Get label offset from businessObject
+                const labelOffsetX = element.businessObject?.labelOffset?.x ?? 0;
+                const labelOffsetY = element.businessObject?.labelOffset?.y ?? 0;
+                const labelText = element.businessObject?.name || '';
                 
                 const arc_element = `            <arc id="${element.id}" source="${element.source.id}" target="${element.target.id}">
                 <graphics>
 ${positions}                </graphics>
+                <inscription>
+                    <text>${labelText}</text>
+                    <graphics>
+                        <offset x="${labelOffsetX}" y="${labelOffsetY}" />
+                    </graphics>
+                </inscription>
             </arc>
 `;
                 pnml += arc_element;
             }
-        });
+        }});
 
         // Close all tags
         pnml += `        </page>

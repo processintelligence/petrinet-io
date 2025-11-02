@@ -28,8 +28,8 @@ const diagram = new Editor({
     type: 'petri:place',
     x: 150,
     y: 100,
-    width: 100,
-    height: 80,
+    width: 50,
+    height: 50,
     businessObject: {
       tokens: 2
     }
@@ -41,8 +41,8 @@ const diagram = new Editor({
     type: 'petri:transition',
     x: 290,
     y: 220,
-    width: 100,
-    height: 80
+    width: 70,
+    height: 70
   });
   
   canvas.addShape(shape2, root);
@@ -65,8 +65,8 @@ const diagram = new Editor({
     type: 'petri:place',
     x: 450,
     y: 80,
-    width: 100,
-    height: 80,
+    width: 50,
+    height: 50,
     businessObject: {
       tokens: 0
     }
