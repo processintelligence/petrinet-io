@@ -1,8 +1,8 @@
 export default class ExamplePalleteProvider {
 
-  static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService", "idCounterService"]
+  static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService", "idCounterService", "eventBus", "elementRegistry"]
 
-  constructor(create, elementFactory, lassoTool, palette, spaceTool, simulationService, idCounterService){
+  constructor(create, elementFactory, lassoTool, palette, spaceTool, simulationService, idCounterService, eventBus, elementRegistry){
     this.create = create; 
     this.elementFactory = elementFactory; 
     this.lassoTool = lassoTool;
@@ -10,9 +10,26 @@ export default class ExamplePalleteProvider {
     this.spaceTool= spaceTool;
     this.simulationService = simulationService;
     this.idCounterService = idCounterService;
-
+    this.eventBus = eventBus;
+    this.elementRegistry = elementRegistry;
     palette.registerProvider(this);
   }
+
+  toggleLabels(event) {
+    this.idCounterService.toggleLabels();
+    
+    // Make button active when labels hidden
+    const button = event.target.closest('[data-action="labels"]');
+    if (button) {
+      button.classList.toggle('active');
+    }
+    
+    // Re-render all elements
+    this.elementRegistry.getAll().forEach(el => {
+      this.eventBus.fire('element.changed', { element: el });
+    });
+  }
+
 
  updateButton(event) {
     const button = event.target.closest('[data-action="start-simulation"]');
@@ -112,6 +129,22 @@ export default class ExamplePalleteProvider {
         action: {
           click: (event) => {
             this.updateButton(event);
+          }
+        }
+      },
+
+      "simulation-separator": {
+        group: "simulation",
+        separator: true
+      },
+
+      "labels": {
+        group: "labels",
+        className: "palette-icon-labels",
+        title: "Toggle Labels",
+        action: {
+          click: (event) => {
+            this.toggleLabels(event);
           }
         }
       }

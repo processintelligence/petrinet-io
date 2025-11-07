@@ -10,14 +10,15 @@ const HIGH_PRIORITY = 1500;
 
 export default class CustomRenderer extends BaseRenderer{
 
-    static $inject = ["eventBus", "styles", "connectionDocking", "simulationService"]
+    static $inject = ["eventBus", "styles", "connectionDocking", "simulationService", "idCounterService"]
     
 
-    constructor(eventBus, styles, connectionDocking, simulationService){
+    constructor(eventBus, styles, connectionDocking, simulationService, idCounterService){
         super(eventBus, HIGH_PRIORITY );
         this.styles = styles
         this.connectionDocking = connectionDocking;
         this.simulationService = simulationService;
+        this.idCounterService = idCounterService;
     }
 
 
@@ -37,7 +38,7 @@ export default class CustomRenderer extends BaseRenderer{
           const { width, height} = element;
           console.log("circle")
           const shape = draw_circle(parentGfx, width, height,this.styles, undefined);
-          draw_label(parentGfx, element, this.styles);
+          draw_label(parentGfx, element, this.styles, this.idCounterService);
           return shape;
       }
 
@@ -48,7 +49,7 @@ export default class CustomRenderer extends BaseRenderer{
           const isEnabled = this.simulationService.isTransitionEnabled(element);
           const isFired = this.simulationService.isTransitionFired(element);
           const shape = draw_rect(parentGfx, width, height, r, this.styles, undefined, isEnabled, isFired);
-          draw_label(parentGfx, element, this.styles);
+          draw_label(parentGfx, element, this.styles, this.idCounterService);
           return shape;
       }
 
@@ -57,7 +58,7 @@ export default class CustomRenderer extends BaseRenderer{
           const r = 0;
           console.log("frame")
           const shape = draw_frame(parentGfx, width,height,r,this.styles, undefined);
-          draw_label(parentGfx, element, this.styles);
+          draw_label(parentGfx, element, this.styles, this.idCounterService);
           return shape;
       }
 
@@ -68,7 +69,7 @@ export default class CustomRenderer extends BaseRenderer{
           const isEnabled = this.simulationService.isTransitionEnabled(element);
           const isFired = this.simulationService.isTransitionFired(element);
           const shape = draw_empty_transition(parentGfx, width, height, r, this.styles, undefined, isEnabled, isFired);
-          // do not render a label for empty transition
+          draw_label(parentGfx, element, this.styles, this.idCounterService);
           return shape;
       }
     }
@@ -87,7 +88,7 @@ export default class CustomRenderer extends BaseRenderer{
 
         const line = createLine(element.waypoints, attrs, 5);
         svgAppend(parentGfx, line);
-        draw_label(parentGfx, element, this.styles);
+        draw_label(parentGfx, element, this.styles, this.idCounterService);
         console.log(`${element.type}`)
         return line;
       }
@@ -334,7 +335,9 @@ function getRectPath(shape) {
     return componentsToPath(rectPath);
   }
 
-function draw_label(parentGfx, element, styles){
+function draw_label(parentGfx, element, styles, idCounterService){
+
+
   const textValue = element.businessObject?.name??""
 
   const attrs = styles.computeStyle({}, {
@@ -391,7 +394,7 @@ function draw_label(parentGfx, element, styles){
     const offset = r / Math.SQRT2; // ~45°
 
     // Render ID label for place (bottom-left corner)
-    if (element.id){
+    if (idCounterService.labelsVisible && element.id){
       const idtext = svgCreate('text');
       const idx = cx - offset - margin;
       const idy = cy + offset + margin;
@@ -436,7 +439,7 @@ function draw_label(parentGfx, element, styles){
     const cy = element.height / 2;
     
     // Render ID label below the transition
-    if (element.id) {
+    if (idCounterService.labelsVisible && element.id) {
       const idtext = svgCreate('text');
       const idx = cx;
       const idy = element.height + 14; // Below the bottom edge
@@ -495,17 +498,19 @@ function draw_label(parentGfx, element, styles){
     baseline = 'middle';
   }
 
-  // Render the name label for all elements
-  svgAttr(text, {
-    x,
-    y,
-    'text-anchor': textAnchor,
-    'dominant-baseline': baseline
-  });
+  // Render the name label for all elements except empty transitions
+  if (element.type !== 'petri:empty_transition') {
+    svgAttr(text, {
+      x,
+      y,
+      'text-anchor': textAnchor,
+      'dominant-baseline': baseline
+    });
 
-  svgAttr(text, attrs);
-  text.textContent = String(textValue);
-  svgAppend(parentGfx, text);
+    svgAttr(text, attrs);
+    text.textContent = String(textValue);
+    svgAppend(parentGfx, text);
+  }
 
   // Render tokens for places if defined on businessObject
   if (element.type === 'petri:place') {

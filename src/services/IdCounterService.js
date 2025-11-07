@@ -2,6 +2,7 @@ export default class IdCounterService {
   constructor() {
     this.placeCounter = 1;
     this.transitionCounter = 1;
+    this.labelsVisible = true;
   }
 
   getNextPlaceId() {
@@ -23,6 +24,10 @@ export default class IdCounterService {
         return undefined;
       }
     }
+  }
+
+  toggleLabels() {
+    this.labelsVisible = !this.labelsVisible;
   }
 }
 
