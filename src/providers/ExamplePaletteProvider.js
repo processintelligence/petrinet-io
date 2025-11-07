@@ -1,14 +1,15 @@
 export default class ExamplePalleteProvider {
 
-  static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService"]
+  static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService", "idCounterService"]
 
-  constructor(create, elementFactory, lassoTool, palette, spaceTool, simulationService){
+  constructor(create, elementFactory, lassoTool, palette, spaceTool, simulationService, idCounterService){
     this.create = create; 
     this.elementFactory = elementFactory; 
     this.lassoTool = lassoTool;
     this.palette = palette; 
     this.spaceTool= spaceTool;
     this.simulationService = simulationService;
+    this.idCounterService = idCounterService;
 
     palette.registerProvider(this);
   }
@@ -50,6 +51,7 @@ export default class ExamplePalleteProvider {
         action: {
           click: (event) => {
             const shape = elementFactory.createShape({
+              id: this.idCounterService.getNextTransitionId(),
               width: 70,
               height: 70,
               type: "petri:transition"
@@ -67,6 +69,7 @@ export default class ExamplePalleteProvider {
         action: {
           click: (event) => {
             const shape = elementFactory.createShape({
+              id: this.idCounterService.getNextTransitionId(),
               width: 14,
               height: 70,
               type: "petri:empty_transition"
@@ -83,6 +86,7 @@ export default class ExamplePalleteProvider {
         action: {
           click: (event) => {
             const circleShape = elementFactory.createShape({
+              id: this.idCounterService.getNextPlaceId(),
               width: 50,
               height: 50,
               type: "petri:place",

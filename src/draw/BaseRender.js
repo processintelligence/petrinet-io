@@ -345,6 +345,7 @@ function draw_label(parentGfx, element, styles){
 
   const text = svgCreate('text');
   let x, y, textAnchor, baseline;
+  
   if(element.type === "petri:connection"){
     const waypoints = element.waypoints;
     
@@ -386,6 +387,30 @@ function draw_label(parentGfx, element, styles){
     const r = Math.min(element.width, element.height) / 2;
     const cx = element.width / 2;
     const cy = element.height / 2;
+    const margin = 4;
+    const offset = r / Math.SQRT2; // ~45°
+
+    // Render ID label for place (bottom-left corner)
+    if (element.id){
+      const idtext = svgCreate('text');
+      const idx = cx - offset - margin;
+      const idy = cy + offset + margin;
+
+      svgAttr(idtext, {
+        x: idx,
+        y: idy,
+        'text-anchor': 'end',
+        'dominant-baseline': 'hanging'
+      });
+    
+      svgAttr(idtext, attrs);
+      idtext.textContent = String(element.id);
+      svgAppend(parentGfx, idtext);
+    }
+
+    // Name label positioning (top-right corner)
+    textAnchor = 'start';
+    baseline = 'hanging';
     
     // Use stored offset if available (relative to center), otherwise calculate default
     if (element.businessObject?.labelOffset) {
@@ -393,9 +418,7 @@ function draw_label(parentGfx, element, styles){
       x = cx + element.businessObject.labelOffset.x;
       y = cy + element.businessObject.labelOffset.y;
     } else {
-      // place label just outside the circle boundary
-      const margin = 4;
-      const offset = r / Math.SQRT2; // ~45°
+      // place label just outside the circle boundar
       x = cx + offset + margin;
       y = cy + offset + margin;
       
@@ -406,11 +429,50 @@ function draw_label(parentGfx, element, styles){
         y: offset + margin 
       };
     }
+  
+  } else if (element.type === 'petri:transition' || element.type === 'petri:empty_transition') {
+    // For transitions: name centered, ID below
+    const cx = element.width / 2;
+    const cy = element.height / 2;
     
-    textAnchor = 'start';
-    baseline = 'hanging';
+    // Render ID label below the transition
+    if (element.id) {
+      const idtext = svgCreate('text');
+      const idx = cx;
+      const idy = element.height + 14; // Below the bottom edge
+
+      svgAttr(idtext, {
+        x: idx,
+        y: idy,
+        'text-anchor': 'middle',
+        'dominant-baseline': 'hanging'
+      });
+    
+      svgAttr(idtext, attrs);
+      idtext.textContent = String(element.id);
+      svgAppend(parentGfx, idtext);
+    }
+    
+    // Name label positioning (centered)
+    // Use stored offset if available (relative to center), otherwise calculate default
+    if (element.businessObject?.labelOffset) {
+      // Offset is relative to center
+      x = cx + element.businessObject.labelOffset.x;
+      y = cy + element.businessObject.labelOffset.y;
+    } else {
+      // Centered label
+      x = cx;
+      y = cy;
+      
+      // Store offset RELATIVE TO CENTER for PNML export (0,0 = centered)
+      if (!element.businessObject) element.businessObject = {};
+      element.businessObject.labelOffset = { x: 0, y: 0 };
+    }
+    
+    textAnchor = 'middle';
+    baseline = 'middle';
   } else {
-    // default: centered (for transitions, frames, etc.)
+    // default: centered (for frames, etc.)
     const cx = element.width / 2;
     const cy = element.height / 2;
     
@@ -433,6 +495,7 @@ function draw_label(parentGfx, element, styles){
     baseline = 'middle';
   }
 
+  // Render the name label for all elements
   svgAttr(text, {
     x,
     y,
@@ -449,7 +512,7 @@ function draw_label(parentGfx, element, styles){
     const tokens = Number.isFinite(element.businessObject?.tokens) ? element.businessObject.tokens : 0;
     if (tokens > 0) {
       draw_tokens(parentGfx, element, tokens, styles);
-    }
+    } 
   }
 }
 

@@ -28,6 +28,7 @@ import KeyboardModule from './keyboard/index.js';
 import PopupModule from './popup/index.js';
 import SimulationModule from './simulation/index.js';
 import ExportModule from './export/index.js';
+import ServicesModule from './services/index.js';
 
 
 
@@ -96,7 +97,8 @@ export default function Editor(options) {
     KeyboardModule,
     PopupModule,
     SimulationModule,
-    ExportModule
+    ExportModule,
+    ServicesModule
   ];
 
   return new Diagram({

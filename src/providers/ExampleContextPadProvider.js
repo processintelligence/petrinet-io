@@ -1,13 +1,14 @@
 export default class ExampleContextPadProvider{
 
-    static $inject =["connect", "contextPad", "modeling", "elementFactory", "create", "popupMenu"]
+    static $inject =["connect", "contextPad", "modeling", "elementFactory", "create", "popupMenu", "idCounterService"]
 
-    constructor(connect, contextPad, modeling, elementFactory, create, popupMenu){
+    constructor(connect, contextPad, modeling, elementFactory, create, popupMenu, idCounterService){
         this.connect= connect;
         this.modeling= modeling;
         this.elementFactory= elementFactory;
         this.create= create;
         this.popupMenu = popupMenu;
+        this.idCounterService = idCounterService;
 
         contextPad.registerProvider(this);
     }
@@ -43,12 +44,20 @@ export default class ExampleContextPadProvider{
                 ? element.x + element.width + 50 + size.width / 2
                 : element.x - 30 - size.width / 2;
 
-            // create shape without preset x/y; modeling will position it by center
-            const shape = elementFactory.createShape({
+            // create shape with auto-generated ID
+            const shapeConfig = {
+                id: this.idCounterService.getNextId(type),
                 type,
                 width: size.width,
                 height: size.height
-            });
+            };
+            
+            // Add businessObject for places
+            if (type === 'petri:place') {
+                shapeConfig.businessObject = { tokens: 0 };
+            }
+            
+            const shape = elementFactory.createShape(shapeConfig);
 
             const created = modeling.createShape(shape, { x: centerX, y: centerY }, parent);
 
@@ -76,8 +85,9 @@ export default class ExampleContextPadProvider{
             return;
           }
 
-          // Create new shape at the same position
+          // Create new shape at the same position with auto-generated ID
           const shape = elementFactory.createShape({
+            id: this.idCounterService.getNextId(newType),
             type: newType,
             width: newSize.width,
             height: newSize.height
