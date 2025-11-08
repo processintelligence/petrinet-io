@@ -70,9 +70,9 @@ export default class SimulationService {
         if (this.isActive) {
             if(this.initialTokenState.size === 0){
                 this.saveInitialTokenState();
-            }else{
-                this.initialTokenState.clear();
             }
+
+            this.saveInitialTokenState();
             this.firedTransitions.clear(); // Reset fired transitions when starting
             this.updateEnabledTransitions();
         } else {

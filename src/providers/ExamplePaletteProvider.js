@@ -31,7 +31,7 @@ export default class ExamplePalleteProvider {
   }
 
 
- updateButton(event) {
+ updateSimulationButton(event) {
     const button = event.target.closest('[data-action="start-simulation"]');
     if (button) {
       const isActive = this.simulationService.toggleSimulation();
@@ -128,7 +128,7 @@ export default class ExamplePalleteProvider {
         title: "Start Simulation",
         action: {
           click: (event) => {
-            this.updateButton(event);
+            this.updateSimulationButton(event);
           }
         }
       },

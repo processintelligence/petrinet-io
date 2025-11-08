@@ -1,12 +1,14 @@
 export default class PnmlImporter {
 
-    static $inject = ["canvas", "elementFactory", "elementRegistry", "modeling"]
+    static $inject = ["canvas", "elementFactory", "elementRegistry", "modeling", "idCounterService"]
 
-    constructor(canvas, elementFactory, elementRegistry, modeling){
+    constructor(canvas, elementFactory, elementRegistry, modeling, idCounterService){
         this.canvas = canvas;
         this.elementFactory = elementFactory;
         this.elementRegistry = elementRegistry;
         this.modeling = modeling;
+        this.idCounterService = idCounterService;
+        this.defaultPnml = false;
     }
 
     /**
@@ -19,12 +21,16 @@ export default class PnmlImporter {
         
         // Look for any child element (except graphics and toolspecific) that has a <text> child
         for (const child of children) {
-            if (child.tagName === 'graphics' || child.tagName === 'toolspecific') {
+            if (child.tagName === 'graphics' || child.tagName === 'toolspecific' || child.tagName === "initialMarking" ) {
                 continue;
             }
             
             const textNode = child.querySelector('text');
             if (textNode) {
+
+                if(child.tagName === "inscription" && textNode.textContent.trim() === "1"){
+                    continue;
+                }
                 // Found a label element with text
                 const text = textNode.textContent || '';
                 
@@ -56,22 +62,30 @@ export default class PnmlImporter {
         const root = this.elementFactory.createRoot();
         this.canvas.setRootElement(root);
 
+        // Remove all finalMarking and finalmarkings elements from the document
+        // Handle both camelCase and lowercase variations
+        const finalMarkings1 = xmlDoc.querySelectorAll('finalMarking');
+        const finalMarkings2 = xmlDoc.querySelectorAll('finalmarkings');
+        [...finalMarkings1, ...finalMarkings2].forEach(marking => marking.remove());
+        
         // Store created elements by their PNML ID for arc creation
         const elementMap = new Map();
+
 
         // Parse and create places
         const places = xmlDoc.querySelectorAll('place');
         places.forEach(placeNode => {
             const id = placeNode.getAttribute('id');
             const positionNode = placeNode.querySelector('graphics > position');
-            const sizeNode = placeNode.querySelector('graphics > dimension');
+            const dimensionNode = placeNode.querySelector('graphics > dimension');
             const markingNode = placeNode.querySelector('initialMarking > text');
 
             const x = positionNode ? parseFloat(positionNode.getAttribute('x')) : 100;
             const y = positionNode ? parseFloat(positionNode.getAttribute('y')) : 100;
-            const width = sizeNode ? parseFloat(sizeNode.getAttribute('width')) : 100;
-            const height = sizeNode ? parseFloat(sizeNode.getAttribute('height')) : 80;
+            const width = this.defaultPnml?  50 : ( dimensionNode? parseFloat(dimensionNode.getAttribute('x')) :  50 );
+            const height = this.defaultPnml?  50 : ( dimensionNode? parseFloat(dimensionNode.getAttribute('y')) :  50  );
             const tokens = markingNode ? parseInt(markingNode.textContent) : 0;
+
             
             // Find any label element (name, or any other non-core element with text)
             const label = this.findLabel(placeNode);
@@ -80,6 +94,7 @@ export default class PnmlImporter {
             const labelOffsetY = label ? label.offsetY : null;
 
             const place = this.elementFactory.createShape({
+                id: this.idCounterService.getNextPlaceId(),
                 type: 'petri:place',
                 x: x,
                 y: y,
@@ -104,12 +119,12 @@ export default class PnmlImporter {
         transitions.forEach(transitionNode => {
             const id = transitionNode.getAttribute('id');
             const positionNode = transitionNode.querySelector('graphics > position');
-            const sizeNode = transitionNode.querySelector('graphics > dimension');
+            const dimensionNode = transitionNode.querySelector('graphics > dimension');
 
             const x = positionNode ? parseFloat(positionNode.getAttribute('x')) : 100;
             const y = positionNode ? parseFloat(positionNode.getAttribute('y')) : 100;
-            const width = sizeNode ? parseFloat(sizeNode.getAttribute('width')) : 100;
-            const height = sizeNode ? parseFloat(sizeNode.getAttribute('height')) : 80;
+            const width = this.defaultPnml?  70 : ( dimensionNode? parseFloat(dimensionNode.getAttribute('x')) :  70 );
+            const height = this.defaultPnml?  70 : ( dimensionNode? parseFloat(dimensionNode.getAttribute('y')) :  70  );
             
             // Find any label element (name, or any other non-core element with text)
             const label = this.findLabel(transitionNode);
@@ -146,6 +161,7 @@ export default class PnmlImporter {
             
             
             const transition = this.elementFactory.createShape({
+                id: this.idCounterService.getNextTransitionId(),
                 type: transitionType,
                 x: x,
                 y: y,

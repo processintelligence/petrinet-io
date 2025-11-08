@@ -34,7 +34,7 @@ export default class PnmlExporter {
                const place_element = `            <place id="${element.id}">
                 <graphics>
                     <position x="${element.x}" y="${element.y}" />
-                    <size width="${element.width}" height="${element.height}" />
+                    <dimension x="${element.width}" y="${element.height}" />
                 </graphics>
                 <name>
                     <text>${element.businessObject?.name || ''}</text>
@@ -61,7 +61,7 @@ export default class PnmlExporter {
                const transition_element = `            <transition id="${element.id}">
                 <graphics>
                     <position x="${element.x}" y="${element.y}" />
-                    <size width="${element.width}" height="${element.height}" />
+                    <dimension x="${element.width}" y="${element.height}" />
                 </graphics>
                 <name>
                     <text>${element.businessObject?.name || ''}</text>
@@ -78,11 +78,11 @@ export default class PnmlExporter {
         elements.forEach(element => {
             if(element.type === "petri:empty_transition"){
 
-               
-               const transition_element = `            <transition id="${element.id}">
+              
+              const transition_element = `            <transition id="${element.id}">
                 <graphics>
                     <position x="${element.x}" y="${element.y}" />
-                    <size width="${element.width}" height="${element.height}" />
+                    <dimension x="${element.width}" y="${element.height}" />
                 </graphics>
                 <toolspecific tool="petrinet.io" version="1.0">
                     <property key="transitionType" value="empty" />

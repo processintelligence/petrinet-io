@@ -118,6 +118,18 @@ const diagram = new Editor({
   
   if (pnmlImportButton && pnmlImporter) {
     pnmlImportButton.addEventListener('click', () => {
+      pnmlImporter.defaultPnml = false;
       pnmlImporter.loadFromFile();
+    });
+  }
+
+
+  const pnmlDefaultImporter = diagram.get('pnmlImporter');
+  const pnmlDefaultImportButton = document.getElementById('import-pnml-default-button');
+  
+  if (pnmlDefaultImportButton && pnmlDefaultImporter) {
+    pnmlDefaultImportButton.addEventListener('click', () => {
+      pnmlDefaultImporter.defaultPnml = true;
+      pnmlDefaultImporter.loadFromFile();
     });
   }

@@ -272,11 +272,30 @@ function draw_play_triangle(parentGfx, width, height, styles) {
 //Arrows related helpers
 
 function createArrowMarker(parentGfx, id, stroke) {
+    // Find the SVG element - try ownerSVGElement first, then traverse up
+    let svgElement = parentGfx.ownerSVGElement;
+    if (!svgElement) {
+      // Traverse up the parent chain to find the SVG element
+      let current = parentGfx;
+      while (current && current.parentNode) {
+        current = current.parentNode;
+        if (current.tagName === 'svg' || current.nodeName === 'svg') {
+          svgElement = current;
+          break;
+        }
+      }
+    }
+    
+    // If still no SVG element found, return a default marker reference
+    if (!svgElement) {
+      return `url(#${id})`;
+    }
+    
     // create the marker only once
-    let defs = parentGfx.ownerSVGElement.querySelector("defs");
+    let defs = svgElement.querySelector("defs");
     if (!defs) {
       defs = svgCreate("defs");
-      svgAppend(parentGfx.ownerSVGElement, defs);
+      svgAppend(svgElement, defs);
     }
     if (!defs.querySelector("#" + id)) {
       const marker = svgCreate("marker", {
