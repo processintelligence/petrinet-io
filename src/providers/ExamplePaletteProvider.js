@@ -30,6 +30,10 @@ export default class ExamplePalleteProvider {
     });
   }
 
+  updateBatchSimulationButton(event) {
+    console.log("updateBatchSimulationButton");
+  }
+
 
  updateSimulationButton(event) {
     const button = event.target.closest('[data-action="start-simulation"]');
@@ -129,6 +133,17 @@ export default class ExamplePalleteProvider {
         action: {
           click: (event) => {
             this.updateSimulationButton(event);
+          }
+        }
+      },
+
+      "batch-simulation": {
+        group: "simulation",
+        className: "palette-icon-batch-simulation",
+        title: "Batch Simulation",
+        action: {
+          click: (event) => {
+            this.updateBatchSimulationButton(event);
           }
         }
       },
