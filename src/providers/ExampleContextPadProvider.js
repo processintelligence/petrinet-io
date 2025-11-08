@@ -1,15 +1,15 @@
 export default class ExampleContextPadProvider{
 
-    static $inject =["connect", "contextPad", "modeling", "elementFactory", "create", "popupMenu", "idCounterService"]
+    static $inject =["connect", "contextPad", "modeling", "elementFactory", "create", "popupMenu", "idCounterService", "selection"]
 
-    constructor(connect, contextPad, modeling, elementFactory, create, popupMenu, idCounterService){
+    constructor(connect, contextPad, modeling, elementFactory, create, popupMenu, idCounterService, selection){
         this.connect= connect;
         this.modeling= modeling;
         this.elementFactory= elementFactory;
         this.create= create;
         this.popupMenu = popupMenu;
         this.idCounterService = idCounterService;
-
+        this.selection = selection;
         contextPad.registerProvider(this);
     }
 
@@ -63,6 +63,8 @@ export default class ExampleContextPadProvider{
 
             // connect selected element -> newly created element
             modeling.createConnection(element, created, { type: 'petri:connection' }, parent);
+
+            this.selection.select(created);
         };
 
 

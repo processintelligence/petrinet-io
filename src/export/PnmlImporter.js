@@ -64,7 +64,7 @@ export default class PnmlImporter {
         places.forEach(placeNode => {
             const id = placeNode.getAttribute('id');
             const positionNode = placeNode.querySelector('graphics > position');
-            const sizeNode = placeNode.querySelector('graphics > size');
+            const sizeNode = placeNode.querySelector('graphics > dimension');
             const markingNode = placeNode.querySelector('initialMarking > text');
 
             const x = positionNode ? parseFloat(positionNode.getAttribute('x')) : 100;
@@ -104,7 +104,7 @@ export default class PnmlImporter {
         transitions.forEach(transitionNode => {
             const id = transitionNode.getAttribute('id');
             const positionNode = transitionNode.querySelector('graphics > position');
-            const sizeNode = transitionNode.querySelector('graphics > size');
+            const sizeNode = transitionNode.querySelector('graphics > dimension');
 
             const x = positionNode ? parseFloat(positionNode.getAttribute('x')) : 100;
             const y = positionNode ? parseFloat(positionNode.getAttribute('y')) : 100;

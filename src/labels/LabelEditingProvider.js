@@ -16,6 +16,15 @@ export default class LabelEditingProvider {
   
         directEditing.activate(element);
       });
+
+      // Intercept clicks outside the editing box to complete instead of cancel
+      eventBus.on('element.mousedown', 1500, (event) => {
+        if (directEditing.isActive()) {
+          // Complete the editing to save the text
+          directEditing.complete();
+        }
+      });
+      
     }
   
     activate(element) {

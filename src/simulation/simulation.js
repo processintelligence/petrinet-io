@@ -7,6 +7,7 @@ export default class SimulationService {
         this.elementRegistry = elementRegistry;
         this.canvas = canvas;
         this.isActive = false;
+        this.initialTokenState = new Map();
         this.enabledTransitions = new Set();
         this.firedTransitions = new Set(); // Track transitions that have fired
 
@@ -28,6 +29,38 @@ export default class SimulationService {
     
     }
 
+    saveInitialTokenState(){
+        const elements = this.elementRegistry.getAll();     
+        const places = elements.filter(el => el.type === "petri:place"); 
+
+        places.forEach(el => {
+            const tokens = el.businessObject?.tokens || 0;
+            this.initialTokenState.set(el.id, tokens)
+        })
+
+    }
+
+    resetTokensToInitial(){
+        const element = this.elementRegistry.getAll(); 
+        const places = element.filter(el => el.type === "petri:place"); 
+
+        places.forEach(place => {
+
+        const initialToken = this.initialTokenState.get(place.id) || 0; 
+
+        if(!place.businessObject){
+            place.businessObject = {tokens: 0};
+        }
+
+        place.businessObject.tokens = initialToken; 
+
+        this.eventBus.fire("element.changed", {element:place});
+
+    })
+
+
+    }
+
     toggleSimulation() {
         this.isActive = !this.isActive;
 
@@ -35,6 +68,11 @@ export default class SimulationService {
         console.log(elements); 
         
         if (this.isActive) {
+            if(this.initialTokenState.size === 0){
+                this.saveInitialTokenState();
+            }else{
+                this.initialTokenState.clear();
+            }
             this.firedTransitions.clear(); // Reset fired transitions when starting
             this.updateEnabledTransitions();
         } else {
@@ -42,6 +80,7 @@ export default class SimulationService {
             this.firedTransitions.clear();
             // Trigger re-render to remove green/purple colors
             this.refreshAllTransitions();
+            this.resetTokensToInitial();
         }
         
         return this.isActive;
