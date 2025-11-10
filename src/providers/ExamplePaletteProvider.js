@@ -1,14 +1,15 @@
 export default class ExamplePalleteProvider {
 
-  static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService", "idCounterService", "eventBus", "elementRegistry"]
+  static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService", "batchSimulationService", "idCounterService", "eventBus", "elementRegistry"]
 
-  constructor(create, elementFactory, lassoTool, palette, spaceTool, simulationService, idCounterService, eventBus, elementRegistry){
+  constructor(create, elementFactory, lassoTool, palette, spaceTool, simulationService, batchSimulationService, idCounterService, eventBus, elementRegistry){
     this.create = create; 
     this.elementFactory = elementFactory; 
     this.lassoTool = lassoTool;
     this.palette = palette; 
     this.spaceTool= spaceTool;
     this.simulationService = simulationService;
+    this.batchSimulationService = batchSimulationService;
     this.idCounterService = idCounterService;
     this.eventBus = eventBus;
     this.elementRegistry = elementRegistry;
@@ -31,7 +32,15 @@ export default class ExamplePalleteProvider {
   }
 
   updateBatchSimulationButton(event) {
-    console.log("updateBatchSimulationButton");
+    const button = event.target.closest('[data-action="batch-simulation"]');
+    if (button) {
+      const isActive = this.batchSimulationService.toggleSimulation();
+      if (isActive) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    }
   }
 
 

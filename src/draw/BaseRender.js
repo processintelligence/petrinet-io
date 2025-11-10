@@ -10,15 +10,25 @@ const HIGH_PRIORITY = 1500;
 
 export default class CustomRenderer extends BaseRenderer{
 
-    static $inject = ["eventBus", "styles", "connectionDocking", "simulationService", "idCounterService"]
+    static $inject = ["eventBus", "styles", "connectionDocking", "simulationService", "batchSimulationService", "idCounterService"]
     
 
-    constructor(eventBus, styles, connectionDocking, simulationService, idCounterService){
+    constructor(eventBus, styles, connectionDocking, simulationService, batchSimulationService, idCounterService){
         super(eventBus, HIGH_PRIORITY );
         this.styles = styles
         this.connectionDocking = connectionDocking;
         this.simulationService = simulationService;
+        this.batchSimulationService = batchSimulationService;
         this.idCounterService = idCounterService;
+    }
+
+    // Helper method to get the active simulation service
+    getActiveSimulationService() {
+        // Use batch simulation service if it's active, otherwise use regular simulation service
+        if (this.batchSimulationService && this.batchSimulationService.isActive) {
+            return this.batchSimulationService;
+        }
+        return this.simulationService;
     }
 
 
@@ -46,8 +56,9 @@ export default class CustomRenderer extends BaseRenderer{
           const { width, height} = element;
           const r = 0;
           console.log("rect")
-          const isEnabled = this.simulationService.isTransitionEnabled(element);
-          const isFired = this.simulationService.isTransitionFired(element);
+          const activeService = this.getActiveSimulationService();
+          const isEnabled = activeService.isTransitionEnabled(element);
+          const isFired = activeService.isTransitionFired(element);
           const shape = draw_rect(parentGfx, width, height, r, this.styles, undefined, isEnabled, isFired);
           draw_label(parentGfx, element, this.styles, this.idCounterService);
           return shape;
@@ -66,8 +77,9 @@ export default class CustomRenderer extends BaseRenderer{
           const { width, height} = element;
           const r = 0;
           console.log("empty_transition")
-          const isEnabled = this.simulationService.isTransitionEnabled(element);
-          const isFired = this.simulationService.isTransitionFired(element);
+          const activeService = this.getActiveSimulationService();
+          const isEnabled = activeService.isTransitionEnabled(element);
+          const isFired = activeService.isTransitionFired(element);
           const shape = draw_empty_transition(parentGfx, width, height, r, this.styles, undefined, isEnabled, isFired);
           draw_label(parentGfx, element, this.styles, this.idCounterService);
           return shape;

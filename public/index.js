@@ -5,9 +5,11 @@
 
 const diagram = new Editor({
     container: document.querySelector('#container')
-  });
-  
-    const injector = diagram.get('injector');
+});
+
+window.diagram = diagram;  // Add this line to expose diagram for testing
+
+const injector = diagram.get('injector');
     const services = Object.keys(injector._providers || {}).sort();
     console.log('[diagram-js] Available services (injectables):', services);
 

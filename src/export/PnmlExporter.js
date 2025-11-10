@@ -7,7 +7,7 @@ export default class PnmlExporter {
         this.elementRegistry = elementRegistry;
     }
 
-    exportPnml(filename = 'petri-net.pnml'){
+    getPnmlString() {
         // Get root element
         const root = this.canvas.getRootElement();
         
@@ -130,6 +130,11 @@ ${positions}                </graphics>
     </net>
 </pnml>`;
 
+        return pnml;
+    }
+
+    exportPnml(filename = 'petri-net.pnml'){
+        const pnml = this.getPnmlString();
         console.log(pnml);
 
         // Download the file
