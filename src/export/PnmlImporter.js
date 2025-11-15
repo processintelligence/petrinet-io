@@ -11,10 +11,7 @@ export default class PnmlImporter {
         this.defaultPnml = false;
     }
 
-    /**
-     * Find any label element (non-core PNML element with a <text> child)
-     * Returns { text, offsetX, offsetY } or null if no label found
-     */
+
     findLabel(parentNode) {
         // Get all direct children of the parent node
         const children = Array.from(parentNode.children);
@@ -47,6 +44,19 @@ export default class PnmlImporter {
     }
 
     importPnml(pnmlContent){
+        // Clear the canvas before importing
+        const currentRoot = this.canvas.getRootElement();
+        if (currentRoot) {
+            // Get all elements that are children of the root (shapes and connections)
+            const elementsToRemove = this.elementRegistry.filter(element => 
+                element.parent === currentRoot && element !== currentRoot
+            );
+            if (elementsToRemove.length > 0) {
+                // Remove all existing elements (but not the root itself)
+                this.modeling.removeElements(elementsToRemove);
+            }
+        }
+        
         // Parse the XML
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(pnmlContent, "text/xml");
@@ -94,7 +104,7 @@ export default class PnmlImporter {
             const labelOffsetY = label ? label.offsetY : null;
 
             const place = this.elementFactory.createShape({
-                id: this.idCounterService.getNextPlaceId(),
+                id: id,
                 type: 'petri:place',
                 x: x,
                 y: y,
@@ -161,7 +171,7 @@ export default class PnmlImporter {
             
             
             const transition = this.elementFactory.createShape({
-                id: this.idCounterService.getNextTransitionId(),
+                id: id,
                 type: transitionType,
                 x: x,
                 y: y,
@@ -223,7 +233,9 @@ export default class PnmlImporter {
                 const labelOffsetX = label ? label.offsetX : null;
                 const labelOffsetY = label ? label.offsetY : null;
 
+                const arcId = arcNode.getAttribute('id');
                 const connection = this.elementFactory.createConnection({
+                    id: arcId, // Preserve the arc ID from PNML
                     type: 'petri:connection',
                     waypoints: waypoints,
                     source: sourceElement,

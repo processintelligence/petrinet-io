@@ -10,25 +10,15 @@ const HIGH_PRIORITY = 1500;
 
 export default class CustomRenderer extends BaseRenderer{
 
-    static $inject = ["eventBus", "styles", "connectionDocking", "simulationService", "batchSimulationService", "idCounterService"]
+    static $inject = ["eventBus", "styles", "connectionDocking", "simulationService", "idCounterService"]
     
 
-    constructor(eventBus, styles, connectionDocking, simulationService, batchSimulationService, idCounterService){
+    constructor(eventBus, styles, connectionDocking, simulationService, idCounterService){
         super(eventBus, HIGH_PRIORITY );
         this.styles = styles
         this.connectionDocking = connectionDocking;
         this.simulationService = simulationService;
-        this.batchSimulationService = batchSimulationService;
         this.idCounterService = idCounterService;
-    }
-
-    // Helper method to get the active simulation service
-    getActiveSimulationService() {
-        // Use batch simulation service if it's active, otherwise use regular simulation service
-        if (this.batchSimulationService && this.batchSimulationService.isActive) {
-            return this.batchSimulationService;
-        }
-        return this.simulationService;
     }
 
 
@@ -56,9 +46,8 @@ export default class CustomRenderer extends BaseRenderer{
           const { width, height} = element;
           const r = 0;
           console.log("rect")
-          const activeService = this.getActiveSimulationService();
-          const isEnabled = activeService.isTransitionEnabled(element);
-          const isFired = activeService.isTransitionFired(element);
+          const isEnabled = this.simulationService.isTransitionEnabled(element);
+          const isFired = this.simulationService.isTransitionFired(element);
           const shape = draw_rect(parentGfx, width, height, r, this.styles, undefined, isEnabled, isFired);
           draw_label(parentGfx, element, this.styles, this.idCounterService);
           return shape;
@@ -77,9 +66,8 @@ export default class CustomRenderer extends BaseRenderer{
           const { width, height} = element;
           const r = 0;
           console.log("empty_transition")
-          const activeService = this.getActiveSimulationService();
-          const isEnabled = activeService.isTransitionEnabled(element);
-          const isFired = activeService.isTransitionFired(element);
+          const isEnabled = this.simulationService.isTransitionEnabled(element);
+          const isFired = this.simulationService.isTransitionFired(element);
           const shape = draw_empty_transition(parentGfx, width, height, r, this.styles, undefined, isEnabled, isFired);
           draw_label(parentGfx, element, this.styles, this.idCounterService);
           return shape;
@@ -531,16 +519,51 @@ function draw_label(parentGfx, element, styles, idCounterService){
 
   // Render the name label for all elements except empty transitions
   if (element.type !== 'petri:empty_transition') {
-    svgAttr(text, {
-      x,
-      y,
-      'text-anchor': textAnchor,
-      'dominant-baseline': baseline
-    });
-
-    svgAttr(text, attrs);
-    text.textContent = String(textValue);
-    svgAppend(parentGfx, text);
+    // Split text by newlines to support multi-line text
+    const lines = String(textValue).split('\n');
+    
+    if (lines.length === 1) {
+      // Single line - use simple text element
+      svgAttr(text, {
+        x,
+        y,
+        'text-anchor': textAnchor,
+        'dominant-baseline': baseline
+      });
+      svgAttr(text, attrs);
+      text.textContent = lines[0];
+      svgAppend(parentGfx, text);
+    } else {
+      // Multi-line - use tspan elements for each line
+      const lineHeight = 14; // Line spacing
+      let startY;
+      
+      // Calculate starting Y position based on baseline
+      if (baseline === 'middle') {
+        startY = y - (lines.length - 1) * lineHeight / 2;
+      } else if (baseline === 'hanging') {
+        startY = y;
+      } else {
+        startY = y - (lines.length - 1) * lineHeight;
+      }
+      
+      lines.forEach((line, index) => {
+        const tspan = svgCreate('tspan');
+        svgAttr(tspan, {
+          x: x,
+          y: startY + index * lineHeight,
+          'text-anchor': textAnchor
+        });
+        svgAttr(tspan, attrs);
+        tspan.textContent = line;
+        svgAppend(text, tspan);
+      });
+      
+      svgAttr(text, {
+        'text-anchor': textAnchor
+      });
+      svgAppend(parentGfx, text);
+    }
   }
 
   // Render tokens for places if defined on businessObject

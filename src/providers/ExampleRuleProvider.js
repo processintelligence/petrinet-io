@@ -58,8 +58,21 @@ export default class ExampleRuleProvider extends RuleProvider{
         }); 
         this.addRule("shape.resize", (context) => {
             const shape = context.shape; 
-
-            return isFrameElement(shape)
+            
+            // Allow resizing for frames
+            if (isFrameElement(shape)) {
+                return true;
+            }
+            
+            // Allow resizing for petri net shapes (places and transitions)
+            if (shape.type === "petri:place" || 
+                shape.type === "petri:transition" || 
+                shape.type === "petri:empty_transition") {
+                return true;
+            }
+            
+            // Disallow resizing for other elements
+            return false;
         })
     }
 

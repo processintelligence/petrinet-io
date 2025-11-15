@@ -1,15 +1,14 @@
 export default class ExamplePalleteProvider {
 
-  static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService", "batchSimulationService", "idCounterService", "eventBus", "elementRegistry"]
+  static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService", "idCounterService", "eventBus", "elementRegistry"]
 
-  constructor(create, elementFactory, lassoTool, palette, spaceTool, simulationService, batchSimulationService, idCounterService, eventBus, elementRegistry){
+  constructor(create, elementFactory, lassoTool, palette, spaceTool, simulationService, idCounterService, eventBus, elementRegistry){
     this.create = create; 
     this.elementFactory = elementFactory; 
     this.lassoTool = lassoTool;
     this.palette = palette; 
     this.spaceTool= spaceTool;
     this.simulationService = simulationService;
-    this.batchSimulationService = batchSimulationService;
     this.idCounterService = idCounterService;
     this.eventBus = eventBus;
     this.elementRegistry = elementRegistry;
@@ -29,18 +28,6 @@ export default class ExamplePalleteProvider {
     this.elementRegistry.getAll().forEach(el => {
       this.eventBus.fire('element.changed', { element: el });
     });
-  }
-
-  updateBatchSimulationButton(event) {
-    const button = event.target.closest('[data-action="batch-simulation"]');
-    if (button) {
-      const isActive = this.batchSimulationService.toggleSimulation();
-      if (isActive) {
-        button.classList.add('active');
-      } else {
-        button.classList.remove('active');
-      }
-    }
   }
 
 
@@ -142,17 +129,6 @@ export default class ExamplePalleteProvider {
         action: {
           click: (event) => {
             this.updateSimulationButton(event);
-          }
-        }
-      },
-
-      "batch-simulation": {
-        group: "simulation",
-        className: "palette-icon-batch-simulation",
-        title: "Batch Simulation",
-        action: {
-          click: (event) => {
-            this.updateBatchSimulationButton(event);
           }
         }
       },
