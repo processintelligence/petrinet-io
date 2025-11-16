@@ -1,4 +1,4 @@
-export default class ExamplePalleteProvider {
+export default class CustomPaletteProvider {
 
   static $inject =[ "create", "elementFactory", "lassoTool", "palette", "spaceTool", "simulationService", "idCounterService", "eventBus", "elementRegistry"]
 

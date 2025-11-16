@@ -1,4 +1,4 @@
-export default class ExampleContextPadProvider{
+export default class CustomContextPadProvider{
 
     static $inject =["connect", "contextPad", "modeling", "elementFactory", "create", "popupMenu", "idCounterService", "selection"]
 

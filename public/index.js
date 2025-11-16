@@ -1,5 +1,3 @@
-/* global Editor */
-
 
 // (1) create new editor instance
 
@@ -19,71 +17,73 @@ const injector = diagram.get('injector');
   
   const canvas = diagram.get('canvas');
   const elementFactory = diagram.get('elementFactory');
-  
+  const importer = diagram.get('pnmlImporter');
   // add root
   const root = elementFactory.createRoot();
   
   canvas.setRootElement(root);
   
-  // add shapes
-  const shape1 = elementFactory.createShape({
-    type: 'petri:place',
-    x: 150,
-    y: 100,
-    width: 50,
-    height: 50,
-    businessObject: {
-      tokens: 2
-    }
-  });
-  
-  canvas.addShape(shape1, root);
-  
-  const shape2 = elementFactory.createShape({
-    type: 'petri:transition',
-    x: 290,
-    y: 220,
-    width: 70,
-    height: 70
-  });
-  
-  canvas.addShape(shape2, root);
-  
-  
-  const connection1 = elementFactory.createConnection({
-    type: 'petri:connection',
-    waypoints: [
-      { x: 250, y: 180 },
-      { x: 290, y: 220 }
-    ],
-    source: shape1,
-    target: shape2
-  });
-  
-  canvas.addConnection(connection1, root);
-  
-  
-  const shape3 = elementFactory.createShape({
-    type: 'petri:place',
-    x: 450,
-    y: 80,
-    width: 50,
-    height: 50,
-    businessObject: {
-      tokens: 0
-    }
-  });
-  
-  canvas.addShape(shape3, root);
+  initialPagePNML = `<?xml version="1.0" encoding="UTF-8"?>
+  <pnml>
+      <net id="ptnet1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+          <page id="top-level">
+              <place id="p1">
+                  <graphics>
+                      <position x="347" y="54" />
+                      <dimension x="50" y="50" />
+                  </graphics>
+                  <name>
+                      <text>to the</text>
+                      <graphics>
+                          <offset x="21.677669529663685" y="21.677669529663685" />
+                      </graphics>
+                  </name>
+                  <initialMarking>
+                      <text>3</text>
+                  </initialMarking>
+              </place>
+              <transition id="t1">
+                  <graphics>
+                      <position x="199" y="43" />
+                      <dimension x="70" y="70" />
+                  </graphics>
+                  <name>
+                      <text>Hi!
+  Welcome</text>
+                      <graphics>
+                          <offset x="0" y="0" />
+                      </graphics>
+                  </name>
+              </transition>
+              <transition id="t2">
+                  <graphics>
+                      <position x="475" y="44" />
+                      <dimension x="70" y="70" />
+                  </graphics>
+                  <name>
+                      <text>Petri
+  Net 
+  Editor</text>
+                      <graphics>
+                          <offset x="0" y="0" />
+                      </graphics>
+                  </name>
+              </transition>
+              <arc id="connection_26" source="t1" target="p1">
+              </arc>
+              <arc id="connection_27" source="p1" target="t2">
+              </arc>
+          </page>
+      </net>
+  </pnml>`
 
+  initialPage = importer.importPnml(initialPagePNML)
   
-  
+
   // (3) interact with the diagram via API
   
   const selection = diagram.get('selection');
-  
-  selection.select(shape3);
-
+2
 
   // (4) Setup SVG Export button
   

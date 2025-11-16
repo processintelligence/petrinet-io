@@ -3,7 +3,7 @@ import RuleProvider from 'diagram-js/lib/features/rules/RuleProvider.js';
 import { isFrameElement } from 'diagram-js/lib/util/Elements.js';
 
 
-export default class ExampleRuleProvider extends RuleProvider{
+export default class CustomRuleProvider extends RuleProvider{
 
     static $inject = ["eventBus", "elementRegistry"];
 

@@ -5,16 +5,18 @@ export default class KeyboardShortcuts {
     'modeling',
     'selection',
     'elementFactory',
-    'canvas'
+    'canvas',
+    'idCounterService'
+
   ];
 
-  constructor(eventBus, modeling, selection, elementFactory, canvas) {
+  constructor(eventBus, modeling, selection, elementFactory, canvas, idCounterService) {
     this.eventBus = eventBus;
     this.modeling = modeling;
     this.selection = selection;
     this.elementFactory = elementFactory;
     this.canvas = canvas;
-    
+    this.idCounterService = idCounterService;
     // Internal clipboard for copy/paste
     this._clipboard = [];
 
@@ -74,7 +76,7 @@ export default class KeyboardShortcuts {
                  element.type && 
                  isFinite(element.x) && 
                  isFinite(element.y) && 
-                 isFinite(element.width) && 
+                 isFinite(element.width) &&
                  isFinite(element.height);
         })
         .map(element => ({
@@ -118,9 +120,19 @@ export default class KeyboardShortcuts {
         console.warn('Skipping element with invalid coordinates:', elementData);
         return;
       }
+
+
+      let newId; 
+
+      if( elementData.type === "petri:transition" || elementData.type === "petri:empty_transition" ){
+        newId = this.idCounterService.getNextTransitionId();
+      } else {
+        newId = this.idCounterService.getNextPlaceId();
+      }
       
       // Create shape with all required properties
       const shape = this.elementFactory.createShape({
+        id: newId,
         type: elementData.type,
         x: finalX,
         y: finalY,

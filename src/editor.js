@@ -23,7 +23,7 @@ import 'diagram-js/assets/diagram-js.css';
 import ProvidersModule from './providers/index.js';
 import CustomRendererModule from './draw/index.js';
 import CroppingConnectionDocking from 'diagram-js/lib/layout/CroppingConnectionDocking.js';
-import LabelsModule from './labels/index.js';
+import EditingModule from './editing/index.js';
 import KeyboardModule from './keyboard/index.js';
 import PopupModule from './popup/index.js';
 import SimulationModule from './simulation/index.js';
@@ -93,7 +93,7 @@ export default function Editor(options) {
     ElementStyleModule,
     CustomRendererModule,
     ConnectionDockingModule,
-    LabelsModule,
+    EditingModule,
     KeyboardModule,
     PopupModule,
     SimulationModule,

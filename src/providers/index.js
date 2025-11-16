@@ -1,14 +1,14 @@
-import ExampleContextPadProvider from './ExampleContextPadProvider.js';
-import ExamplePaletteProvider from './ExamplePaletteProvider.js';
-import ExampleRuleProvider from './ExampleRuleProvider.js';
+import CustomContextPadProvider from './ContextPadProvider.js';
+import CustomPaletteProvider from './PaletteProvider.js';
+import CustomRuleProvider from './RuleProvider.js';
 
 export default {
   __init__: [
-    'exampleContextPadProvider',
-    'examplePaletteProvider',
-    'exampleRuleProvider'
+    'contextPadProvider',
+    'paletteProvider',
+    'ruleProvider'
   ],
-  exampleContextPadProvider: [ 'type', ExampleContextPadProvider ],
-  examplePaletteProvider: [ 'type', ExamplePaletteProvider ],
-  exampleRuleProvider: [ 'type', ExampleRuleProvider ]
+  contextPadProvider: [ 'type', CustomContextPadProvider ],
+  paletteProvider: [ 'type', CustomPaletteProvider ],
+  ruleProvider: [ 'type', CustomRuleProvider ]
 };
