@@ -19,6 +19,7 @@ import InteractionEventsModule from 'diagram-js/lib/features/interaction-events/
 import PopupMenuModule from 'diagram-js/lib/features/popup-menu/index.js';
 import DirectEditingModule from 'diagram-js-direct-editing';
 import 'diagram-js/assets/diagram-js.css';
+import './styles/petri-net-icons.css';
 
 import ProvidersModule from './providers/index.js';
 import CustomRendererModule from './draw/index.js';
