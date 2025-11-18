@@ -21,7 +21,7 @@ export function drawTransition(parentGfx, element, styles, simulationService) {
 
   // Set rectangle style
   const attrs = styles.computeStyle({}, {
-    stroke: "black",
+    stroke: "#808080",
     strokeWidth: 2,
     fill: fillColor
   });
