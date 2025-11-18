@@ -13,11 +13,13 @@ export default class EditingProvider {
       eventBus.on('element.dblclick', 1000, (event) => {
         const element = event && event.element;
   
-        if (!element) return;
-        if(element.type === "petri:place"){
+        if (!element)
+          return;
+        if(element.type === "petri:place") {
           this.getTokens(element);
-        }else{
-        directEditing.activate(element);}
+        } else {
+          this.directEditing.activate(element);
+        }
       });
 
       // Intercept clicks outside the editing box to complete instead of cancel
@@ -47,7 +49,11 @@ export default class EditingProvider {
           width: element.width * zoom,
           height: element.height * zoom
         },
-        text: text
+        text: text,
+        style: {
+          fontFamily: 'Arial, sans-serif',
+          fontSize: "12" * zoom + "px",
+        }
       };
     }
   
@@ -79,13 +85,10 @@ export default class EditingProvider {
       
       // Get current tokens, default to 0 if not set
       const currentTokens = element.businessObject.tokens || 0;
-
       const updateTokens = window.prompt("Enter the number of tokens", currentTokens);
-      
       if(updateTokens !== null){
         // Convert to number and validate
         const tokenCount = parseInt(updateTokens, 10);
-        
         if(!isNaN(tokenCount) && tokenCount >= 0){
           element.businessObject.tokens = tokenCount;
           this.eventBus.fire('element.changed', { element });
