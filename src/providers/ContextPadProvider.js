@@ -17,9 +17,7 @@ export default class CustomContextPadProvider{
     getContextPadEntries(element){
         
         const { connect, modeling, elementFactory } = this;
-        
         const removeElement = () => {modeling.removeElements([element])};
-
         const startConnect = (event, element, autoActivate) => {connect.start(event, element, autoActivate);}
 
         const createAdjacent = (type) => {
@@ -27,11 +25,11 @@ export default class CustomContextPadProvider{
             if (!parent) return;
 
             const defaultSizes = {
-                "petri:transition": { width: 70, height: 70 },
-                "petri:place": { width: 50, height: 50 }
+                "petri:transition": { width: 40, height: 40 },
+                "petri:place": { width: 30, height: 30 }
             };
 
-            const size = defaultSizes[type] || { width: 70, height: 70 };
+            const size = defaultSizes[type] || { width: 40, height: 40 };
 
             // choose side based on connections: right if outgoing present (or none), left if only incoming
             const hasOutgoing = Array.isArray(element.outgoing) && element.outgoing.length > 0;
@@ -58,10 +56,10 @@ export default class CustomContextPadProvider{
             }
             
             const shape = elementFactory.createShape(shapeConfig);
-
             const created = modeling.createShape(shape, { x: centerX, y: centerY }, parent);
 
             // connect selected element -> newly created element
+            // console.log(element, created, { type: 'petri:connection' }, parent);
             modeling.createConnection(element, created, { type: 'petri:connection' }, parent);
 
             this.selection.select(created);
@@ -78,10 +76,10 @@ export default class CustomContextPadProvider{
           // Replace transition with empty_transition or vice versa
           if (element.type === "petri:transition") {
             newType = "petri:empty_transition";
-            newSize = { width: 14, height: 70 };
+            newSize = { width: 10, height: 50 };
           } else if (element.type === "petri:empty_transition") {
             newType = "petri:transition";
-            newSize = { width: 70, height: 70 };
+            newSize = { width: 40, height: 40 };
           } else {
             // Not a transition type, do nothing
             return;

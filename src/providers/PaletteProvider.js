@@ -45,7 +45,7 @@ export default class CustomPaletteProvider {
   
   getPaletteEntries(){
 
-    const {create, elementFactory,lassoTool, spaceTool} = this;
+    const {create, elementFactory, lassoTool, spaceTool} = this;
 
     return{
       "lasso-tool": {
@@ -69,8 +69,8 @@ export default class CustomPaletteProvider {
           click: (event) => {
             const shape = elementFactory.createShape({
               id: this.idCounterService.getNextTransitionId(),
-              width: 70,
-              height: 70,
+              width: 40,
+              height: 40,
               type: "petri:transition"
             }); 
 
@@ -87,8 +87,8 @@ export default class CustomPaletteProvider {
           click: (event) => {
             const shape = elementFactory.createShape({
               id: this.idCounterService.getNextTransitionId(),
-              width: 14,
-              height: 70,
+              width: 10,
+              height: 50,
               type: "petri:empty_transition"
             }); 
 
@@ -104,14 +104,13 @@ export default class CustomPaletteProvider {
           click: (event) => {
             const circleShape = elementFactory.createShape({
               id: this.idCounterService.getNextPlaceId(),
-              width: 50,
-              height: 50,
+              width: 30,
+              height: 30,
               type: "petri:place",
               businessObject: {
                 tokens: 0
               }
             });
-
             create.start(event, circleShape);
           }
         }
