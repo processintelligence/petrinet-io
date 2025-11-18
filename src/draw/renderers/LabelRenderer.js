@@ -49,14 +49,16 @@ export default class LabelRenderer {
 
     // Create text element for ID
     const idtext = svgCreate('text');
+    svgAttr(idtext, attrs);
     svgAttr(idtext, {
       x: idPosition.x,
       y: idPosition.y,
       'text-anchor': idPosition.textAnchor,
-      'dominant-baseline': idPosition.baseline
+      'dominant-baseline': idPosition.baseline,
+      fontStyle: 'italic',
+      fill: '#888',
     });
 
-    svgAttr(idtext, attrs);
     idtext.textContent = String(element.id);
     svgAppend(parentGfx, idtext);
   }
