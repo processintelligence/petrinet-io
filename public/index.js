@@ -1,6 +1,4 @@
-
 // (1) create new editor instance
-
 const diagram = new Editor({
     container: document.querySelector('#container')
 });
@@ -14,7 +12,6 @@ const injector = diagram.get('injector');
   
   
   // (2) draw diagram elements (i.e. import)
-  
   const canvas = diagram.get('canvas');
   const elementFactory = diagram.get('elementFactory');
   const importer = diagram.get('pnmlImporter');
@@ -81,12 +78,9 @@ const injector = diagram.get('injector');
   
 
   // (3) interact with the diagram via API
-  
   const selection = diagram.get('selection');
-2
 
   // (4) Setup SVG Export button
-  
   const svgExporter = diagram.get('svgExporter');
   const exportButton = document.getElementById('export-button');
   
