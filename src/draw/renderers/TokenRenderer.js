@@ -64,7 +64,11 @@ export default class TokenRenderer {
       'text-anchor': 'middle',
       'dominant-baseline': 'middle'
     });
-    svgAttr(text, this.styles.computeStyle({}, { fill: 'black', fontSize: 12, fontFamily: 'Arial, sans-serif' }));
+    svgAttr(text, this.styles.computeStyle({}, {
+      fill: 'black',
+      fontSize: 12,
+      fontFamily: 'Arial, sans-serif'
+    }));
     text.textContent = String(count);
     svgAppend(parentGfx, text);
   }
