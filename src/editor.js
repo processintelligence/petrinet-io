@@ -18,6 +18,7 @@ import SpaceToolModule from 'diagram-js/lib/features/space-tool/index.js';
 import InteractionEventsModule from 'diagram-js/lib/features/interaction-events/index.js';
 import PopupMenuModule from 'diagram-js/lib/features/popup-menu/index.js';
 import DirectEditingModule from 'diagram-js-direct-editing';
+import gridModule from 'diagram-js-grid';
 import 'diagram-js/assets/diagram-js.css';
 import './styles/petri-net-icons.css';
 
@@ -63,7 +64,9 @@ export default function Editor(options) {
 
   const {
     container,
-    additionalModules = []
+    additionalModules = [
+      gridModule
+    ]
   } = options;
 
   // default modules provided by the toolbox
