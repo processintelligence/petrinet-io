@@ -8,3 +8,7 @@
   display: inline-block;     /* required for transform */
   transform: rotate(90deg);
 }
+
+.active {
+  color: #A00 !important;
+}
