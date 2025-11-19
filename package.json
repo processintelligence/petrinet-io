@@ -12,14 +12,14 @@
   "browser": "dist/petrinet-io.umd.js",
   "files": [
     "dist"
-  ],  
-
+  ],
   "scripts": {
     "dev": "webpack serve --mode development --open",
     "build": "webpack --config webpack.lib.config.js",
     "start": "npm run dev"
   },
   "dependencies": {
+    "bpmn-font": "^0.12.1",
     "diagram-js": "^15.2.4",
     "diagram-js-direct-editing": "^3.2.0",
     "diagram-js-grid": "^1.1.0",
