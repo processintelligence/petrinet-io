@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
       /* Basic layout styles */
       html,
@@ -15,61 +12,11 @@
           margin: 0;
       }
 
-      /* Button container styles */
-      .button-container {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        display: flex;
-        gap: 12px;
-        z-index: 9999;
-      }
-
-      .svg-button {
-        background-color: #007bff; 
-        color: white; 
-        border-radius: 8px;
-        padding: 12px 20px; 
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        border: none;
-      }
-
-      .svg-button:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-      }
-
-      .pnml-button {
-        background-color: #28a745;
-        color: white; 
-        border-radius: 8px;
-        padding: 12px 20px; 
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        border: none;
-      }
-
-      .pnml-button:hover {
-        background-color: #218838;
-        transform: scale(1.05);
-      }
-
-      /* Note: Icon styles are now included in the library (vendor/editor.js) */
     </style>
 </head>
 <body>
-    <div id="container"></div>
-    <div class="button-container">
-      <button class="svg-button" id="export-button">SVG Export</button>
-      <button class="pnml-button" id="export-pnml-button">PNML Export</button>
-      <button class="pnml-button" id="import-pnml-button">PNML Import</button>
-      <button class="pnml-button" id="import-pnml-default-button">PNML Default Import</button>
-    </div>
-    <script src="vendor/editor.js"></script>
-    <script src="index.js"></script>
+  <div id="container"></div>
+  <script src="/bundle.js"></script>
 </body>
 </html>
 

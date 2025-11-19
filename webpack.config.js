@@ -1,21 +1,25 @@
 // webpack.config.js (ESM version)
+const path = require('path');
 
-import path from 'path';
-import { fileURLToPath } from 'url';
+module.exports = {
+  mode: 'development',
+  entry: './public/index.js',
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export default {
-  entry: {
-    bundle: ['./src/index.js']
-  },
   output: {
-    library: 'Editor',
-    libraryExport: 'default',
-    libraryTarget: 'umd',
-    path: path.resolve(__dirname, 'public'),
-    filename: 'vendor/editor.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/',
+    library: {
+      name: 'PetriNetIO',
+      type: 'umd'
+    },
+    globalObject: 'this', // so it works in Node and browser
+    clean: true
+  },
+    devServer: {
+    static: path.join(__dirname, 'public'), // serve index.html etc.
+    hot: true,
+    port: 8080
   },
   module: {
     rules: [
@@ -27,7 +31,5 @@ export default {
         ],
       },
     ],
-  },
-  mode: 'development',
-  devtool: 'source-map'
+  }
 };

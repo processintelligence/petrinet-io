@@ -1,11 +1,22 @@
 {
-  "name": "diagram-js-editor",
-  "version": "1.0.0",
-  "description": "Modern example of a diagram-js based editor",
-  "type": "module",
+  "name": "@processintelligence/petrinet-io",
+  "version": "0.1.0",
+  "description": "Petri net modeling & simulation viewer built on diagram-js",
+  "main": "dist/petrinet-io.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/petrinet-io.umd.js",
+      "require": "./dist/petrinet-io.umd.js"
+    }
+  },
+  "browser": "dist/petrinet-io.umd.js",
+  "files": [
+    "dist"
+  ],  
+
   "scripts": {
     "dev": "webpack serve --mode development --open",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.lib.config.js",
     "start": "npm run dev"
   },
   "dependencies": {
