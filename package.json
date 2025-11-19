@@ -19,6 +19,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "bpmn-font": "^0.12.1",
     "diagram-js": "^15.2.4",
     "diagram-js-direct-editing": "^3.2.0",
