@@ -1,0 +1,52 @@
+@import "~diagram-js/assets/diagram-js.css";
+
+/* General */
+button {
+  border: none;
+  background: none;
+}
+
+button:hover,
+a:hover {
+  cursor: pointer;
+}
+
+.pnjs-buttons {
+  position: fixed;
+}
+
+.pnjs-buttons > div {
+  display: block;
+  padding: 0;
+  margin: 10px 0 0;
+  list-style: none;
+}
+
+.pnjs-buttons > div > div {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.pnjs-buttons > div > div > a,
+.pnjs-buttons button {
+  color: black;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  border: solid 1px #cdcdcd;
+}
+
+.pnjs-buttons a {
+  opacity: 0.3;
+  text-decoration: none;
+}
+
+.pnjs-buttons a.pnjs-buttons-active,
+.pnjs-buttons button.pnjs-buttons-active {
+  opacity: 1;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}

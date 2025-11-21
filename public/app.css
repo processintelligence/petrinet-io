@@ -1,0 +1,25 @@
+html,
+body,
+#container,
+#canvas,
+#canvas > div {
+	font-family: sans-serif;
+	height: 100%;
+	margin: 0;
+}
+
+.bottom-buttons {
+  bottom: 20px;
+  left: 20px;
+}
+
+.bottom-buttons a:hover,
+.ojs-buttons-active:hover {
+  background-color: var(--color-button-hover);
+  transition: background-color 0.2s linear;
+}
+
+.bottom-buttons a.active {
+  opacity: 1;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}

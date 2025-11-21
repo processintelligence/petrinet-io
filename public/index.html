@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <style>
-      /* Basic layout styles */
-      html,
-      body,
-      #container,
-      #canvas,
-      #canvas > div {
-          height: 100%;
-          margin: 0;
-      }
 
-    </style>
+<head>
+  <link rel="stylesheet" href="./app.css">
 </head>
+
 <body>
+  
   <div id="container"></div>
+
+  <div class="bottom-buttons pnjs-buttons">
+    <div>
+      <div>open</div>
+      <div>
+        <button id="js-open-pnml" class="pnjs-buttons-active" title="open PNML file">PNML file</button>
+      </div>
+    </div>
+
+    <div>
+      <div>download</div>
+      <div>
+        <button id="js-download-pnml" class="pnjs-buttons-active" title="download PNML file">PNML file</button>
+      </div>
+      <div>
+        <button id="js-download-svg" class="pnjs-buttons-active" title="download as SVG image">SVG image</button>
+      </div>
+    </div>
+  </div>
+  
   <script src="/bundle.js"></script>
 </body>
+
 </html>
-
-
-
