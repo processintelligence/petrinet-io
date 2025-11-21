@@ -9,7 +9,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/petrinet-io/',
+    // publicPath: '/petrinet-io/',
+    publicPath: '/',
     library: {
       name: 'PetriNetIO',
       type: 'umd'

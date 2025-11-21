@@ -14,10 +14,14 @@ document.getElementById('js-download-pnml').addEventListener('click', () => {
   petrinetio.exportPNML();
 });
 
+document.getElementById('js-download-tpn').addEventListener('click', () => {
+  petrinetio.exportTpn();
+});
+
 document.getElementById('js-download-svg').addEventListener('click', () => {
   petrinetio.exportSVG();
 });
 
-document.getElementById('js-download-tpn').addEventListener('click', () => {
-  petrinetio.exportTpn();
+document.getElementById('js-download-pdf').addEventListener('click', () => {
+  petrinetio.exportPDF();
 });
