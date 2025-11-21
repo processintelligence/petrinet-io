@@ -17,3 +17,7 @@ document.getElementById('js-download-pnml').addEventListener('click', () => {
 document.getElementById('js-download-svg').addEventListener('click', () => {
   petrinetio.exportSVG();
 });
+
+document.getElementById('js-download-tpn').addEventListener('click', () => {
+  petrinetio.exportTpn();
+});
