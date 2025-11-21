@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="ptnet1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+        <page id="top-level">
+            <place id="p1">
+                <graphics>
+                    <position x="100" y="200" />
+                    <dimension x="50" y="50" />
+                </graphics>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <transition id="t1">
+                <graphics>
+                    <position x="200" y="200" />
+                    <dimension x="70" y="70" />
+                </graphics>
+                <name>
+                    <text>A</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <place id="p2">
+                <graphics>
+                    <position x="300" y="200" />
+                    <dimension x="50" y="50" />
+                </graphics>
+            </place>
+            <transition id="t2">
+                <graphics>
+                    <position x="400" y="200" />
+                    <dimension x="70" y="70" />
+                </graphics>
+                <name>
+                    <text>B</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <place id="p3">
+                <graphics>
+                    <position x="500" y="200" />
+                    <dimension x="50" y="50" />
+                </graphics>
+            </place>
+            <arc id="a1" source="p1" target="t1">
+                <graphics></graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="a2" source="t1" target="p2">
+                <graphics></graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="a3" source="p2" target="t2">
+                <graphics></graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="a4" source="t2" target="p3">
+                <graphics></graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </inscription>
+            </arc>
+        </page>
+    </net>
+</pnml>
