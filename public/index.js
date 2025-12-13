@@ -1,4 +1,4 @@
-import PetriNetIO from '../lib/PetriNetIO'; // or from 'petrinet-io' after install
+import PetriNetIO from '../lib/index'; // or from 'petrinet-io' after install
 
 const petrinetio = new PetriNetIO({
   container: '#container'
