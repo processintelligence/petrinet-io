@@ -1,4 +1,3 @@
-import "../lib/assets/petrinet-io.css";
 import PetriNetIO from '../lib/PetriNetIO'; // or from 'petrinet-io' after install
 
 const petrinetio = new PetriNetIO({

@@ -16,6 +16,11 @@ module.exports = {
     globalObject: 'this'
   },
 
+  externals: {
+    '@fortawesome/fontawesome-free/css/all.min.css': '@fortawesome/fontawesome-free/css/all.min.css',
+    'bpmn-font/dist/css/bpmn-embedded.css': 'bpmn-font/dist/css/bpmn-embedded.css'
+  },
+
   module: {
     rules: [
       {
