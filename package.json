@@ -23,8 +23,7 @@
     "start": "npm run dev",
     "static": "npm run build",
     "deploy": "npm run static && gh-pages -d dist",
-    "build:lib": "webpack --mode production --config webpack.lib.config.js",
-    "prepublishOnly": "npm run build:lib"
+    "build:lib": "webpack --mode production --config webpack.lib.config.js"
   },
   "dependencies": {
     "diagram-js": "^15.2.4",
