@@ -52,6 +52,8 @@ pn.exportPDF()
 
 ## Complete Vue example
 
+Open a fully working example in [CodeSandbox](https://codesandbox.io/p/sandbox/elastic-lake-z2mlg8).
+
 ```vue
 <template>
   <main>

@@ -1,6 +1,6 @@
 {
   "name": "petrinet-io",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Petri net modeling & simulation viewer",
   "main": "dist/petrinet-io.umd.js",
   "exports": {
