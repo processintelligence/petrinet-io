@@ -24,3 +24,7 @@ document.getElementById('js-download-svg').addEventListener('click', () => {
 document.getElementById('js-download-pdf').addEventListener('click', () => {
   petrinetio.exportPDF();
 });
+
+document.getElementById('js-auto-layout').addEventListener('click', () => {
+  console.log('[Auto layout] Placeholder action triggered. Layout algorithm integration is next.');
+});

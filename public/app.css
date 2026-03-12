@@ -13,6 +13,11 @@ body,
   left: 20px;
 }
 
+.top-right-buttons {
+  top: 20px;
+  right: 20px;
+}
+
 .bottom-buttons a:hover,
 .ojs-buttons-active:hover {
   background-color: var(--color-button-hover);
