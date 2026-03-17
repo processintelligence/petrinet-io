@@ -1,6 +1,6 @@
-# Petri Net Editor
+# `petrinet-io` - Petri Net Editor Library
 
-A web-based Petri net modeling and simulation tool built with diagram-js. This editor allows you to create, edit, simulate, and export Petri nets using an intuitive visual interface.
+A web-based Petri net modeling and simulation tool built on top of `diagram-js`. This library allows you to create, edit, simulate, and export Petri nets using an intuitive visual interface.
 
 ![](docs/movie.gif)
 
