@@ -24,3 +24,7 @@ document.getElementById('js-download-svg').addEventListener('click', () => {
 document.getElementById('js-download-pdf').addEventListener('click', () => {
   petrinetio.exportPDF();
 });
+
+document.getElementById('js-properties').addEventListener('click', () => {
+  console.log(petrinetio.getPetriNet());
+});
