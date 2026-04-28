@@ -26,5 +26,5 @@ document.getElementById('js-download-pdf').addEventListener('click', () => {
 });
 
 document.getElementById('js-auto-layout').addEventListener('click', () => {
-  console.log('[Auto layout] Placeholder action triggered. Layout algorithm integration is next.');
+  petrinetio.runAutoLayout();
 });
