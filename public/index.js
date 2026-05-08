@@ -1,4 +1,4 @@
-import PetriNetIO from '../lib/index'; // or from 'petrinet-io' after install
+import PetriNetIO from '../lib/index';
 
 const petrinetio = new PetriNetIO({
   container: '#container'
@@ -25,6 +25,10 @@ document.getElementById('js-download-pdf').addEventListener('click', () => {
   petrinetio.exportPDF();
 });
 
-document.getElementById('js-auto-layout').addEventListener('click', () => {
-  petrinetio.runAutoLayout();
+document.getElementById('js-auto-layout-sugiyama').addEventListener('click', () => {
+  petrinetio.runAutoLayout('sugiyama');
+});
+
+document.getElementById('js-auto-layout-circular').addEventListener('click', () => {
+  petrinetio.runAutoLayout('circular');
 });
