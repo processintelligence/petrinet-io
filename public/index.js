@@ -56,6 +56,11 @@ document.getElementById('js-auto-layout-force-directed').addEventListener('click
   petrinetio.runAutoLayout('force-directed');
 });
 
+document.getElementById('js-preview-auto-structures').addEventListener('click', () => {
+  //TODO remove temporary visual debug action for auto-layout cycle detection.
+  console.log(petrinetio.previewAutoLayoutStructures());
+});
+
 document.getElementById('js-load-melanoma-treatment').addEventListener('click', async () => {
   try {
     await loadFixture('Melanoma_Treatment.pnml');
@@ -67,6 +72,22 @@ document.getElementById('js-load-melanoma-treatment').addEventListener('click', 
 document.getElementById('js-load-model-23').addEventListener('click', async () => {
   try {
     await loadFixture('model (23).pnml');
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+document.getElementById('js-load-detection-mixed').addEventListener('click', async () => {
+  try {
+    await loadFixture('detection-mixed-structures.pnml');
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+document.getElementById('js-load-detection-six-split').addEventListener('click', async () => {
+  try {
+    await loadFixture('detection-six-split.pnml');
   } catch (error) {
     console.error(error);
   }
