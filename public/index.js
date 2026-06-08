@@ -4,6 +4,14 @@ const petrinetio = new PetriNetIO({
   container: '#container'
 });
 
+function onClick(id, handler) {
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.addEventListener('click', handler);
+  }
+}
+
 async function loadFixture(fileName, layoutAlgorithm = null) {
   const response = await fetch(`test-pnmls/${ fileName }`);
 
@@ -24,44 +32,43 @@ async function loadFixture(fileName, layoutAlgorithm = null) {
 }
 
 
-document.getElementById('js-open-pnml').addEventListener('click', () => {
+onClick('js-open-pnml', () => {
   petrinetio.loadFromFile();
 });
 
-document.getElementById('js-download-pnml').addEventListener('click', () => {
+onClick('js-download-pnml', () => {
   petrinetio.exportPNML();
 });
 
-document.getElementById('js-download-tpn').addEventListener('click', () => {
+onClick('js-download-tpn', () => {
   petrinetio.exportTpn();
 });
 
-document.getElementById('js-download-svg').addEventListener('click', () => {
+onClick('js-download-svg', () => {
   petrinetio.exportSVG();
 });
 
-document.getElementById('js-download-pdf').addEventListener('click', () => {
+onClick('js-download-pdf', () => {
   petrinetio.exportPDF();
 });
 
-document.getElementById('js-auto-layout-sugiyama').addEventListener('click', () => {
+onClick('js-auto-layout-sugiyama', () => {
   petrinetio.runAutoLayout('sugiyama');
 });
 
-document.getElementById('js-auto-layout-circular').addEventListener('click', () => {
+onClick('js-auto-layout-circular', () => {
   petrinetio.runAutoLayout('circular');
 });
 
-document.getElementById('js-auto-layout-force-directed').addEventListener('click', () => {
+onClick('js-auto-layout-force-directed', () => {
   petrinetio.runAutoLayout('force-directed');
 });
 
-document.getElementById('js-preview-auto-structures').addEventListener('click', () => {
-  //TODO remove temporary visual debug action for auto-layout cycle detection.
+onClick('js-preview-auto-structures', () => {
   console.log(petrinetio.previewAutoLayoutStructures());
 });
 
-document.getElementById('js-load-melanoma-treatment').addEventListener('click', async () => {
+onClick('js-load-melanoma-treatment', async () => {
   try {
     await loadFixture('Melanoma_Treatment.pnml');
   } catch (error) {
@@ -69,7 +76,7 @@ document.getElementById('js-load-melanoma-treatment').addEventListener('click', 
   }
 });
 
-document.getElementById('js-load-model-23').addEventListener('click', async () => {
+onClick('js-load-model-23', async () => {
   try {
     await loadFixture('model (23).pnml');
   } catch (error) {
@@ -77,7 +84,15 @@ document.getElementById('js-load-model-23').addEventListener('click', async () =
   }
 });
 
-document.getElementById('js-load-detection-mixed').addEventListener('click', async () => {
+onClick('js-load-spotify-cares', async () => {
+  try {
+    await loadFixture('Spotify_Cares.pnml');
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+onClick('js-load-detection-mixed', async () => {
   try {
     await loadFixture('detection-mixed-structures.pnml');
   } catch (error) {
@@ -85,7 +100,7 @@ document.getElementById('js-load-detection-mixed').addEventListener('click', asy
   }
 });
 
-document.getElementById('js-load-detection-six-split').addEventListener('click', async () => {
+onClick('js-load-detection-six-split', async () => {
   try {
     await loadFixture('detection-six-split.pnml');
   } catch (error) {
