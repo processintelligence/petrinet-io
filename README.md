@@ -48,6 +48,10 @@ To export the current model as `.pdf`:
 ```js
 pn.exportPDF()
 ```
+To export the graph of the Petri net:
+```js
+pn.getPetriNet()
+```
 
 
 ## Complete Vue example
