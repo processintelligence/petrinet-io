@@ -56,6 +56,10 @@ onClick('js-auto-layout-sugiyama', () => {
   petrinetio.runAutoLayout('sugiyama');
 });
 
+onClick('js-auto-layout-auto', () => {
+  petrinetio.runAutoLayout('auto');
+});
+
 onClick('js-auto-layout-circular', () => {
   petrinetio.runAutoLayout('circular');
 });
@@ -65,7 +69,7 @@ onClick('js-auto-layout-force-directed', () => {
 });
 
 onClick('js-preview-auto-structures', () => {
-  console.log(petrinetio.previewAutoLayoutStructures());
+  petrinetio.previewAutoLayoutStructures();
 });
 
 onClick('js-load-melanoma-treatment', async () => {
