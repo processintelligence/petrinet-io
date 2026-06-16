@@ -28,3 +28,15 @@ document.getElementById('js-download-pdf').addEventListener('click', () => {
 document.getElementById('js-properties').addEventListener('click', () => {
   console.log(petrinetio.getPetriNet());
 });
+
+document.getElementById('js-sugiyama').addEventListener('click', () => {
+  petrinetio.runAutoLayout('sugiyama');
+});
+
+document.getElementById('js-circular').addEventListener('click', () => {
+  petrinetio.runAutoLayout('circular');
+});
+
+document.getElementById('js-force').addEventListener('click', () => {
+  petrinetio.runAutoLayout('force-directed');
+});
