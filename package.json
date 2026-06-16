@@ -1,6 +1,6 @@
 {
   "name": "petrinet-io",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Petri net modeling & simulation viewer",
   "main": "dist/petrinet-io.umd.js",
   "exports": {
@@ -16,7 +16,9 @@
     "LICENSE"
   ],
   "license": "Apache-2.0",
-  "sideEffects": ["**/*.css"],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "webpack serve --mode development --open",
     "build": "webpack --mode production --config webpack.config.js",
