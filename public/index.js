@@ -88,6 +88,14 @@ onClick('js-load-model-23', async () => {
   }
 });
 
+onClick('js-load-cross-flow-branch', async () => {
+  try {
+    await loadFixture('cross-flow-branch.pnml');
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 onClick('js-load-spotify-cares', async () => {
   try {
     await loadFixture('Spotify_Cares.pnml');
