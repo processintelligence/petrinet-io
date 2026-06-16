@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="ptnet1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+        <page id="top-level">
+            <place id="p1">
+                <graphics>
+                    <position x="235" y="245" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <arc id="Connection_1c3efba2-59a3-4e42-92e7-15156373f1da" source="p1" target="t5">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <place id="p2">
+                <graphics>
+                    <position x="405" y="245" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <arc id="Connection_ac9c1472-928b-4be3-8066-646e80d1852b" source="t5" target="p2">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <transition id="t2">
+                <graphics>
+                    <position x="485" y="240" />
+                    <dimension x="40" y="40" />
+                </graphics>
+                <name>
+                    <text>B</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <arc id="Connection_92504533-67fd-482b-a6fb-e2783b8baa4e" source="p2" target="t2">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <place id="p4">
+                <graphics>
+                    <position x="575" y="245" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <arc id="Connection_82fc435e-036e-401a-ae4c-7259f64de42d" source="t2" target="p4">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <transition id="t4">
+                <graphics>
+                    <position x="485" y="350" />
+                    <dimension x="40" y="40" />
+                </graphics>
+                <name>
+                    <text>D</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <transition id="t6">
+                <graphics>
+                    <position x="940" y="240" />
+                    <dimension x="40" y="40" />
+                </graphics>
+                <name>
+                    <text>F</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <place id="p8">
+                <graphics>
+                    <position x="1030" y="245" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <arc id="Connection_e234bf7a-ad17-4df4-94a2-4285d81d87a1" source="t6" target="p8">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <transition id="t8">
+                <graphics>
+                    <position x="500" y="145" />
+                    <dimension x="10" y="50" />
+                </graphics>
+                <toolspecific tool="petrinet.io" version="1.0">
+                    <property key="transitionType" value="empty" />
+                </toolspecific>
+            </transition>
+            <arc id="connection_22" source="t8" target="p2">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_42" source="p2" target="t4">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_43" source="t4" target="p4">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_44" source="p4" target="t8">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_45" source="p4" target="t6">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <transition id="t3">
+                <graphics>
+                    <position x="485" y="440" />
+                    <dimension x="40" y="40" />
+                </graphics>
+                <name>
+                    <text>D</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <place id="p3">
+                <graphics>
+                    <position x="575" y="445" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <arc id="Connection_51b6b402-6c0d-4edb-8794-db60579de27d" source="t3" target="p3">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_46" source="p3" target="t6">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <place id="p5">
+                <graphics>
+                    <position x="405" y="445" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <arc id="connection_47" source="p5" target="t3">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <transition id="t5">
+                <graphics>
+                    <position x="330" y="235" />
+                    <dimension x="10" y="50" />
+                </graphics>
+                <toolspecific tool="petrinet.io" version="1.0">
+                    <property key="transitionType" value="empty" />
+                </toolspecific>
+            </transition>
+            <place id="p6">
+                <graphics>
+                    <position x="395" y="355" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <arc id="Connection_7c53ac8b-c86e-429b-9654-f3be3d773504" source="t5" target="p6">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_50" source="p6" target="t3">
+                <graphics>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10" />
+                    </graphics>
+                </inscription>
+            </arc>
+        </page>
+    </net>
+</pnml>
