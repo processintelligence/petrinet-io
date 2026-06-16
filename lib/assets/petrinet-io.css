@@ -4,6 +4,58 @@
   transform: rotate(90deg);
 }
 
+.pnjs-color-picker {
+  position: fixed;
+  z-index: 1000;
+  width: 276px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.pnjs-color-picker-row {
+  display: grid;
+  grid-template-columns: 42px repeat(8, 20px) 24px;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.pnjs-color-picker-label {
+  font: 12px Arial, sans-serif;
+  color: #333;
+}
+
+.pnjs-color-swatch {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid #777;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.pnjs-color-input {
+  width: 24px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid #777;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.pnjs-color-reset {
+  width: 100%;
+  padding: 5px 0;
+  color: #222;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  background: #f7f7f7;
+  font: 12px Arial, sans-serif;
+}
+
 .active {
   color: #A00 !important;
 }
@@ -34,42 +86,3 @@ a:hover {
   cursor: pointer;
 }
 
-.pnjs-buttons {
-  position: fixed;
-}
-
-.pnjs-buttons > div {
-  display: block;
-  padding: 0;
-  margin: 10px 0 0;
-  list-style: none;
-}
-
-.pnjs-buttons > div > div {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.pnjs-buttons > div > div > a,
-.pnjs-buttons button {
-  color: black;
-  background-color: #f8f8f8;
-  border-radius: 3px;
-  display: inline-block;
-  padding: 6px 10px;
-  font-size: 13px;
-  font-weight: bold;
-  text-align: center;
-  border: solid 1px #cdcdcd;
-}
-
-.pnjs-buttons a {
-  opacity: 0.3;
-  text-decoration: none;
-}
-
-.pnjs-buttons a.pnjs-buttons-active,
-.pnjs-buttons button.pnjs-buttons-active {
-  opacity: 1;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
-}

@@ -1,27 +1,8 @@
-import PetriNetIO from '../lib/index';
+import PetriNetIO from '../lib/index'; // or from 'petrinet-io' after install
 
 const petrinetio = new PetriNetIO({
   container: '#container'
 });
-
-async function loadFixture(fileName, layoutAlgorithm = null) {
-  const response = await fetch(`test-pnmls/${ fileName }`);
-
-  if (!response.ok) {
-    throw new Error(`Failed to load fixture "${ fileName }": ${ response.status }`);
-  }
-
-  const pnml = await response.text();
-  petrinetio.importPNML(pnml);
-
-  if (layoutAlgorithm) {
-    petrinetio.runAutoLayout(layoutAlgorithm);
-  }
-
-  requestAnimationFrame(() => {
-    petrinetio.getCanvas().zoom('fit-viewport');
-  });
-}
 
 
 document.getElementById('js-open-pnml').addEventListener('click', () => {
@@ -44,30 +25,6 @@ document.getElementById('js-download-pdf').addEventListener('click', () => {
   petrinetio.exportPDF();
 });
 
-document.getElementById('js-auto-layout-sugiyama').addEventListener('click', () => {
-  petrinetio.runAutoLayout('sugiyama');
-});
-
-document.getElementById('js-auto-layout-circular').addEventListener('click', () => {
-  petrinetio.runAutoLayout('circular');
-});
-
-document.getElementById('js-auto-layout-force-directed').addEventListener('click', () => {
-  petrinetio.runAutoLayout('force-directed');
-});
-
-document.getElementById('js-load-melanoma-treatment').addEventListener('click', async () => {
-  try {
-    await loadFixture('Melanoma_Treatment.pnml');
-  } catch (error) {
-    console.error(error);
-  }
-});
-
-document.getElementById('js-load-model-23').addEventListener('click', async () => {
-  try {
-    await loadFixture('model (23).pnml');
-  } catch (error) {
-    console.error(error);
-  }
+document.getElementById('js-properties').addEventListener('click', () => {
+  console.log(petrinetio.getPetriNet());
 });
