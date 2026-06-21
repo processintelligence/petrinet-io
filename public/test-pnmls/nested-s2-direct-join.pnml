@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="ptnet1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+        <page id="top-level">
+            <transition id="s1">
+                <graphics>
+                    <position x="120" y="240" />
+                    <dimension x="40" y="40" />
+                </graphics>
+                <name>
+                    <text>S1</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <place id="a">
+                <graphics>
+                    <position x="265" y="145" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text>A</text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <place id="b">
+                <graphics>
+                    <position x="265" y="295" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text>B</text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <transition id="s2">
+                <graphics>
+                    <position x="420" y="145" />
+                    <dimension x="40" y="40" />
+                </graphics>
+                <name>
+                    <text>S2</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <place id="c">
+                <graphics>
+                    <position x="730" y="220" />
+                    <dimension x="30" y="30" />
+                </graphics>
+                <name>
+                    <text>C</text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211" />
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <transition id="t4">
+                <graphics>
+                    <position x="575" y="295" />
+                    <dimension x="40" y="40" />
+                </graphics>
+                <name>
+                    <text>4</text>
+                    <graphics>
+                        <offset x="0" y="0" />
+                    </graphics>
+                </name>
+            </transition>
+            <arc id="a1" source="s1" target="a">
+                <graphics></graphics>
+            </arc>
+            <arc id="a2" source="s1" target="b">
+                <graphics></graphics>
+            </arc>
+            <arc id="a3" source="a" target="s2">
+                <graphics></graphics>
+            </arc>
+            <arc id="a4" source="s2" target="b">
+                <graphics></graphics>
+            </arc>
+            <arc id="a5" source="s2" target="c">
+                <graphics></graphics>
+            </arc>
+            <arc id="a6" source="b" target="t4">
+                <graphics></graphics>
+            </arc>
+            <arc id="a7" source="t4" target="c">
+                <graphics></graphics>
+            </arc>
+        </page>
+    </net>
+</pnml>

@@ -53,6 +53,10 @@ body,
   background: #8ec5ff;
 }
 
+.auto-detect-complex {
+  background: #d6a3ff;
+}
+
 .auto-detect-sequence {
   background: #ff9c9c;
 }

@@ -104,6 +104,14 @@ onClick('js-load-spotify-cares', async () => {
   }
 });
 
+onClick('js-load-spotify-cares-sized', async () => {
+  try {
+    await loadFixture('Spotify_Cares_Sized.pnml');
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 onClick('js-load-detection-mixed', async () => {
   try {
     await loadFixture('detection-mixed-structures.pnml');
