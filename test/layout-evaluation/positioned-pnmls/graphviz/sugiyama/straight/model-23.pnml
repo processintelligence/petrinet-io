@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pnml>
     <net id="ptnet1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+        <!--
+            Node centers were extracted exactly from Graphviz dot.svg.
+            Dimensions and initial markings remain those of the local model
+            (23) source PNML.
+        -->
         <page id="top-level">
             <place id="p1">
                 <graphics>
-                    <position x="235" y="245" />
+                    <position x="89.6647" y="413.0726" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -29,7 +34,7 @@
             </arc>
             <place id="p2">
                 <graphics>
-                    <position x="405" y="245" />
+                    <position x="292.3821" y="495.1445" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -54,7 +59,7 @@
             </arc>
             <transition id="t2">
                 <graphics>
-                    <position x="485" y="240" />
+                    <position x="402.2827" y="408.0727" />
                     <dimension x="40" y="40" />
                 </graphics>
                 <name>
@@ -76,7 +81,7 @@
             </arc>
             <place id="p4">
                 <graphics>
-                    <position x="575" y="245" />
+                    <position x="522.1833" y="479.1861" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -101,7 +106,7 @@
             </arc>
             <transition id="t4">
                 <graphics>
-                    <position x="485" y="350" />
+                    <position x="402.2827" y="498.1237" />
                     <dimension x="40" y="40" />
                 </graphics>
                 <name>
@@ -113,7 +118,7 @@
             </transition>
             <transition id="t6">
                 <graphics>
-                    <position x="940" y="240" />
+                    <position x="632.0839" y="426.3108" />
                     <dimension x="40" y="40" />
                 </graphics>
                 <name>
@@ -125,7 +130,7 @@
             </transition>
             <place id="p8">
                 <graphics>
-                    <position x="1030" y="245" />
+                    <position x="751.9844" y="431.3108" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -150,7 +155,7 @@
             </arc>
             <transition id="t8">
                 <graphics>
-                    <position x="500" y="145" />
+                    <position x="647.0838" y="518.2012" />
                     <dimension x="10" y="50" />
                 </graphics>
                 <toolspecific tool="petrinet.io" version="1.0">
@@ -209,7 +214,7 @@
             </arc>
             <transition id="t3">
                 <graphics>
-                    <position x="485" y="440" />
+                    <position x="402.2827" y="318.0216" />
                     <dimension x="40" y="40" />
                 </graphics>
                 <name>
@@ -221,7 +226,7 @@
             </transition>
             <place id="p3">
                 <graphics>
-                    <position x="575" y="445" />
+                    <position x="522.1833" y="348.0991" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -256,7 +261,7 @@
             </arc>
             <place id="p5">
                 <graphics>
-                    <position x="405" y="445" />
+                    <position x="292.3821" y="405.0934" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -281,7 +286,7 @@
             </arc>
             <transition id="t5">
                 <graphics>
-                    <position x="330" y="235" />
+                    <position x="201.0234" y="403.0727" />
                     <dimension x="10" y="50" />
                 </graphics>
                 <toolspecific tool="petrinet.io" version="1.0">
@@ -290,7 +295,7 @@
             </transition>
             <place id="p6">
                 <graphics>
-                    <position x="395" y="355" />
+                    <position x="292.3821" y="323.0216" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>

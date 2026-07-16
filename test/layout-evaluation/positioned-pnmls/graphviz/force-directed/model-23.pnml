@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="ptnet1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+        <page id="top-level">
+            <place id="p1">
+                <graphics>
+                    <position x="228.69" y="40.12"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211"></offset>
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <place id="p2">
+                <graphics>
+                    <position x="241.3" y="197.41"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211"></offset>
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <place id="p4">
+                <graphics>
+                    <position x="214.55" y="239.134"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211"></offset>
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <place id="p8">
+                <graphics>
+                    <position x="278.11" y="128.9"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211"></offset>
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <place id="p3">
+                <graphics>
+                    <position x="140.51" y="95.19"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211"></offset>
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <place id="p5">
+                <graphics>
+                    <position x="40.12" y="70.32"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211"></offset>
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <place id="p6">
+                <graphics>
+                    <position x="137.51" y="155.36"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <name>
+                    <text></text>
+                    <graphics>
+                        <offset x="14.606601717798211" y="14.606601717798211"></offset>
+                    </graphics>
+                </name>
+                <initialMarking>
+                    <text>0</text>
+                </initialMarking>
+            </place>
+            <arc id="Connection_1c3efba2-59a3-4e42-92e7-15156373f1da" source="p1" target="t5">
+                <graphics>
+                    <position x="240.13" y="70.27"></position>
+                    <position x="239.673027" y="72.224294"></position>
+                    <position x="239.19838" y="74.251852"></position>
+                    <position x="238.707969" y="76.344687"></position>
+                    <position x="238.203704" y="78.494815"></position>
+                    <position x="237.687494" y="80.694248"></position>
+                    <position x="237.16125" y="82.935"></position>
+                    <position x="236.626881" y="85.209086"></position>
+                    <position x="236.086296" y="87.508519"></position>
+                    <position x="235.541406" y="89.825312"></position>
+                    <position x="234.99412" y="92.151481"></position>
+                    <position x="234.446348" y="94.479039"></position>
+                    <position x="233.9" y="96.8"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="Connection_ac9c1472-928b-4be3-8066-646e80d1852b" source="t5" target="p2">
+                <graphics>
+                    <position x="231.64" y="145.11"></position>
+                    <position x="232.787193" y="148.239334"></position>
+                    <position x="234.001713" y="151.553009"></position>
+                    <position x="235.272969" y="155.022031"></position>
+                    <position x="236.59037" y="158.617407"></position>
+                    <position x="237.943328" y="162.310145"></position>
+                    <position x="239.32125" y="166.07125"></position>
+                    <position x="240.713547" y="169.87173"></position>
+                    <position x="242.10963" y="173.682593"></position>
+                    <position x="243.498906" y="177.474844"></position>
+                    <position x="244.870787" y="181.219491"></position>
+                    <position x="246.214682" y="184.887541"></position>
+                    <position x="247.52" y="188.45"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="Connection_92504533-67fd-482b-a6fb-e2783b8baa4e" source="p2" target="t2">
+                <graphics>
+                    <position x="259.05" y="227.59"></position>
+                    <position x="259.611291" y="230.687755"></position>
+                    <position x="260.206991" y="233.973704"></position>
+                    <position x="260.832344" y="237.421875"></position>
+                    <position x="261.482593" y="241.006296"></position>
+                    <position x="262.15298" y="244.700995"></position>
+                    <position x="262.83875" y="248.48"></position>
+                    <position x="263.535145" y="252.317338"></position>
+                    <position x="264.237407" y="256.187037"></position>
+                    <position x="264.940781" y="260.063125"></position>
+                    <position x="265.640509" y="263.91963"></position>
+                    <position x="266.331834" y="267.730579"></position>
+                    <position x="267.01" y="271.47"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="Connection_82fc435e-036e-401a-ae4c-7259f64de42d" source="t2" target="p4">
+                <graphics>
+                    <position x="254.05" y="281.34"></position>
+                    <position x="253.446528" y="280.669034"></position>
+                    <position x="252.841389" y="279.996435"></position>
+                    <position x="252.235" y="279.322656"></position>
+                    <position x="251.627778" y="278.648148"></position>
+                    <position x="251.020139" y="277.973362"></position>
+                    <position x="250.4125" y="277.29875"></position>
+                    <position x="249.805278" y="276.624763"></position>
+                    <position x="249.198889" y="275.951852"></position>
+                    <position x="248.59375" y="275.280469"></position>
+                    <position x="247.990278" y="274.611065"></position>
+                    <position x="247.388889" y="273.944091"></position>
+                    <position x="246.79" y="273.28"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="Connection_e234bf7a-ad17-4df4-94a2-4285d81d87a1" source="t6" target="p8">
+                <graphics>
+                    <position x="230.36" y="174.44"></position>
+                    <position x="233.458953" y="172.933611"></position>
+                    <position x="236.67162" y="171.371389"></position>
+                    <position x="239.976719" y="169.76375"></position>
+                    <position x="243.352963" y="168.121111"></position>
+                    <position x="246.779068" y="166.453889"></position>
+                    <position x="250.23375" y="164.7725"></position>
+                    <position x="253.695723" y="163.087361"></position>
+                    <position x="257.143704" y="161.408889"></position>
+                    <position x="260.556406" y="159.7475"></position>
+                    <position x="263.912546" y="158.113611"></position>
+                    <position x="267.190839" y="156.517639"></position>
+                    <position x="270.37" y="154.97"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_22" source="t8" target="p2">
+                <graphics>
+                    <position x="300.43" y="240.26"></position>
+                    <position x="299.007419" y="239.364531"></position>
+                    <position x="297.458519" y="238.38875"></position>
+                    <position x="295.796563" y="237.341094"></position>
+                    <position x="294.034815" y="236.23"></position>
+                    <position x="292.186539" y="235.063906"></position>
+                    <position x="290.265" y="233.85125"></position>
+                    <position x="288.283461" y="232.600469"></position>
+                    <position x="286.255185" y="231.32"></position>
+                    <position x="284.193438" y="230.018281"></position>
+                    <position x="282.111481" y="228.70375"></position>
+                    <position x="280.022581" y="227.384844"></position>
+                    <position x="277.94" y="226.07"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_42" source="p2" target="t4">
+                <graphics>
+                    <position x="243.13" y="220.43"></position>
+                    <position x="240.493252" y="222.037494"></position>
+                    <position x="237.696852" y="223.74162"></position>
+                    <position x="234.761563" y="225.529844"></position>
+                    <position x="231.708148" y="227.38963"></position>
+                    <position x="228.557373" y="229.308443"></position>
+                    <position x="225.33" y="231.27375"></position>
+                    <position x="222.046794" y="233.273015"></position>
+                    <position x="218.728519" y="235.293704"></position>
+                    <position x="215.395938" y="237.323281"></position>
+                    <position x="212.069815" y="239.349213"></position>
+                    <position x="208.770914" y="241.358964"></position>
+                    <position x="205.52" y="243.34"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_43" source="t4" target="p4">
+                <graphics>
+                    <position x="197.2" y="258.31"></position>
+                    <position x="197.781204" y="258.234803"></position>
+                    <position x="198.36463" y="258.159259"></position>
+                    <position x="198.95" y="258.083437"></position>
+                    <position x="199.537037" y="258.007407"></position>
+                    <position x="200.125463" y="257.931238"></position>
+                    <position x="200.715" y="257.855"></position>
+                    <position x="201.30537" y="257.778762"></position>
+                    <position x="201.896296" y="257.702593"></position>
+                    <position x="202.4875" y="257.626562"></position>
+                    <position x="203.078704" y="257.550741"></position>
+                    <position x="203.66963" y="257.475197"></position>
+                    <position x="204.26" y="257.4"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_44" source="p4" target="t8">
+                <graphics>
+                    <position x="244.97" y="252"></position>
+                    <position x="248.411765" y="251.524265"></position>
+                    <position x="252.054954" y="251.020787"></position>
+                    <position x="255.858906" y="250.495156"></position>
+                    <position x="259.782963" y="249.952963"></position>
+                    <position x="263.786464" y="249.399797"></position>
+                    <position x="267.82875" y="248.84125"></position>
+                    <position x="271.869161" y="248.282911"></position>
+                    <position x="275.867037" y="247.73037"></position>
+                    <position x="279.781719" y="247.189219"></position>
+                    <position x="283.572546" y="246.665046"></position>
+                    <position x="287.19886" y="246.163443"></position>
+                    <position x="290.62" y="245.69"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_45" source="p4" target="t6">
+                <graphics>
+                    <position x="225.36" y="239.36"></position>
+                    <position x="224.840133" y="237.530376"></position>
+                    <position x="224.301898" y="235.636343"></position>
+                    <position x="223.747344" y="233.685156"></position>
+                    <position x="223.178519" y="231.684074"></position>
+                    <position x="222.597471" y="229.640353"></position>
+                    <position x="222.00625" y="227.56125"></position>
+                    <position x="221.406904" y="225.454022"></position>
+                    <position x="220.801481" y="223.325926"></position>
+                    <position x="220.192031" y="221.184219"></position>
+                    <position x="219.580602" y="219.036157"></position>
+                    <position x="218.969242" y="216.888999"></position>
+                    <position x="218.36" y="214.75"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="Connection_51b6b402-6c0d-4edb-8794-db60579de27d" source="t3" target="p3">
+                <graphics>
+                    <position x="106.17" y="137.67"></position>
+                    <position x="108.327442" y="136.467494"></position>
+                    <position x="110.533704" y="135.238287"></position>
+                    <position x="112.779687" y="133.987344"></position>
+                    <position x="115.056296" y="132.71963"></position>
+                    <position x="117.354433" y="131.44011"></position>
+                    <position x="119.665" y="130.15375"></position>
+                    <position x="121.9789" y="128.865515"></position>
+                    <position x="124.287037" y="127.58037"></position>
+                    <position x="126.580312" y="126.303281"></position>
+                    <position x="128.84963" y="125.039213"></position>
+                    <position x="131.085891" y="123.793131"></position>
+                    <position x="133.28" y="122.57"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_46" source="p3" target="t6">
+                <graphics>
+                    <position x="164.72" y="122.79"></position>
+                    <position x="166.424277" y="125.125642"></position>
+                    <position x="168.224213" y="127.591806"></position>
+                    <position x="170.107969" y="130.172344"></position>
+                    <position x="172.063704" y="132.851111"></position>
+                    <position x="174.079578" y="135.611962"></position>
+                    <position x="176.14375" y="138.43875"></position>
+                    <position x="178.244381" y="141.31533"></position>
+                    <position x="180.36963" y="144.225556"></position>
+                    <position x="182.507656" y="147.153281"></position>
+                    <position x="184.64662" y="150.082361"></position>
+                    <position x="186.774682" y="152.996649"></position>
+                    <position x="188.88" y="155.88"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_47" source="p5" target="t3">
+                <graphics>
+                    <position x="61.72" y="99.17"></position>
+                    <position x="62.459809" y="100.718727"></position>
+                    <position x="63.222639" y="102.316481"></position>
+                    <position x="64.006094" y="103.958125"></position>
+                    <position x="64.807778" y="105.638519"></position>
+                    <position x="65.625295" y="107.352523"></position>
+                    <position x="66.45625" y="109.095"></position>
+                    <position x="67.298247" y="110.86081"></position>
+                    <position x="68.148889" y="112.644815"></position>
+                    <position x="69.005781" y="114.441875"></position>
+                    <position x="69.866528" y="116.246852"></position>
+                    <position x="70.728733" y="118.054606"></position>
+                    <position x="71.59" y="119.86"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="Connection_7c53ac8b-c86e-429b-9654-f3be3d773504" source="t5" target="p6">
+                <graphics>
+                    <position x="220.81" y="132.89"></position>
+                    <position x="218.224028" y="134.309745"></position>
+                    <position x="215.236389" y="135.94963"></position>
+                    <position x="211.9" y="137.780625"></position>
+                    <position x="208.267778" y="139.773704"></position>
+                    <position x="204.392639" y="141.899838"></position>
+                    <position x="200.3275" y="144.13"></position>
+                    <position x="196.125278" y="146.435162"></position>
+                    <position x="191.838889" y="148.786296"></position>
+                    <position x="187.52125" y="151.154375"></position>
+                    <position x="183.225278" y="153.51037"></position>
+                    <position x="179.003889" y="155.825255"></position>
+                    <position x="174.91" y="158.07"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <arc id="connection_50" source="p6" target="t3">
+                <graphics>
+                    <position x="137.65" y="165.65"></position>
+                    <position x="136.01548" y="165.131534"></position>
+                    <position x="134.330509" y="164.597269"></position>
+                    <position x="132.600469" y="164.048906"></position>
+                    <position x="130.830741" y="163.488148"></position>
+                    <position x="129.026707" y="162.916696"></position>
+                    <position x="127.19375" y="162.33625"></position>
+                    <position x="125.337251" y="161.748513"></position>
+                    <position x="123.462593" y="161.155185"></position>
+                    <position x="121.575156" y="160.557969"></position>
+                    <position x="119.680324" y="159.958565"></position>
+                    <position x="117.783478" y="159.358675"></position>
+                    <position x="115.89" y="158.76"></position>
+                </graphics>
+                <inscription>
+                    <text></text>
+                    <graphics>
+                        <offset x="0" y="-10"></offset>
+                    </graphics>
+                </inscription>
+            </arc>
+            <transition id="t2">
+                <graphics>
+                    <position x="252.53" y="281.86"></position>
+                    <dimension x="40" y="40"></dimension>
+                </graphics>
+                <name>
+                    <text>A</text>
+                    <graphics>
+                        <offset x="0" y="0"></offset>
+                    </graphics>
+                </name>
+            </transition>
+            <transition id="t4">
+                <graphics>
+                    <position x="156.57" y="240.969"></position>
+                    <dimension x="40" y="40"></dimension>
+                </graphics>
+                <name>
+                    <text>B</text>
+                    <graphics>
+                        <offset x="0" y="0"></offset>
+                    </graphics>
+                </name>
+            </transition>
+            <transition id="t6">
+                <graphics>
+                    <position x="189.76" y="164.47"></position>
+                    <dimension x="40" y="40"></dimension>
+                </graphics>
+                <name>
+                    <text>D</text>
+                    <graphics>
+                        <offset x="0" y="0"></offset>
+                    </graphics>
+                </name>
+            </transition>
+            <transition id="t8">
+                <graphics>
+                    <position x="300.71" y="218.602"></position>
+                    <dimension x="10" y="50"></dimension>
+                </graphics>
+                <toolspecific tool="petrinet.io" version="1.0">
+                    <property key="transitionType" value="empty"></property>
+                </toolspecific>
+            </transition>
+            <transition id="t3">
+                <graphics>
+                    <position x="65.558" y="129.15"></position>
+                    <dimension x="40" y="40"></dimension>
+                </graphics>
+                <name>
+                    <text>C</text>
+                    <graphics>
+                        <offset x="0" y="0"></offset>
+                    </graphics>
+                </name>
+            </transition>
+            <transition id="t5">
+                <graphics>
+                    <position x="221.11" y="104.99"></position>
+                    <dimension x="10" y="50"></dimension>
+                </graphics>
+                <toolspecific tool="petrinet.io" version="1.0">
+                    <property key="transitionType" value="empty"></property>
+                </toolspecific>
+            </transition>
+        </page>
+    </net>
+</pnml>

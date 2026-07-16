@@ -23,7 +23,11 @@
     "start": "npm run dev",
     "static": "npm run build",
     "deploy": "npm run static && gh-pages -d dist",
-    "build:lib": "webpack --mode production --config webpack.lib.config.js"
+    "build:lib": "webpack --mode production --config webpack.lib.config.js",
+    "benchmark:layout": "node test/layout-benchmark/benchmark-auto-layout.mjs",
+    "evaluate:layouts": "node test/layout-evaluation/evaluate.mjs",
+    "test:layout-benchmark": "node --test test/layout-benchmark/*.test.mjs",
+    "test:layout-evaluation": "node --test test/layout-evaluation/*.test.mjs test/layout-evaluation/metrics/*.test.mjs"
   },
   "dependencies": {
     "diagram-js": "^15.2.4",
@@ -42,6 +46,7 @@
     "bpmn-font": "^0.12.1",
     "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
+    "fast-xml-parser": "^5.7.3",
     "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.5",
     "style-loader": "^4.0.0",

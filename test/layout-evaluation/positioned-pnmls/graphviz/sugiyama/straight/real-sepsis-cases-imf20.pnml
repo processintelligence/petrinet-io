@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+        <name>
+            <text></text>
+        </name>
+        <page id="n0">
+            <place id="ent_id280e87ba-f13a-40b7-bac8-ce6e76d1dd1e">
+                <name>
+                    <text>ent_id280e87ba-f13a-40b7-bac8-ce6e76d1dd1e</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="2132" y="497"></position>
+                </graphics>
+            </place>
+            <place id="ent_id1b7d0920-2ee6-4ee6-bf1c-ddf2fa7be487">
+                <name>
+                    <text>ent_id1b7d0920-2ee6-4ee6-bf1c-ddf2fa7be487</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="2588" y="754"></position>
+                </graphics>
+            </place>
+            <place id="ent_id47a5582f-8d19-42e2-ad98-326d0e32d8af">
+                <name>
+                    <text>ent_id47a5582f-8d19-42e2-ad98-326d0e32d8af</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="1894" y="497"></position>
+                </graphics>
+            </place>
+            <place id="exi_ida4d406e3-5eec-4961-b73a-67a1b319737e">
+                <name>
+                    <text>exi_ida4d406e3-5eec-4961-b73a-67a1b319737e</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="1180" y="411"></position>
+                </graphics>
+            </place>
+            <place id="exi_id76ccd7c5-04d8-41b4-a4e0-7283057fd24e">
+                <name>
+                    <text>exi_id76ccd7c5-04d8-41b4-a4e0-7283057fd24e</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="496" y="696"></position>
+                </graphics>
+            </place>
+            <place id="exi_id11aad9a4-b162-4bf1-a3ca-7146a7da366a">
+                <name>
+                    <text>exi_id11aad9a4-b162-4bf1-a3ca-7146a7da366a</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="2360" y="672"></position>
+                </graphics>
+            </place>
+            <place id="ent_id36edc384-b747-4319-9273-310ff9559573">
+                <name>
+                    <text>ent_id36edc384-b747-4319-9273-310ff9559573</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="496" y="186"></position>
+                </graphics>
+            </place>
+            <place id="ent_idfdf4682f-bcd4-4b72-9a65-ecacf86bc142">
+                <name>
+                    <text>ent_idfdf4682f-bcd4-4b72-9a65-ecacf86bc142</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="3500" y="1089"></position>
+                </graphics>
+            </place>
+            <place id="ent_id962fa01b-03f2-49e9-8b88-152739b96871">
+                <name>
+                    <text>ent_id962fa01b-03f2-49e9-8b88-152739b96871</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="1418" y="418"></position>
+                </graphics>
+            </place>
+            <place id="source">
+                <name>
+                    <text>source</text>
+                </name>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="40" y="987"></position>
+                </graphics>
+            </place>
+            <place id="ent_id0cd99d56-2bcd-48bf-b93d-07087ae9a3be">
+                <name>
+                    <text>ent_id0cd99d56-2bcd-48bf-b93d-07087ae9a3be</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="496" y="1023"></position>
+                </graphics>
+            </place>
+            <place id="exi_idf8494a7e-4fde-4847-91a0-fe456d40b695">
+                <name>
+                    <text>exi_idf8494a7e-4fde-4847-91a0-fe456d40b695</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="1418" y="146"></position>
+                </graphics>
+            </place>
+            <place id="3f1fcb66-369a-4c6f-9e31-62071d7c1084">
+                <name>
+                    <text>3f1fcb66-369a-4c6f-9e31-62071d7c1084</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="724" y="525"></position>
+                </graphics>
+            </place>
+            <place id="ent_id9cb18660-6388-461f-8c45-f092f5f2924b">
+                <name>
+                    <text>ent_id9cb18660-6388-461f-8c45-f092f5f2924b</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="496" y="573"></position>
+                </graphics>
+            </place>
+            <place id="ent_iddff533c1-a0ed-47e4-9f43-98f598209119">
+                <name>
+                    <text>ent_iddff533c1-a0ed-47e4-9f43-98f598209119</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="1180" y="177"></position>
+                </graphics>
+            </place>
+            <place id="sink">
+                <name>
+                    <text>sink</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="3956" y="1167"></position>
+                </graphics>
+            </place>
+            <place id="ent_id3a7e1c99-430a-410c-aa4d-403de242bb38">
+                <name>
+                    <text>ent_id3a7e1c99-430a-410c-aa4d-403de242bb38</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="496" y="855"></position>
+                </graphics>
+            </place>
+            <place id="ent_ida17a5b35-87d3-46ad-868a-168110304ecc">
+                <name>
+                    <text>ent_ida17a5b35-87d3-46ad-868a-168110304ecc</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="952" y="517"></position>
+                </graphics>
+            </place>
+            <place id="ent_id81c39a21-7a45-4e87-a7a9-0c5b2bcba676">
+                <name>
+                    <text>ent_id81c39a21-7a45-4e87-a7a9-0c5b2bcba676</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="724" y="429"></position>
+                </graphics>
+            </place>
+            <place id="ent_id9c5f1903-6954-4369-9bdf-4c1abe14c4cd">
+                <name>
+                    <text>ent_id9c5f1903-6954-4369-9bdf-4c1abe14c4cd</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="3044" y="929"></position>
+                </graphics>
+            </place>
+            <place id="exi_id45830302-ead4-487f-a887-dfc34cfbb9eb">
+                <name>
+                    <text>exi_id45830302-ead4-487f-a887-dfc34cfbb9eb</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="2816" y="865"></position>
+                </graphics>
+            </place>
+            <place id="exi_id811979b5-e37c-4239-a2a8-bc66b640e822">
+                <name>
+                    <text>exi_id811979b5-e37c-4239-a2a8-bc66b640e822</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="496" y="431"></position>
+                </graphics>
+            </place>
+            <place id="ent_id7a61fa47-653c-4f6f-926c-c3d626e978e7">
+                <name>
+                    <text>ent_id7a61fa47-653c-4f6f-926c-c3d626e978e7</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="724" y="749"></position>
+                </graphics>
+            </place>
+            <place id="exi_id9c676344-df71-4569-89e4-3e6147780467">
+                <name>
+                    <text>exi_id9c676344-df71-4569-89e4-3e6147780467</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="724" y="96"></position>
+                </graphics>
+            </place>
+            <place id="ent_id1ada6269-0319-40f0-8034-c300b787eab3">
+                <name>
+                    <text>ent_id1ada6269-0319-40f0-8034-c300b787eab3</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="1656" y="124"></position>
+                </graphics>
+            </place>
+            <place id="exi_ida6268cfb-0b7a-4890-8329-3fa68454c1ff">
+                <name>
+                    <text>exi_ida6268cfb-0b7a-4890-8329-3fa68454c1ff</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="724" y="1113"></position>
+                </graphics>
+            </place>
+            <place id="exi_id17e0b615-a39f-40e4-9a1f-6b92bdb397ae">
+                <name>
+                    <text>exi_id17e0b615-a39f-40e4-9a1f-6b92bdb397ae</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="1180" y="607"></position>
+                </graphics>
+            </place>
+            <place id="exi_idc0242c20-7fdc-4939-834d-2eab069dc405">
+                <name>
+                    <text>exi_idc0242c20-7fdc-4939-834d-2eab069dc405</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="724" y="855"></position>
+                </graphics>
+            </place>
+            <place id="exi_id78d1ebab-4086-4cc4-949b-3e651f443f3e">
+                <name>
+                    <text>exi_id78d1ebab-4086-4cc4-949b-3e651f443f3e</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="952" y="177"></position>
+                </graphics>
+            </place>
+            <place id="exi_id72f58249-a9c6-4752-a974-ea1b66de2bb0">
+                <name>
+                    <text>exi_id72f58249-a9c6-4752-a974-ea1b66de2bb0</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="3272" y="983"></position>
+                </graphics>
+            </place>
+            <place id="exi_id95a56c17-31ce-4b84-9f69-fcffeaa26026">
+                <name>
+                    <text>exi_id95a56c17-31ce-4b84-9f69-fcffeaa26026</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="268" y="987"></position>
+                </graphics>
+            </place>
+            <place id="exi_idf3070c92-61df-403a-b9aa-51b798cc557a">
+                <name>
+                    <text>exi_idf3070c92-61df-403a-b9aa-51b798cc557a</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="952" y="411"></position>
+                </graphics>
+            </place>
+            <place id="ent_id61991b21-35ab-473f-90dd-262fedd4a870">
+                <name>
+                    <text>ent_id61991b21-35ab-473f-90dd-262fedd4a870</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="3728" y="1167"></position>
+                </graphics>
+            </place>
+            <place id="exi_id69df5a40-7c8a-40a9-9b0e-b55a91cf0b02">
+                <name>
+                    <text>exi_id69df5a40-7c8a-40a9-9b0e-b55a91cf0b02</text>
+                </name>
+                <graphics>
+                    <dimension x="50" y="50"></dimension>
+                    <position x="1656" y="418"></position>
+                </graphics>
+            </place>
+            <transition id="sfl_755de984-4739-4daf-ba05-b80b4af66ce1">
+                <name>
+                    <text>sfl_755de984-4739-4daf-ba05-b80b4af66ce1</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="f3ea9c72-2605-4ac8-b8a8-721e8e99d318"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1056" y="167"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_63c61d58-3d23-47f6-b663-5a4b8c7df751">
+                <name>
+                    <text>sfl_63c61d58-3d23-47f6-b663-5a4b8c7df751</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c694b150-1555-41dd-a39c-6b018b46d9d3"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="828" y="1030"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e">
+                <name>
+                    <text>sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="9663ca21-741c-4fc6-bbbb-d85f33c8a235"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="372" y="686"></position>
+                </graphics>
+            </transition>
+            <transition id="f0d23532-1d80-4197-b912-f80f4def28f5">
+                <name>
+                    <text>f0d23532-1d80-4197-b912-f80f4def28f5</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="7432fd9f-906d-46da-a832-d2be4c0d6c36"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2236" y="662"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_0e902f3f-3fe6-47e2-9373-5abf71619f82">
+                <name>
+                    <text>sfl_0e902f3f-3fe6-47e2-9373-5abf71619f82</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="d4ee517a-594c-4f17-a93e-32c15c861b14"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1284" y="384"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_8f1b5236-22b5-44f8-9f6d-19c8fb552719">
+                <name>
+                    <text>sfl_8f1b5236-22b5-44f8-9f6d-19c8fb552719</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="7dc4a1f6-cb17-4ec8-9e3b-dcd160707959"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1532" y="220"></position>
+                </graphics>
+            </transition>
+            <transition id="id00b81264-1603-44ec-a222-48808535e317">
+                <name>
+                    <text>IV Liquid</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="600" y="633"></position>
+                </graphics>
+            </transition>
+            <transition id="idc57f60f0-d2a8-4db1-bc16-164e0db51a0a">
+                <name>
+                    <text>LacticAcid</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="600" y="845"></position>
+                </graphics>
+            </transition>
+            <transition id="id5430c438-c8a3-4dbd-b464-af0c148f20fd">
+                <name>
+                    <text>Admission NC</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1056" y="597"></position>
+                </graphics>
+            </transition>
+            <transition id="id8d9bb27a-c816-4aec-8129-5db9d97120f1">
+                <name>
+                    <text>CRP</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="600" y="86"></position>
+                </graphics>
+            </transition>
+            <transition id="idfe569b16-7321-43e0-b629-dc7f4ae4f63e">
+                <name>
+                    <text>Admission IC</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1284" y="130"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_3154d129-4e27-4bac-9c26-31adc846af23">
+                <name>
+                    <text>sfl_3154d129-4e27-4bac-9c26-31adc846af23</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="418a2d08-45e5-4634-868a-fc8147215f33"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1056" y="401"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_b28b9467-63fb-4e41-b65d-8cd1ed2cb291">
+                <name>
+                    <text>sfl_b28b9467-63fb-4e41-b65d-8cd1ed2cb291</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="cc85a928-6725-4ff6-bfb3-113a0ae0cfa5"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1408" y="40"></position>
+                </graphics>
+            </transition>
+            <transition id="idf9ebf20d-13b9-4b0c-ba53-5f3d0cfefdde">
+                <name>
+                    <text>Leucocytes</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="600" y="1103"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_4bc63a38-873b-47e9-8122-e3c0970364a5">
+                <name>
+                    <text>sfl_4bc63a38-873b-47e9-8122-e3c0970364a5</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="f7183fdd-936f-471a-8fe2-914c9e9d7da4"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="3376" y="973"></position>
+                </graphics>
+            </transition>
+            <transition id="id9cb18660-6388-461f-8c45-f092f5f2924b">
+                <name>
+                    <text>ER Registration</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="600" y="527"></position>
+                </graphics>
+            </transition>
+            <transition id="id8fddfb74-724f-4ec1-b3db-7c445475211d">
+                <name>
+                    <text>Release A</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2464" y="638"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_12f2d5e1-91a6-4b94-a140-7eb6730c05a9">
+                <name>
+                    <text>sfl_12f2d5e1-91a6-4b94-a140-7eb6730c05a9</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="30464bbf-ef69-4172-9b76-0c2fd2a6be60"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1760" y="404"></position>
+                </graphics>
+            </transition>
+            <transition id="id47a5582f-8d19-42e2-ad98-326d0e32d8af">
+                <name>
+                    <text>id47a5582f-8d19-42e2-ad98-326d0e32d8af</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="59bb8f73-12c2-46e9-a34f-b1969e9aa30c"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2008" y="487"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_2d3ee573-cc34-46e4-bd53-f1d822f340e1">
+                <name>
+                    <text>sfl_2d3ee573-cc34-46e4-bd53-f1d822f340e1</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="49219ef2-e17d-4ddd-83e3-50aca185fb29"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1884" y="1210"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_94e0596d-52a1-4423-9d98-d47e2de16ac1">
+                <name>
+                    <text>sfl_94e0596d-52a1-4423-9d98-d47e2de16ac1</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="75dee99a-1237-418a-81fa-d01a4bd780f1"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2008" y="359"></position>
+                </graphics>
+            </transition>
+            <transition id="id9c5f1903-6954-4369-9bdf-4c1abe14c4cd">
+                <name>
+                    <text>id9c5f1903-6954-4369-9bdf-4c1abe14c4cd</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="e3e9ad7c-be92-46cc-bdf2-96b9b4024a57"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="3148" y="962"></position>
+                </graphics>
+            </transition>
+            <transition id="id962fa01b-03f2-49e9-8b88-152739b96871">
+                <name>
+                    <text>id962fa01b-03f2-49e9-8b88-152739b96871</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="8d3ce856-1598-40b0-b45e-159f35f276e1"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1532" y="408"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_14298324-5112-490e-b226-14b1ce19183c">
+                <name>
+                    <text>sfl_14298324-5112-490e-b226-14b1ce19183c</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="24c8926d-2388-4f3a-9649-c29fab4ab18c"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1532" y="114"></position>
+                </graphics>
+            </transition>
+            <transition id="id61991b21-35ab-473f-90dd-262fedd4a870">
+                <name>
+                    <text>id61991b21-35ab-473f-90dd-262fedd4a870</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="8e006d35-e7bf-4454-bdc5-943c9b7f99dc"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="3832" y="1157"></position>
+                </graphics>
+            </transition>
+            <transition id="id10211351-1347-43e6-98e9-34b101ab1cb2">
+                <name>
+                    <text>Release D</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2920" y="972"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_6cad0c75-72f4-4d2a-8b9d-0d440483331d">
+                <name>
+                    <text>sfl_6cad0c75-72f4-4d2a-8b9d-0d440483331d</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="58a37f0a-bddb-43b8-82c4-633477f738cf"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="600" y="315"></position>
+                </graphics>
+            </transition>
+            <transition id="idfdf4682f-bcd4-4b72-9a65-ecacf86bc142">
+                <name>
+                    <text>idfdf4682f-bcd4-4b72-9a65-ecacf86bc142</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="d99eb561-5c9c-453c-a203-18d436d18953"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="3604" y="1079"></position>
+                </graphics>
+            </transition>
+            <transition id="idb9014c93-7b0e-41ed-8540-19497b753cd9">
+                <name>
+                    <text>ER Sepsis Triage</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1284" y="490"></position>
+                </graphics>
+            </transition>
+            <transition id="idcca9ae9b-a207-4b90-a1d1-4d1d0dcb8360">
+                <name>
+                    <text>IV Antibiotics</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1760" y="510"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_24659ebd-a5f9-41e8-8148-4ab953740576">
+                <name>
+                    <text>sfl_24659ebd-a5f9-41e8-8148-4ab953740576</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="7a2122c3-68f0-4468-97e8-6f7cf955ecd1"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="828" y="924"></position>
+                </graphics>
+            </transition>
+            <transition id="fa1f8c77-3d51-4587-ae92-c7dea120a722">
+                <name>
+                    <text>fa1f8c77-3d51-4587-ae92-c7dea120a722</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="1b28ce84-9fbb-4dda-bebf-125daef74e5c"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="144" y="977"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_71f07355-5e18-4545-8167-5308cba0bba3">
+                <name>
+                    <text>sfl_71f07355-5e18-4545-8167-5308cba0bba3</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="f10832b4-25fd-4aa8-9f00-5f2c35b663e8"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="600" y="739"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_ec680b05-72e9-4508-ad80-ae95504fb13d">
+                <name>
+                    <text>sfl_ec680b05-72e9-4508-ad80-ae95504fb13d</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="7b23252a-2fe3-458e-9a1d-2569dd0d867b"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="1284" y="596"></position>
+                </graphics>
+            </transition>
+            <transition id="id2c36b070-9926-49fa-8e29-95d61d42b03e">
+                <name>
+                    <text>Return ER</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="3376" y="1079"></position>
+                </graphics>
+            </transition>
+            <transition id="c0220b1c-fe38-4bd3-b254-761db1af7fcb">
+                <name>
+                    <text>c0220b1c-fe38-4bd3-b254-761db1af7fcb</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="4bf95b49-a149-49f5-a244-d26e8dd2ae73"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="828" y="419"></position>
+                </graphics>
+            </transition>
+            <transition id="id2d4e3262-742d-4d61-95d9-f5780501f9b2">
+                <name>
+                    <text>Release C</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2920" y="760"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_1126af3f-5c28-4122-83fb-d9da47911c0c">
+                <name>
+                    <text>sfl_1126af3f-5c28-4122-83fb-d9da47911c0c</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="084adabb-d4a8-45de-9f29-02f88c600df4"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2464" y="744"></position>
+                </graphics>
+            </transition>
+            <transition id="id8e961305-bec2-4ed1-b51f-d0db99a5187d">
+                <name>
+                    <text>ER Triage</text>
+                </name>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="600" y="421"></position>
+                </graphics>
+            </transition>
+            <transition id="9bb2882d-d052-4787-9c28-437ea39dd7d7">
+                <name>
+                    <text>9bb2882d-d052-4787-9c28-437ea39dd7d7</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="9874fd85-994f-401f-8dba-a9cde455da9a"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2692" y="834"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_14c9b872-15cc-45d3-bf39-3edddb8f88d2">
+                <name>
+                    <text>sfl_14c9b872-15cc-45d3-bf39-3edddb8f88d2</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="621a165f-9c08-44ec-bbe1-2ad69833dad5"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="2920" y="866"></position>
+                </graphics>
+            </transition>
+            <transition id="sfl_ec22e976-9fd8-4fe8-b319-f1a287e598e4">
+                <name>
+                    <text>sfl_ec22e976-9fd8-4fe8-b319-f1a287e598e4</text>
+                </name>
+                <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="7927096d-563a-401b-9694-436928d9b031"></toolspecific>
+                <graphics>
+                    <dimension x="70" y="70"></dimension>
+                    <position x="828" y="131"></position>
+                </graphics>
+            </transition>
+            <arc id="2119115761664" source="idb9014c93-7b0e-41ed-8540-19497b753cd9" target="ent_id962fa01b-03f2-49e9-8b88-152739b96871"></arc>
+            <arc id="2118726834192" source="sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e" target="exi_id811979b5-e37c-4239-a2a8-bc66b640e822"></arc>
+            <arc id="2118726836256" source="c0220b1c-fe38-4bd3-b254-761db1af7fcb" target="ent_ida17a5b35-87d3-46ad-868a-168110304ecc"></arc>
+            <arc id="2118726838320" source="ent_id81c39a21-7a45-4e87-a7a9-0c5b2bcba676" target="c0220b1c-fe38-4bd3-b254-761db1af7fcb"></arc>
+            <arc id="2119115765840" source="sfl_71f07355-5e18-4545-8167-5308cba0bba3" target="ent_id7a61fa47-653c-4f6f-926c-c3d626e978e7"></arc>
+            <arc id="2119096146032" source="ent_id962fa01b-03f2-49e9-8b88-152739b96871" target="id962fa01b-03f2-49e9-8b88-152739b96871"></arc>
+            <arc id="2119115765936" source="sfl_1126af3f-5c28-4122-83fb-d9da47911c0c" target="ent_id1b7d0920-2ee6-4ee6-bf1c-ddf2fa7be487"></arc>
+            <arc id="2119116218592" source="exi_id72f58249-a9c6-4752-a974-ea1b66de2bb0" target="sfl_4bc63a38-873b-47e9-8122-e3c0970364a5"></arc>
+            <arc id="2119115755760" source="sfl_4bc63a38-873b-47e9-8122-e3c0970364a5" target="ent_idfdf4682f-bcd4-4b72-9a65-ecacf86bc142"></arc>
+            <arc id="2118726838512" source="exi_ida4d406e3-5eec-4961-b73a-67a1b319737e" target="idb9014c93-7b0e-41ed-8540-19497b753cd9"></arc>
+            <arc id="2118726830352" source="id2c36b070-9926-49fa-8e29-95d61d42b03e" target="ent_idfdf4682f-bcd4-4b72-9a65-ecacf86bc142"></arc>
+            <arc id="2118739050800" source="exi_ida4d406e3-5eec-4961-b73a-67a1b319737e" target="sfl_0e902f3f-3fe6-47e2-9373-5abf71619f82"></arc>
+            <arc id="2119115764016" source="id47a5582f-8d19-42e2-ad98-326d0e32d8af" target="ent_id280e87ba-f13a-40b7-bac8-ce6e76d1dd1e"></arc>
+            <arc id="2119115766080" source="id8d9bb27a-c816-4aec-8129-5db9d97120f1" target="exi_id9c676344-df71-4569-89e4-3e6147780467"></arc>
+            <arc id="2119116218736" source="exi_idf8494a7e-4fde-4847-91a0-fe456d40b695" target="sfl_8f1b5236-22b5-44f8-9f6d-19c8fb552719"></arc>
+            <arc id="2118726832512" source="idcca9ae9b-a207-4b90-a1d1-4d1d0dcb8360" target="ent_id47a5582f-8d19-42e2-ad98-326d0e32d8af"></arc>
+            <arc id="2118747060640" source="ent_id47a5582f-8d19-42e2-ad98-326d0e32d8af" target="id47a5582f-8d19-42e2-ad98-326d0e32d8af"></arc>
+            <arc id="2119115671968" source="exi_id69df5a40-7c8a-40a9-9b0e-b55a91cf0b02" target="sfl_12f2d5e1-91a6-4b94-a140-7eb6730c05a9"></arc>
+            <arc id="2118726832608" source="sfl_3154d129-4e27-4bac-9c26-31adc846af23" target="exi_ida4d406e3-5eec-4961-b73a-67a1b319737e"></arc>
+            <arc id="2118726840816" source="exi_id69df5a40-7c8a-40a9-9b0e-b55a91cf0b02" target="idcca9ae9b-a207-4b90-a1d1-4d1d0dcb8360"></arc>
+            <arc id="2119115764208" source="id8e961305-bec2-4ed1-b51f-d0db99a5187d" target="ent_id81c39a21-7a45-4e87-a7a9-0c5b2bcba676"></arc>
+            <arc id="2119115760128" source="sfl_14298324-5112-490e-b226-14b1ce19183c" target="ent_id1ada6269-0319-40f0-8034-c300b787eab3"></arc>
+            <arc id="2118744625728" source="exi_id95a56c17-31ce-4b84-9f69-fcffeaa26026" target="sfl_2d3ee573-cc34-46e4-bd53-f1d822f340e1"></arc>
+            <arc id="2118726832704" source="sfl_2d3ee573-cc34-46e4-bd53-f1d822f340e1" target="ent_id61991b21-35ab-473f-90dd-262fedd4a870"></arc>
+            <arc id="2119115762240" source="sfl_24659ebd-a5f9-41e8-8148-4ab953740576" target="ent_id3a7e1c99-430a-410c-aa4d-403de242bb38"></arc>
+            <arc id="2119096146512" source="ent_idfdf4682f-bcd4-4b72-9a65-ecacf86bc142" target="idfdf4682f-bcd4-4b72-9a65-ecacf86bc142"></arc>
+            <arc id="2118726828624" source="ent_id1b7d0920-2ee6-4ee6-bf1c-ddf2fa7be487" target="9bb2882d-d052-4787-9c28-437ea39dd7d7"></arc>
+            <arc id="2118726834768" source="sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e" target="exi_id76ccd7c5-04d8-41b4-a4e0-7283057fd24e"></arc>
+            <arc id="2118726828672" source="sfl_8f1b5236-22b5-44f8-9f6d-19c8fb552719" target="ent_iddff533c1-a0ed-47e4-9f43-98f598209119"></arc>
+            <arc id="2119115760320" source="sfl_63c61d58-3d23-47f6-b663-5a4b8c7df751" target="ent_id0cd99d56-2bcd-48bf-b93d-07087ae9a3be"></arc>
+            <arc id="2118726832848" source="exi_id811979b5-e37c-4239-a2a8-bc66b640e822" target="id8e961305-bec2-4ed1-b51f-d0db99a5187d"></arc>
+            <arc id="2118726838992" source="idfdf4682f-bcd4-4b72-9a65-ecacf86bc142" target="ent_id61991b21-35ab-473f-90dd-262fedd4a870"></arc>
+            <arc id="2119116217056" source="exi_id17e0b615-a39f-40e4-9a1f-6b92bdb397ae" target="sfl_ec680b05-72e9-4508-ad80-ae95504fb13d"></arc>
+            <arc id="2118726836976" source="exi_id11aad9a4-b162-4bf1-a3ca-7146a7da366a" target="id8fddfb74-724f-4ec1-b3db-7c445475211d"></arc>
+            <arc id="2118726839040" source="ent_id36edc384-b747-4319-9273-310ff9559573" target="id8d9bb27a-c816-4aec-8129-5db9d97120f1"></arc>
+            <arc id="2119115762432" source="sfl_94e0596d-52a1-4423-9d98-d47e2de16ac1" target="ent_id280e87ba-f13a-40b7-bac8-ce6e76d1dd1e"></arc>
+            <arc id="2118726834960" source="idc57f60f0-d2a8-4db1-bc16-164e0db51a0a" target="exi_idc0242c20-7fdc-4939-834d-2eab069dc405"></arc>
+            <arc id="2118726839088" source="exi_idc0242c20-7fdc-4939-834d-2eab069dc405" target="9bb2882d-d052-4787-9c28-437ea39dd7d7"></arc>
+            <arc id="2118726830928" source="exi_id72f58249-a9c6-4752-a974-ea1b66de2bb0" target="id2c36b070-9926-49fa-8e29-95d61d42b03e"></arc>
+            <arc id="2118726839136" source="ent_id3a7e1c99-430a-410c-aa4d-403de242bb38" target="idc57f60f0-d2a8-4db1-bc16-164e0db51a0a"></arc>
+            <arc id="2119115764592" source="idf9ebf20d-13b9-4b0c-ba53-5f3d0cfefdde" target="exi_ida6268cfb-0b7a-4890-8329-3fa68454c1ff"></arc>
+            <arc id="2119115680656" source="exi_id811979b5-e37c-4239-a2a8-bc66b640e822" target="sfl_6cad0c75-72f4-4d2a-8b9d-0d440483331d"></arc>
+            <arc id="2119115762576" source="f0d23532-1d80-4197-b912-f80f4def28f5" target="exi_id11aad9a4-b162-4bf1-a3ca-7146a7da366a"></arc>
+            <arc id="2119115676576" source="exi_idc0242c20-7fdc-4939-834d-2eab069dc405" target="sfl_24659ebd-a5f9-41e8-8148-4ab953740576"></arc>
+            <arc id="2119115766704" source="id962fa01b-03f2-49e9-8b88-152739b96871" target="exi_id69df5a40-7c8a-40a9-9b0e-b55a91cf0b02"></arc>
+            <arc id="2118726843312" source="exi_id17e0b615-a39f-40e4-9a1f-6b92bdb397ae" target="f0d23532-1d80-4197-b912-f80f4def28f5"></arc>
+            <arc id="2118726837168" source="id8fddfb74-724f-4ec1-b3db-7c445475211d" target="ent_id1b7d0920-2ee6-4ee6-bf1c-ddf2fa7be487"></arc>
+            <arc id="2119115764688" source="sfl_14c9b872-15cc-45d3-bf39-3edddb8f88d2" target="ent_id9c5f1903-6954-4369-9bdf-4c1abe14c4cd"></arc>
+            <arc id="2118726841296" source="c0220b1c-fe38-4bd3-b254-761db1af7fcb" target="exi_idf3070c92-61df-403a-b9aa-51b798cc557a"></arc>
+            <arc id="2118726839280" source="ent_id7a61fa47-653c-4f6f-926c-c3d626e978e7" target="f0d23532-1d80-4197-b912-f80f4def28f5"></arc>
+            <arc id="2118726843408" source="ent_ida17a5b35-87d3-46ad-868a-168110304ecc" target="id5430c438-c8a3-4dbd-b464-af0c148f20fd"></arc>
+            <arc id="2118726841392" source="ent_id0cd99d56-2bcd-48bf-b93d-07087ae9a3be" target="idf9ebf20d-13b9-4b0c-ba53-5f3d0cfefdde"></arc>
+            <arc id="2118726829104" source="ent_iddff533c1-a0ed-47e4-9f43-98f598209119" target="idfe569b16-7321-43e0-b629-dc7f4ae4f63e"></arc>
+            <arc id="2118726837360" source="ent_id280e87ba-f13a-40b7-bac8-ce6e76d1dd1e" target="f0d23532-1d80-4197-b912-f80f4def28f5"></arc>
+            <arc id="2119115764880" source="id00b81264-1603-44ec-a222-48808535e317" target="ent_id7a61fa47-653c-4f6f-926c-c3d626e978e7"></arc>
+            <arc id="2119115758736" source="id9cb18660-6388-461f-8c45-f092f5f2924b" target="3f1fcb66-369a-4c6f-9e31-62071d7c1084"></arc>
+            <arc id="2118739051712" source="exi_id95a56c17-31ce-4b84-9f69-fcffeaa26026" target="sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e"></arc>
+            <arc id="2118746619088" source="ent_id61991b21-35ab-473f-90dd-262fedd4a870" target="id61991b21-35ab-473f-90dd-262fedd4a870"></arc>
+            <arc id="2118726835440" source="id10211351-1347-43e6-98e9-34b101ab1cb2" target="ent_id9c5f1903-6954-4369-9bdf-4c1abe14c4cd"></arc>
+            <arc id="2118726839568" source="exi_id45830302-ead4-487f-a887-dfc34cfbb9eb" target="id2d4e3262-742d-4d61-95d9-f5780501f9b2"></arc>
+            <arc id="2119115763008" source="sfl_ec22e976-9fd8-4fe8-b319-f1a287e598e4" target="ent_id36edc384-b747-4319-9273-310ff9559573"></arc>
+            <arc id="2119115674944" source="exi_idf3070c92-61df-403a-b9aa-51b798cc557a" target="sfl_94e0596d-52a1-4423-9d98-d47e2de16ac1"></arc>
+            <arc id="2118726833472" source="sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e" target="ent_id9cb18660-6388-461f-8c45-f092f5f2924b"></arc>
+            <arc id="2119115765072" source="sfl_0e902f3f-3fe6-47e2-9373-5abf71619f82" target="ent_id962fa01b-03f2-49e9-8b88-152739b96871"></arc>
+            <arc id="2118726831504" source="exi_id9c676344-df71-4569-89e4-3e6147780467" target="9bb2882d-d052-4787-9c28-437ea39dd7d7"></arc>
+            <arc id="2118744634800" source="exi_idf8494a7e-4fde-4847-91a0-fe456d40b695" target="sfl_14298324-5112-490e-b226-14b1ce19183c"></arc>
+            <arc id="2118726829488" source="id5430c438-c8a3-4dbd-b464-af0c148f20fd" target="exi_id17e0b615-a39f-40e4-9a1f-6b92bdb397ae"></arc>
+            <arc id="2119115685312" source="exi_id11aad9a4-b162-4bf1-a3ca-7146a7da366a" target="sfl_1126af3f-5c28-4122-83fb-d9da47911c0c"></arc>
+            <arc id="2118709190112" source="exi_id45830302-ead4-487f-a887-dfc34cfbb9eb" target="sfl_14c9b872-15cc-45d3-bf39-3edddb8f88d2"></arc>
+            <arc id="2119115767280" source="sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e" target="ent_id0cd99d56-2bcd-48bf-b93d-07087ae9a3be"></arc>
+            <arc id="2118726833664" source="idfe569b16-7321-43e0-b629-dc7f4ae4f63e" target="exi_idf8494a7e-4fde-4847-91a0-fe456d40b695"></arc>
+            <arc id="2118726841872" source="fa1f8c77-3d51-4587-ae92-c7dea120a722" target="exi_id95a56c17-31ce-4b84-9f69-fcffeaa26026"></arc>
+            <arc id="2119115767328" source="sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e" target="ent_id36edc384-b747-4319-9273-310ff9559573"></arc>
+            <arc id="2119116213792" source="exi_ida6268cfb-0b7a-4890-8329-3fa68454c1ff" target="sfl_63c61d58-3d23-47f6-b663-5a4b8c7df751"></arc>
+            <arc id="2119096143440" source="ent_id9cb18660-6388-461f-8c45-f092f5f2924b" target="id9cb18660-6388-461f-8c45-f092f5f2924b"></arc>
+            <arc id="2119116219984" source="exi_id78d1ebab-4086-4cc4-949b-3e651f443f3e" target="sfl_b28b9467-63fb-4e41-b65d-8cd1ed2cb291"></arc>
+            <arc id="2119115757200" source="sfl_755de984-4739-4daf-ba05-b80b4af66ce1" target="ent_iddff533c1-a0ed-47e4-9f43-98f598209119"></arc>
+            <arc id="2118726835872" source="id61991b21-35ab-473f-90dd-262fedd4a870" target="sink"></arc>
+            <arc id="2118726835920" source="exi_id45830302-ead4-487f-a887-dfc34cfbb9eb" target="id10211351-1347-43e6-98e9-34b101ab1cb2"></arc>
+            <arc id="2119115767520" source="sfl_b675c7e6-5388-4ca6-9e44-78567da7ec4e" target="ent_id3a7e1c99-430a-410c-aa4d-403de242bb38"></arc>
+            <arc id="2119115757296" source="sfl_ec680b05-72e9-4508-ad80-ae95504fb13d" target="ent_ida17a5b35-87d3-46ad-868a-168110304ecc"></arc>
+            <arc id="2118726842112" source="exi_ida6268cfb-0b7a-4890-8329-3fa68454c1ff" target="9bb2882d-d052-4787-9c28-437ea39dd7d7"></arc>
+            <arc id="2118776203024" source="source" target="fa1f8c77-3d51-4587-ae92-c7dea120a722"></arc>
+            <arc id="2119116220176" source="exi_idf3070c92-61df-403a-b9aa-51b798cc557a" target="sfl_3154d129-4e27-4bac-9c26-31adc846af23"></arc>
+            <arc id="2118726844176" source="exi_id76ccd7c5-04d8-41b4-a4e0-7283057fd24e" target="id00b81264-1603-44ec-a222-48808535e317"></arc>
+            <arc id="2118726829872" source="sfl_b28b9467-63fb-4e41-b65d-8cd1ed2cb291" target="ent_id1ada6269-0319-40f0-8034-c300b787eab3"></arc>
+            <arc id="2119115765648" source="9bb2882d-d052-4787-9c28-437ea39dd7d7" target="exi_id45830302-ead4-487f-a887-dfc34cfbb9eb"></arc>
+            <arc id="2118739056560" source="exi_id9c676344-df71-4569-89e4-3e6147780467" target="sfl_ec22e976-9fd8-4fe8-b319-f1a287e598e4"></arc>
+            <arc id="2118746611648" source="ent_id9c5f1903-6954-4369-9bdf-4c1abe14c4cd" target="id9c5f1903-6954-4369-9bdf-4c1abe14c4cd"></arc>
+            <arc id="2119115677632" source="exi_id78d1ebab-4086-4cc4-949b-3e651f443f3e" target="sfl_755de984-4739-4daf-ba05-b80b4af66ce1"></arc>
+            <arc id="2119115755472" source="sfl_6cad0c75-72f4-4d2a-8b9d-0d440483331d" target="ent_id81c39a21-7a45-4e87-a7a9-0c5b2bcba676"></arc>
+            <arc id="2119317524432" source="3f1fcb66-369a-4c6f-9e31-62071d7c1084" target="c0220b1c-fe38-4bd3-b254-761db1af7fcb"></arc>
+            <arc id="2118726844368" source="id9c5f1903-6954-4369-9bdf-4c1abe14c4cd" target="exi_id72f58249-a9c6-4752-a974-ea1b66de2bb0"></arc>
+            <arc id="2118726838224" source="ent_id1ada6269-0319-40f0-8034-c300b787eab3" target="f0d23532-1d80-4197-b912-f80f4def28f5"></arc>
+            <arc id="2118744623088" source="exi_id76ccd7c5-04d8-41b4-a4e0-7283057fd24e" target="sfl_71f07355-5e18-4545-8167-5308cba0bba3"></arc>
+            <arc id="2118726830064" source="id2d4e3262-742d-4d61-95d9-f5780501f9b2" target="ent_id9c5f1903-6954-4369-9bdf-4c1abe14c4cd"></arc>
+            <arc id="2119115759600" source="sfl_12f2d5e1-91a6-4b94-a140-7eb6730c05a9" target="ent_id47a5582f-8d19-42e2-ad98-326d0e32d8af"></arc>
+            <arc id="2118726836208" source="c0220b1c-fe38-4bd3-b254-761db1af7fcb" target="exi_id78d1ebab-4086-4cc4-949b-3e651f443f3e"></arc>
+        </page>
+        <finalmarkings>
+            <marking>
+                <place idref="sink">
+                    <text>1</text>
+                </place>
+            </marking>
+        </finalmarkings>
+    </net>
+</pnml>

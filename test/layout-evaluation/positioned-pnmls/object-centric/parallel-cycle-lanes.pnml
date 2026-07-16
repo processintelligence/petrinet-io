@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="parallel-cycle-lanes" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+        <name>
+            <text>Parallel cycle lanes</text>
+        </name>
+        <page id="page1">
+            <place id="p_start">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="41" y="129"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <place id="p_a0">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="313" y="25"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_a_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="585" y="25"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_b0">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="313" y="103"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_b1">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="585" y="129"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_b2">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="857" y="129"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_b_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1129" y="129"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_c0">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="313" y="207"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_c1">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="585" y="181"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_c2">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="857" y="181"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_c3">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1129" y="181"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_c_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1401" y="129"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_end">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1673" y="129"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <transition id="t_split">
+                <name>
+                    <text>A</text>
+                </name>
+                <graphics>
+                    <position x="130" y="120"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_a_work">
+                <name>
+                    <text>B</text>
+                </name>
+                <graphics>
+                    <position x="402" y="16"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_b_check">
+                <name>
+                    <text>C</text>
+                </name>
+                <graphics>
+                    <position x="402" y="120"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_b_review">
+                <name>
+                    <text>D</text>
+                </name>
+                <graphics>
+                    <position x="674" y="120"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_b_repeat">
+                <name>
+                    <text>E</text>
+                </name>
+                <graphics>
+                    <position x="946" y="68"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_b_exit">
+                <name>
+                    <text>F</text>
+                </name>
+                <graphics>
+                    <position x="946" y="120"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_c_check">
+                <name>
+                    <text>G</text>
+                </name>
+                <graphics>
+                    <position x="402" y="172"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_c_review">
+                <name>
+                    <text>H</text>
+                </name>
+                <graphics>
+                    <position x="674" y="172"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_c_verify">
+                <name>
+                    <text>I</text>
+                </name>
+                <graphics>
+                    <position x="946" y="172"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_c_repeat">
+                <name>
+                    <text>J</text>
+                </name>
+                <graphics>
+                    <position x="1218" y="250"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_c_exit">
+                <name>
+                    <text>K</text>
+                </name>
+                <graphics>
+                    <position x="1218" y="120"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t_join">
+                <name>
+                    <text>L</text>
+                </name>
+                <graphics>
+                    <position x="1490" y="120"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <arc id="a01" source="p_start" target="t_split">
+                <graphics></graphics>
+            </arc>
+            <arc id="a02" source="t_split" target="p_a0">
+                <graphics></graphics>
+            </arc>
+            <arc id="a03" source="t_split" target="p_b0">
+                <graphics></graphics>
+            </arc>
+            <arc id="a04" source="t_split" target="p_c0">
+                <graphics></graphics>
+            </arc>
+            <arc id="a05" source="p_a0" target="t_a_work">
+                <graphics></graphics>
+            </arc>
+            <arc id="a06" source="t_a_work" target="p_a_out">
+                <graphics></graphics>
+            </arc>
+            <arc id="a07" source="p_b0" target="t_b_check">
+                <graphics></graphics>
+            </arc>
+            <arc id="a08" source="t_b_check" target="p_b1">
+                <graphics></graphics>
+            </arc>
+            <arc id="a09" source="p_b1" target="t_b_review">
+                <graphics></graphics>
+            </arc>
+            <arc id="a10" source="t_b_review" target="p_b2">
+                <graphics></graphics>
+            </arc>
+            <arc id="a11" source="p_b2" target="t_b_repeat">
+                <graphics></graphics>
+            </arc>
+            <arc id="a12" source="t_b_repeat" target="p_b0">
+                <graphics>
+                    <position x="888" y="92"></position>
+                    <position x="736" y="92"></position>
+                    <position x="600" y="92"></position>
+                    <position x="404" y="92"></position>
+                </graphics>
+            </arc>
+            <arc id="a13" source="p_b2" target="t_b_exit">
+                <graphics></graphics>
+            </arc>
+            <arc id="a14" source="t_b_exit" target="p_b_out">
+                <graphics></graphics>
+            </arc>
+            <arc id="a15" source="p_c0" target="t_c_check">
+                <graphics></graphics>
+            </arc>
+            <arc id="a16" source="t_c_check" target="p_c1">
+                <graphics></graphics>
+            </arc>
+            <arc id="a17" source="p_c1" target="t_c_review">
+                <graphics></graphics>
+            </arc>
+            <arc id="a18" source="t_c_review" target="p_c2">
+                <graphics></graphics>
+            </arc>
+            <arc id="a19" source="p_c2" target="t_c_verify">
+                <graphics></graphics>
+            </arc>
+            <arc id="a20" source="t_c_verify" target="p_c3">
+                <graphics></graphics>
+            </arc>
+            <arc id="a21" source="p_c3" target="t_c_repeat">
+                <graphics></graphics>
+            </arc>
+            <arc id="a22" source="t_c_repeat" target="p_c0">
+                <graphics>
+                    <position x="1160" y="274"></position>
+                    <position x="1008" y="274"></position>
+                    <position x="872" y="274"></position>
+                    <position x="736" y="274"></position>
+                    <position x="600" y="274"></position>
+                    <position x="404" y="274"></position>
+                </graphics>
+            </arc>
+            <arc id="a23" source="p_c3" target="t_c_exit">
+                <graphics></graphics>
+            </arc>
+            <arc id="a24" source="t_c_exit" target="p_c_out">
+                <graphics></graphics>
+            </arc>
+            <arc id="a25" source="p_a_out" target="t_join">
+                <graphics>
+                    <position x="676" y="40"></position>
+                    <position x="872" y="40"></position>
+                    <position x="1008" y="40"></position>
+                    <position x="1144" y="40"></position>
+                    <position x="1280" y="40"></position>
+                    <position x="1432" y="40"></position>
+                </graphics>
+            </arc>
+            <arc id="a26" source="p_b_out" target="t_join">
+                <graphics>
+                    <position x="1220" y="196"></position>
+                    <position x="1432" y="196"></position>
+                </graphics>
+            </arc>
+            <arc id="a27" source="p_c_out" target="t_join">
+                <graphics></graphics>
+            </arc>
+            <arc id="a28" source="t_join" target="p_end">
+                <graphics></graphics>
+            </arc>
+        </page>
+        <finalmarkings>
+            <marking>
+                <place idref="p_end">
+                    <text>1</text>
+                </place>
+            </marking>
+        </finalmarkings>
+    </net>
+</pnml>

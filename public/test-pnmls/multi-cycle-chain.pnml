@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+  <net id="multi-cycle-chain" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <name><text>Multi-cycle chain</text></name>
+    <page id="page1">
+      <place id="p_start"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics><initialMarking><text>1</text></initialMarking></place>
+      <place id="p_a0"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_a1"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_a2"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_b0"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_b1"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_b2"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_b3"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_c0"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_c1"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_c2"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_c3"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_c4"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+      <place id="p_end"><name><text></text></name><graphics><position x="0" y="0"/><dimension x="30" y="30"/></graphics></place>
+
+      <transition id="t_begin"><name><text>A</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_a_check"><name><text>B</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_a_refine"><name><text>C</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_a_repeat"><name><text>D</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_a_continue"><name><text>E</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_b_check"><name><text>F</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_b_refine"><name><text>G</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_b_approve"><name><text>H</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_b_repeat"><name><text>I</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_b_continue"><name><text>J</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_c_check"><name><text>K</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_c_refine"><name><text>L</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_c_verify"><name><text>M</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_c_approve"><name><text>N</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_c_repeat"><name><text>O</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+      <transition id="t_c_finish"><name><text>P</text></name><graphics><position x="0" y="0"/><dimension x="124" y="48"/></graphics></transition>
+
+      <arc id="a01" source="p_start" target="t_begin"/>
+      <arc id="a02" source="t_begin" target="p_a0"/>
+
+      <arc id="a03" source="p_a0" target="t_a_check"/>
+      <arc id="a04" source="t_a_check" target="p_a1"/>
+      <arc id="a05" source="p_a1" target="t_a_refine"/>
+      <arc id="a06" source="t_a_refine" target="p_a2"/>
+      <arc id="a07" source="p_a2" target="t_a_repeat"/>
+      <arc id="a08" source="t_a_repeat" target="p_a0"/>
+      <arc id="a09" source="p_a2" target="t_a_continue"/>
+      <arc id="a10" source="t_a_continue" target="p_b0"/>
+
+      <arc id="a11" source="p_b0" target="t_b_check"/>
+      <arc id="a12" source="t_b_check" target="p_b1"/>
+      <arc id="a13" source="p_b1" target="t_b_refine"/>
+      <arc id="a14" source="t_b_refine" target="p_b2"/>
+      <arc id="a15" source="p_b2" target="t_b_approve"/>
+      <arc id="a16" source="t_b_approve" target="p_b3"/>
+      <arc id="a17" source="p_b3" target="t_b_repeat"/>
+      <arc id="a18" source="t_b_repeat" target="p_b0"/>
+      <arc id="a19" source="p_b3" target="t_b_continue"/>
+      <arc id="a20" source="t_b_continue" target="p_c0"/>
+
+      <arc id="a21" source="p_c0" target="t_c_check"/>
+      <arc id="a22" source="t_c_check" target="p_c1"/>
+      <arc id="a23" source="p_c1" target="t_c_refine"/>
+      <arc id="a24" source="t_c_refine" target="p_c2"/>
+      <arc id="a25" source="p_c2" target="t_c_verify"/>
+      <arc id="a26" source="t_c_verify" target="p_c3"/>
+      <arc id="a27" source="p_c3" target="t_c_approve"/>
+      <arc id="a28" source="t_c_approve" target="p_c4"/>
+      <arc id="a29" source="p_c4" target="t_c_repeat"/>
+      <arc id="a30" source="t_c_repeat" target="p_c0"/>
+      <arc id="a31" source="p_c4" target="t_c_finish"/>
+      <arc id="a32" source="t_c_finish" target="p_end"/>
+    </page>
+    <finalmarkings><marking><place idref="p_end"><text>1</text></place></marking></finalmarkings>
+  </net>
+</pnml>

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pnml>
     <net id="ptnet1" type="http://www.pnml.org/version-2009/grammar/ptnet">
+        <!--
+            Node centers were reconstructed from the supplied Graphviz circo PNG.
+            Dimensions and initial markings remain those of the local model (23)
+            source PNML.
+        -->
         <page id="top-level">
             <place id="p1">
                 <graphics>
-                    <position x="235" y="245" />
+                    <position x="27" y="322" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -29,7 +34,7 @@
             </arc>
             <place id="p2">
                 <graphics>
-                    <position x="405" y="245" />
+                    <position x="381" y="518" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -54,7 +59,7 @@
             </arc>
             <transition id="t2">
                 <graphics>
-                    <position x="485" y="240" />
+                    <position x="606" y="438" />
                     <dimension x="40" y="40" />
                 </graphics>
                 <name>
@@ -76,7 +81,7 @@
             </arc>
             <place id="p4">
                 <graphics>
-                    <position x="575" y="245" />
+                    <position x="611" y="201" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -101,7 +106,7 @@
             </arc>
             <transition id="t4">
                 <graphics>
-                    <position x="485" y="350" />
+                    <position x="503" y="513" />
                     <dimension x="40" y="40" />
                 </graphics>
                 <name>
@@ -113,7 +118,7 @@
             </transition>
             <transition id="t6">
                 <graphics>
-                    <position x="940" y="240" />
+                    <position x="503" y="120" />
                     <dimension x="40" y="40" />
                 </graphics>
                 <name>
@@ -125,7 +130,7 @@
             </transition>
             <place id="p8">
                 <graphics>
-                    <position x="1030" y="245" />
+                    <position x="538" y="32" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -150,7 +155,7 @@
             </arc>
             <transition id="t8">
                 <graphics>
-                    <position x="500" y="145" />
+                    <position x="660" y="311" />
                     <dimension x="10" y="50" />
                 </graphics>
                 <toolspecific tool="petrinet.io" version="1.0">
@@ -209,7 +214,7 @@
             </arc>
             <transition id="t3">
                 <graphics>
-                    <position x="485" y="440" />
+                    <position x="272" y="195" />
                     <dimension x="40" y="40" />
                 </graphics>
                 <name>
@@ -221,7 +226,7 @@
             </transition>
             <place id="p3">
                 <graphics>
-                    <position x="575" y="445" />
+                    <position x="381" y="125" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -256,7 +261,7 @@
             </arc>
             <place id="p5">
                 <graphics>
-                    <position x="405" y="445" />
+                    <position x="198" y="143" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>
@@ -281,7 +286,7 @@
             </arc>
             <transition id="t5">
                 <graphics>
-                    <position x="330" y="235" />
+                    <position x="248" y="311" />
                     <dimension x="10" y="50" />
                 </graphics>
                 <toolspecific tool="petrinet.io" version="1.0">
@@ -290,7 +295,7 @@
             </transition>
             <place id="p6">
                 <graphics>
-                    <position x="395" y="355" />
+                    <position x="277" y="443" />
                     <dimension x="30" y="30" />
                 </graphics>
                 <name>

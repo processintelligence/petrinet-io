@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="branch-cascade" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+        <name>
+            <text>Branch cascade</text>
+        </name>
+        <page id="page1">
+            <place id="p_start">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="40.12" y="638.73"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <place id="p1a">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="243.55" y="698.96"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p1b">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="174.51" y="475.67"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p1b_mid">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="313.12" y="508.8"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p1a_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="497.39" y="772.914"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p1b_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="517.14" y="671.72"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_stage2">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="782.65" y="741.96"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p2b_mid">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="985.89" y="842.983"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p2c1">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1024.15" y="617.93"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p2c2">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1286.7" y="639.84"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p2_join">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1036" y="662.36"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_stage3">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1012.37" y="402.92"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3a">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1045.2" y="314.21"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3b">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="920.63" y="214.9"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3c">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="871.79" y="153.9"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3d">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="983.45" y="197.08"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3a_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="774.1" y="290.17"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3b_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="705.19" y="281.29"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3c_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="645.01" y="79.7"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3d_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="771.68" y="120.69"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_end">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="546.35" y="159.99"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <transition id="t1_split">
+                <name>
+                    <text>A</text>
+                </name>
+                <graphics>
+                    <position x="108.23" y="592.71"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t1a">
+                <name>
+                    <text>B</text>
+                </name>
+                <graphics>
+                    <position x="315.84" y="748.4"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t1b1">
+                <name>
+                    <text>C</text>
+                </name>
+                <graphics>
+                    <position x="183.46" y="406.49"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t1b2">
+                <name>
+                    <text>D</text>
+                </name>
+                <graphics>
+                    <position x="361.48" y="586.57"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t1_join">
+                <name>
+                    <text>E</text>
+                </name>
+                <graphics>
+                    <position x="576.45" y="732.78"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2a">
+                <name>
+                    <text>F</text>
+                </name>
+                <graphics>
+                    <position x="855.55" y="718.47"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2b1">
+                <name>
+                    <text>G</text>
+                </name>
+                <graphics>
+                    <position x="810.77" y="834.91"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2b2">
+                <name>
+                    <text>H</text>
+                </name>
+                <graphics>
+                    <position x="992.5" y="724.35"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2c1">
+                <name>
+                    <text>I</text>
+                </name>
+                <graphics>
+                    <position x="835.21" y="637.75"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2c2">
+                <name>
+                    <text>J</text>
+                </name>
+                <graphics>
+                    <position x="1112.8" y="602.51"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2c3">
+                <name>
+                    <text>K</text>
+                </name>
+                <graphics>
+                    <position x="1128" y="685.13"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2_continue">
+                <name>
+                    <text>L</text>
+                </name>
+                <graphics>
+                    <position x="995.2" y="522.57"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3_split">
+                <name>
+                    <text>M</text>
+                </name>
+                <graphics>
+                    <position x="909.57" y="259.65"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3a">
+                <name>
+                    <text>N</text>
+                </name>
+                <graphics>
+                    <position x="853.94" y="335.57"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3b">
+                <name>
+                    <text>O</text>
+                </name>
+                <graphics>
+                    <position x="761.2" y="205.3"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3c">
+                <name>
+                    <text>P</text>
+                </name>
+                <graphics>
+                    <position x="721.11" y="40.12"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3d">
+                <name>
+                    <text>Q</text>
+                </name>
+                <graphics>
+                    <position x="862.75" y="82.57"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3_join">
+                <name>
+                    <text>R</text>
+                </name>
+                <graphics>
+                    <position x="626.48" y="193.33"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <arc id="a01" source="p_start" target="t1_split">
+                <graphics>
+                    <position x="69.7" y="649.05"></position>
+                    <position x="71.679028" y="648.411968"></position>
+                    <position x="73.752222" y="647.744074"></position>
+                    <position x="75.91375" y="647.048125"></position>
+                    <position x="78.157778" y="646.325926"></position>
+                    <position x="80.478472" y="645.579282"></position>
+                    <position x="82.87" y="644.81"></position>
+                    <position x="85.326528" y="644.019884"></position>
+                    <position x="87.842222" y="643.210741"></position>
+                    <position x="90.41125" y="642.384375"></position>
+                    <position x="93.027778" y="641.542593"></position>
+                    <position x="95.685972" y="640.687199"></position>
+                    <position x="98.38" y="639.82"></position>
+                </graphics>
+            </arc>
+            <arc id="a02" source="t1_split" target="p1a">
+                <graphics>
+                    <position x="192.51" y="641.25"></position>
+                    <position x="196.410353" y="645.542425"></position>
+                    <position x="200.466991" y="650.007731"></position>
+                    <position x="204.643281" y="654.605469"></position>
+                    <position x="208.902593" y="659.295185"></position>
+                    <position x="213.208293" y="664.036429"></position>
+                    <position x="217.52375" y="668.78875"></position>
+                    <position x="221.812332" y="673.511696"></position>
+                    <position x="226.037407" y="678.164815"></position>
+                    <position x="230.162344" y="682.707656"></position>
+                    <position x="234.150509" y="687.099769"></position>
+                    <position x="237.965272" y="691.3007"></position>
+                    <position x="241.57" y="695.27"></position>
+                </graphics>
+            </arc>
+            <arc id="a03" source="t1_split" target="p1b">
+                <graphics>
+                    <position x="173.99" y="592.11"></position>
+                    <position x="174.859925" y="586.432708"></position>
+                    <position x="175.782731" y="580.406667"></position>
+                    <position x="176.747969" y="574.100625"></position>
+                    <position x="177.745185" y="567.583333"></position>
+                    <position x="178.763929" y="560.923542"></position>
+                    <position x="179.79375" y="554.19"></position>
+                    <position x="180.824196" y="547.451458"></position>
+                    <position x="181.844815" y="540.776667"></position>
+                    <position x="182.845156" y="534.234375"></position>
+                    <position x="183.814769" y="527.893333"></position>
+                    <position x="184.7432" y="521.822292"></position>
+                    <position x="185.62" y="516.09"></position>
+                </graphics>
+            </arc>
+            <arc id="a04" source="p1a" target="t1a">
+                <graphics>
+                    <position x="272.23" y="720.66"></position>
+                    <position x="275.240966" y="722.135613"></position>
+                    <position x="278.475231" y="723.720741"></position>
+                    <position x="281.912344" y="725.405313"></position>
+                    <position x="285.531852" y="727.179259"></position>
+                    <position x="289.313304" y="729.032512"></position>
+                    <position x="293.23625" y="730.955"></position>
+                    <position x="297.280237" y="732.936655"></position>
+                    <position x="301.424815" y="734.967407"></position>
+                    <position x="305.649531" y="737.037187"></position>
+                    <position x="309.933935" y="739.135926"></position>
+                    <position x="314.257575" y="741.253553"></position>
+                    <position x="318.6" y="743.38"></position>
+                </graphics>
+            </arc>
+            <arc id="a05" source="t1a" target="p1a_out">
+                <graphics>
+                    <position x="439.99" y="779.56"></position>
+                    <position x="444.153681" y="780.040764"></position>
+                    <position x="448.320278" y="780.521944"></position>
+                    <position x="452.475625" y="781.001875"></position>
+                    <position x="456.605556" y="781.478889"></position>
+                    <position x="460.695903" y="781.951319"></position>
+                    <position x="464.7325" y="782.4175"></position>
+                    <position x="468.701181" y="782.875764"></position>
+                    <position x="472.587778" y="783.324444"></position>
+                    <position x="476.378125" y="783.761875"></position>
+                    <position x="480.058056" y="784.186389"></position>
+                    <position x="483.613403" y="784.596319"></position>
+                    <position x="487.03" y="784.99"></position>
+                </graphics>
+            </arc>
+            <arc id="a06" source="p1b" target="t1b1">
+                <graphics>
+                    <position x="200.04" y="479.35"></position>
+                    <position x="201.208819" y="478.09206"></position>
+                    <position x="202.418056" y="476.790648"></position>
+                    <position x="203.664375" y="475.449375"></position>
+                    <position x="204.944444" y="474.071852"></position>
+                    <position x="206.254931" y="472.66169"></position>
+                    <position x="207.5925" y="471.2225"></position>
+                    <position x="208.953819" y="469.757894"></position>
+                    <position x="210.335556" y="468.271481"></position>
+                    <position x="211.734375" y="466.766875"></position>
+                    <position x="213.146944" y="465.247685"></position>
+                    <position x="214.569931" y="463.717523"></position>
+                    <position x="216" y="462.18"></position>
+                </graphics>
+            </arc>
+            <arc id="a07" source="t1b1" target="p1b_mid">
+                <graphics>
+                    <position x="267.18" y="455.01"></position>
+                    <position x="270.725098" y="459.012159"></position>
+                    <position x="274.399954" y="463.160602"></position>
+                    <position x="278.173906" y="467.420781"></position>
+                    <position x="282.016296" y="471.758148"></position>
+                    <position x="285.896464" y="476.138154"></position>
+                    <position x="289.78375" y="480.52625"></position>
+                    <position x="293.647494" y="484.887888"></position>
+                    <position x="297.457037" y="489.188519"></position>
+                    <position x="301.181719" y="493.393594"></position>
+                    <position x="304.79088" y="497.468565"></position>
+                    <position x="308.25386" y="501.378883"></position>
+                    <position x="311.54" y="505.09"></position>
+                </graphics>
+            </arc>
+            <arc id="a08" source="p1b_mid" target="t1b2">
+                <graphics>
+                    <position x="339.44" y="534.1"></position>
+                    <position x="342.663275" y="537.03173"></position>
+                    <position x="346.178704" y="540.229676"></position>
+                    <position x="349.949687" y="543.660469"></position>
+                    <position x="353.93963" y="547.290741"></position>
+                    <position x="358.111933" y="551.087124"></position>
+                    <position x="362.43" y="555.01625"></position>
+                    <position x="366.857234" y="559.044751"></position>
+                    <position x="371.357037" y="563.139259"></position>
+                    <position x="375.892812" y="567.266406"></position>
+                    <position x="380.427963" y="571.392824"></position>
+                    <position x="384.925891" y="575.485145"></position>
+                    <position x="389.35" y="579.51"></position>
+                </graphics>
+            </arc>
+            <arc id="a09" source="t1b2" target="p1b_out">
+                <graphics>
+                    <position x="458.46" y="635.08"></position>
+                    <position x="462.873773" y="638.173796"></position>
+                    <position x="467.385185" y="641.336204"></position>
+                    <position x="471.964375" y="644.54625"></position>
+                    <position x="476.581481" y="647.782963"></position>
+                    <position x="481.206644" y="651.02537"></position>
+                    <position x="485.81" y="654.2525"></position>
+                    <position x="490.36169" y="657.44338"></position>
+                    <position x="494.831852" y="660.577037"></position>
+                    <position x="499.190625" y="663.6325"></position>
+                    <position x="503.408148" y="666.588796"></position>
+                    <position x="507.45456" y="669.424954"></position>
+                    <position x="511.3" y="672.12"></position>
+                </graphics>
+            </arc>
+            <arc id="a10" source="p1a_out" target="t1_join">
+                <graphics>
+                    <position x="527.34" y="784.22"></position>
+                    <position x="529.950324" y="783.574647"></position>
+                    <position x="532.718426" y="782.890509"></position>
+                    <position x="535.6325" y="782.170469"></position>
+                    <position x="538.680741" y="781.417407"></position>
+                    <position x="541.851343" y="780.634207"></position>
+                    <position x="545.1325" y="779.82375"></position>
+                    <position x="548.512407" y="778.988918"></position>
+                    <position x="551.979259" y="778.132593"></position>
+                    <position x="555.52125" y="777.257656"></position>
+                    <position x="559.126574" y="776.366991"></position>
+                    <position x="562.783426" y="775.463478"></position>
+                    <position x="566.48" y="774.55"></position>
+                </graphics>
+            </arc>
+            <arc id="a11" source="p1b_out" target="t1_join">
+                <graphics>
+                    <position x="545.18" y="695.31"></position>
+                    <position x="548.3118" y="697.374358"></position>
+                    <position x="551.689398" y="699.600694"></position>
+                    <position x="555.286094" y="701.971406"></position>
+                    <position x="559.075185" y="704.468889"></position>
+                    <position x="563.029971" y="707.075538"></position>
+                    <position x="567.12375" y="709.77375"></position>
+                    <position x="571.329821" y="712.54592"></position>
+                    <position x="575.621481" y="715.374444"></position>
+                    <position x="579.972031" y="718.241719"></position>
+                    <position x="584.354769" y="721.130139"></position>
+                    <position x="588.742992" y="724.022101"></position>
+                    <position x="593.11" y="726.9"></position>
+                </graphics>
+            </arc>
+            <arc id="a12" source="t1_join" target="p_stage2">
+                <graphics>
+                    <position x="700.45" y="756.85"></position>
+                    <position x="706.729167" y="756.857494"></position>
+                    <position x="713.0725" y="756.864954"></position>
+                    <position x="719.44375" y="756.872344"></position>
+                    <position x="725.806667" y="756.87963"></position>
+                    <position x="732.125" y="756.886777"></position>
+                    <position x="738.3625" y="756.89375"></position>
+                    <position x="744.482917" y="756.900515"></position>
+                    <position x="750.45" y="756.907037"></position>
+                    <position x="756.2275" y="756.913281"></position>
+                    <position x="761.779167" y="756.919213"></position>
+                    <position x="767.06875" y="756.924797"></position>
+                    <position x="772.06" y="756.93"></position>
+                </graphics>
+            </arc>
+            <arc id="a13" source="p_stage2" target="t2a">
+                <graphics>
+                    <position x="812.84" y="755.12"></position>
+                    <position x="815.061453" y="754.852662"></position>
+                    <position x="817.395787" y="754.571296"></position>
+                    <position x="819.835469" y="754.276875"></position>
+                    <position x="822.372963" y="753.97037"></position>
+                    <position x="825.000735" y="753.652755"></position>
+                    <position x="827.71125" y="753.325"></position>
+                    <position x="830.496973" y="752.988079"></position>
+                    <position x="833.35037" y="752.642963"></position>
+                    <position x="836.263906" y="752.290625"></position>
+                    <position x="839.230046" y="751.932037"></position>
+                    <position x="842.241256" y="751.568171"></position>
+                    <position x="845.29" y="751.2"></position>
+                </graphics>
+            </arc>
+            <arc id="a14" source="t2a" target="p2_join">
+                <graphics>
+                    <position x="968.01" y="717.85"></position>
+                    <position x="973.234132" y="715.302049"></position>
+                    <position x="978.521389" y="712.723056"></position>
+                    <position x="983.841563" y="710.127813"></position>
+                    <position x="989.164444" y="707.531111"></position>
+                    <position x="994.459826" y="704.947743"></position>
+                    <position x="999.6975" y="702.3925"></position>
+                    <position x="1004.847257" y="699.880174"></position>
+                    <position x="1009.878889" y="697.425556"></position>
+                    <position x="1014.762188" y="695.043437"></position>
+                    <position x="1019.466944" y="692.748611"></position>
+                    <position x="1023.962951" y="690.555868"></position>
+                    <position x="1028.22" y="688.48"></position>
+                </graphics>
+            </arc>
+            <arc id="a15" source="p_stage2" target="t2b1">
+                <graphics>
+                    <position x="806.86" y="769.46"></position>
+                    <position x="809.60419" y="773.183987"></position>
+                    <position x="812.603519" y="777.254398"></position>
+                    <position x="815.823125" y="781.623906"></position>
+                    <position x="819.228148" y="786.245185"></position>
+                    <position x="822.783727" y="791.070909"></position>
+                    <position x="826.455" y="796.05375"></position>
+                    <position x="830.207106" y="801.146383"></position>
+                    <position x="834.005185" y="806.301481"></position>
+                    <position x="837.814375" y="811.471719"></position>
+                    <position x="841.599815" y="816.609769"></position>
+                    <position x="845.326644" y="821.668304"></position>
+                    <position x="848.96" y="826.6"></position>
+                </graphics>
+            </arc>
+            <arc id="a16" source="t2b1" target="p2b_mid">
+                <graphics>
+                    <position x="934.95" y="858.46"></position>
+                    <position x="938.50338" y="858.434815"></position>
+                    <position x="942.052037" y="858.409352"></position>
+                    <position x="945.58625" y="858.38375"></position>
+                    <position x="949.096296" y="858.358148"></position>
+                    <position x="952.572454" y="858.332685"></position>
+                    <position x="956.005" y="858.3075"></position>
+                    <position x="959.384213" y="858.282731"></position>
+                    <position x="962.70037" y="858.258519"></position>
+                    <position x="965.94375" y="858.235"></position>
+                    <position x="969.10463" y="858.212315"></position>
+                    <position x="972.173287" y="858.190602"></position>
+                    <position x="975.14" y="858.17"></position>
+                </graphics>
+            </arc>
+            <arc id="a17" source="p2b_mid" target="t2b2">
+                <graphics>
+                    <position x="1007.67" y="844.1"></position>
+                    <position x="1009.661406" y="840.025081"></position>
+                    <position x="1011.83375" y="835.579815"></position>
+                    <position x="1014.161719" y="830.815938"></position>
+                    <position x="1016.62" y="825.785185"></position>
+                    <position x="1019.183281" y="820.539294"></position>
+                    <position x="1021.82625" y="815.13"></position>
+                    <position x="1024.523594" y="809.609039"></position>
+                    <position x="1027.25" y="804.028148"></position>
+                    <position x="1029.980156" y="798.439062"></position>
+                    <position x="1032.68875" y="792.893519"></position>
+                    <position x="1035.350469" y="787.443252"></position>
+                    <position x="1037.94" y="782.14"></position>
+                </graphics>
+            </arc>
+            <arc id="a18" source="t2b2" target="p2_join">
+                <graphics>
+                    <position x="1053.27" y="723.92"></position>
+                    <position x="1053.189207" y="722.223351"></position>
+                    <position x="1053.106991" y="720.505972"></position>
+                    <position x="1053.023594" y="718.771719"></position>
+                    <position x="1052.939259" y="717.024444"></position>
+                    <position x="1052.85423" y="715.268003"></position>
+                    <position x="1052.76875" y="713.50625"></position>
+                    <position x="1052.683061" y="711.743038"></position>
+                    <position x="1052.597407" y="709.982222"></position>
+                    <position x="1052.512031" y="708.227656"></position>
+                    <position x="1052.427176" y="706.483194"></position>
+                    <position x="1052.343084" y="704.752691"></position>
+                    <position x="1052.26" y="703.04"></position>
+                </graphics>
+            </arc>
+            <arc id="a19" source="p_stage2" target="t2c1">
+                <graphics>
+                    <position x="808.69" y="746.41"></position>
+                    <position x="812.213877" y="743.039537"></position>
+                    <position x="816.094352" y="739.327963"></position>
+                    <position x="820.284688" y="735.32"></position>
+                    <position x="824.738148" y="731.06037"></position>
+                    <position x="829.407998" y="726.593796"></position>
+                    <position x="834.2475" y="721.965"></position>
+                    <position x="839.209919" y="717.218704"></position>
+                    <position x="844.248519" y="712.39963"></position>
+                    <position x="849.316563" y="707.5525"></position>
+                    <position x="854.367315" y="702.722037"></position>
+                    <position x="859.354039" y="697.952963"></position>
+                    <position x="864.23" y="693.29"></position>
+                </graphics>
+            </arc>
+            <arc id="a20" source="t2c1" target="p2c1">
+                <graphics>
+                    <position x="959.47" y="649.11"></position>
+                    <position x="964.325127" y="648.122147"></position>
+                    <position x="969.196852" y="647.131343"></position>
+                    <position x="974.064688" y="646.141719"></position>
+                    <position x="978.908148" y="645.157407"></position>
+                    <position x="983.706748" y="644.182541"></position>
+                    <position x="988.44" y="643.22125"></position>
+                    <position x="993.087419" y="642.277668"></position>
+                    <position x="997.628519" y="641.355926"></position>
+                    <position x="1002.042813" y="640.460156"></position>
+                    <position x="1006.309815" y="639.594491"></position>
+                    <position x="1010.409039" y="638.763061"></position>
+                    <position x="1014.32" y="637.97"></position>
+                </graphics>
+            </arc>
+            <arc id="a21" source="p2c1" target="t2c2">
+                <graphics>
+                    <position x="1054.71" y="632.19"></position>
+                    <position x="1057.830573" y="632.042216"></position>
+                    <position x="1061.165417" y="631.884398"></position>
+                    <position x="1064.696719" y="631.717344"></position>
+                    <position x="1068.406667" y="631.541852"></position>
+                    <position x="1072.277448" y="631.358721"></position>
+                    <position x="1076.29125" y="631.16875"></position>
+                    <position x="1080.43026" y="630.972737"></position>
+                    <position x="1084.676667" y="630.771481"></position>
+                    <position x="1089.012656" y="630.565781"></position>
+                    <position x="1093.420417" y="630.356435"></position>
+                    <position x="1097.882135" y="630.144242"></position>
+                    <position x="1102.38" y="629.93"></position>
+                </graphics>
+            </arc>
+            <arc id="a22" source="t2c2" target="p2c2">
+                <graphics>
+                    <position x="1237.11" y="640.43"></position>
+                    <position x="1240.637546" y="641.217355"></position>
+                    <position x="1244.158704" y="642.003009"></position>
+                    <position x="1247.66375" y="642.784844"></position>
+                    <position x="1251.142963" y="643.560741"></position>
+                    <position x="1254.58662" y="644.328582"></position>
+                    <position x="1257.985" y="645.08625"></position>
+                    <position x="1261.32838" y="645.831626"></position>
+                    <position x="1264.607037" y="646.562593"></position>
+                    <position x="1267.81125" y="647.277031"></position>
+                    <position x="1270.931296" y="647.972824"></position>
+                    <position x="1273.957454" y="648.647853"></position>
+                    <position x="1276.88" y="649.3"></position>
+                </graphics>
+            </arc>
+            <arc id="a23" source="p2c2" target="t2c3">
+                <graphics>
+                    <position x="1287.99" y="661.5"></position>
+                    <position x="1285.431829" y="662.743918"></position>
+                    <position x="1282.711296" y="664.066343"></position>
+                    <position x="1279.841875" y="665.460781"></position>
+                    <position x="1276.837037" y="666.920741"></position>
+                    <position x="1273.710255" y="668.439728"></position>
+                    <position x="1270.475" y="670.01125"></position>
+                    <position x="1267.144745" y="671.628814"></position>
+                    <position x="1263.732963" y="673.285926"></position>
+                    <position x="1260.253125" y="674.976094"></position>
+                    <position x="1256.718704" y="676.692824"></position>
+                    <position x="1253.143171" y="678.429624"></position>
+                    <position x="1249.54" y="680.18"></position>
+                </graphics>
+            </arc>
+            <arc id="a24" source="t2c3" target="p2_join">
+                <graphics>
+                    <position x="1127.8" y="694.92"></position>
+                    <position x="1123.19614" y="693.867355"></position>
+                    <position x="1118.58162" y="692.812176"></position>
+                    <position x="1113.974531" y="691.758594"></position>
+                    <position x="1109.392963" y="690.710741"></position>
+                    <position x="1104.855006" y="689.672749"></position>
+                    <position x="1100.37875" y="688.64875"></position>
+                    <position x="1095.982286" y="687.642876"></position>
+                    <position x="1091.683704" y="686.659259"></position>
+                    <position x="1087.501094" y="685.702031"></position>
+                    <position x="1083.452546" y="684.775324"></position>
+                    <position x="1079.556152" y="683.88327"></position>
+                    <position x="1075.83" y="683.03"></position>
+                </graphics>
+            </arc>
+            <arc id="a25" source="p2_join" target="t2_continue">
+                <graphics>
+                    <position x="1053.93" y="662.21"></position>
+                    <position x="1054.307494" y="660.022847"></position>
+                    <position x="1054.687454" y="657.749444"></position>
+                    <position x="1055.066094" y="655.401875"></position>
+                    <position x="1055.43963" y="652.992222"></position>
+                    <position x="1055.804277" y="650.532569"></position>
+                    <position x="1056.15625" y="648.035"></position>
+                    <position x="1056.491765" y="645.511597"></position>
+                    <position x="1056.807037" y="642.974444"></position>
+                    <position x="1057.098281" y="640.435625"></position>
+                    <position x="1057.361713" y="637.907222"></position>
+                    <position x="1057.593547" y="635.401319"></position>
+                    <position x="1057.79" y="632.93"></position>
+                    <position x="1058.072569" y="628.627743"></position>
+                    <position x="1058.307222" y="624.262778"></position>
+                    <position x="1058.496875" y="619.852813"></position>
+                    <position x="1058.644444" y="615.415556"></position>
+                    <position x="1058.752847" y="610.968715"></position>
+                    <position x="1058.825" y="606.53"></position>
+                    <position x="1058.863819" y="602.117118"></position>
+                    <position x="1058.872222" y="597.747778"></position>
+                    <position x="1058.853125" y="593.439687"></position>
+                    <position x="1058.809444" y="589.210556"></position>
+                    <position x="1058.744097" y="585.07809"></position>
+                    <position x="1058.66" y="581.06"></position>
+                </graphics>
+            </arc>
+            <arc id="a26" source="t2_continue" target="p_stage3">
+                <graphics>
+                    <position x="1051.49" y="522.07"></position>
+                    <position x="1050.12809" y="516.191209"></position>
+                    <position x="1048.678889" y="509.934676"></position>
+                    <position x="1047.159688" y="503.375156"></position>
+                    <position x="1045.587778" y="496.587407"></position>
+                    <position x="1043.980451" y="489.646186"></position>
+                    <position x="1042.355" y="482.62625"></position>
+                    <position x="1040.728715" y="475.602355"></position>
+                    <position x="1039.118889" y="468.649259"></position>
+                    <position x="1037.542813" y="461.841719"></position>
+                    <position x="1036.017778" y="455.254491"></position>
+                    <position x="1034.561076" y="448.962332"></position>
+                    <position x="1033.19" y="443.04"></position>
+                </graphics>
+            </arc>
+            <arc id="a27" source="p_stage3" target="t3_split">
+                <graphics>
+                    <position x="1021.4" y="403.55"></position>
+                    <position x="1019.128819" y="398.085781"></position>
+                    <position x="1016.592222" y="391.982917"></position>
+                    <position x="1013.830625" y="385.338594"></position>
+                    <position x="1010.884444" y="378.25"></position>
+                    <position x="1007.794097" y="370.814323"></position>
+                    <position x="1004.6" y="363.12875"></position>
+                    <position x="1001.342569" y="355.290469"></position>
+                    <position x="998.062222" y="347.396667"></position>
+                    <position x="994.799375" y="339.544531"></position>
+                    <position x="991.594444" y="331.83125"></position>
+                    <position x="988.487847" y="324.35401"></position>
+                    <position x="985.52" y="317.21"></position>
+                </graphics>
+            </arc>
+            <arc id="a28" source="t3_split" target="p3a">
+                <graphics>
+                    <position x="1019.28" y="308.16"></position>
+                    <position x="1020.88011" y="308.9836"></position>
+                    <position x="1022.474213" y="309.803796"></position>
+                    <position x="1024.060469" y="310.619687"></position>
+                    <position x="1025.637037" y="311.43037"></position>
+                    <position x="1027.202078" y="312.234942"></position>
+                    <position x="1028.75375" y="313.0325"></position>
+                    <position x="1030.290214" y="313.822141"></position>
+                    <position x="1031.80963" y="314.602963"></position>
+                    <position x="1033.310156" y="315.374062"></position>
+                    <position x="1034.789954" y="316.134537"></position>
+                    <position x="1036.247182" y="316.883484"></position>
+                    <position x="1037.68" y="317.62"></position>
+                </graphics>
+            </arc>
+            <arc id="a29" source="t3_split" target="p3b">
+                <graphics>
+                    <position x="955.28" y="259.29"></position>
+                    <position x="954.836921" y="258.62463"></position>
+                    <position x="954.39287" y="257.958704"></position>
+                    <position x="953.948125" y="257.2925"></position>
+                    <position x="953.502963" y="256.626296"></position>
+                    <position x="953.057662" y="255.96037"></position>
+                    <position x="952.6125" y="255.295"></position>
+                    <position x="952.167755" y="254.630463"></position>
+                    <position x="951.723704" y="253.967037"></position>
+                    <position x="951.280625" y="253.305"></position>
+                    <position x="950.838796" y="252.64463"></position>
+                    <position x="950.398495" y="251.986204"></position>
+                    <position x="949.96" y="251.33"></position>
+                </graphics>
+            </arc>
+            <arc id="a30" source="t3_split" target="p3c">
+                <graphics>
+                    <position x="937.74" y="259.05"></position>
+                    <position x="936.366273" y="257.812425"></position>
+                    <position x="935.001852" y="256.555231"></position>
+                    <position x="933.649375" y="255.279219"></position>
+                    <position x="932.311481" y="253.985185"></position>
+                    <position x="930.99081" y="252.673929"></position>
+                    <position x="929.69" y="251.34625"></position>
+                    <position x="928.41169" y="250.002946"></position>
+                    <position x="927.158519" y="248.644815"></position>
+                    <position x="925.933125" y="247.272656"></position>
+                    <position x="924.738148" y="245.887269"></position>
+                    <position x="923.576227" y="244.48945"></position>
+                    <position x="922.45" y="243.08"></position>
+                    <position x="919.542176" y="239.204988"></position>
+                    <position x="916.744907" y="235.170741"></position>
+                    <position x="914.06" y="231.008438"></position>
+                    <position x="911.489259" y="226.749259"></position>
+                    <position x="909.034491" y="222.424387"></position>
+                    <position x="906.6975" y="218.065"></position>
+                    <position x="904.480093" y="213.70228"></position>
+                    <position x="902.384074" y="209.367407"></position>
+                    <position x="900.41125" y="205.091563"></position>
+                    <position x="898.563426" y="200.905926"></position>
+                    <position x="896.842407" y="196.841678"></position>
+                    <position x="895.25" y="192.93"></position>
+                </graphics>
+            </arc>
+            <arc id="a31" source="t3_split" target="p3d">
+                <graphics>
+                    <position x="980.67" y="259.42"></position>
+                    <position x="981.377812" y="257.537546"></position>
+                    <position x="982.095" y="255.628704"></position>
+                    <position x="982.819688" y="253.69875"></position>
+                    <position x="983.55" y="251.752963"></position>
+                    <position x="984.284062" y="249.79662"></position>
+                    <position x="985.02" y="247.835"></position>
+                    <position x="985.755937" y="245.87338"></position>
+                    <position x="986.49" y="243.917037"></position>
+                    <position x="987.220313" y="241.97125"></position>
+                    <position x="987.945" y="240.041296"></position>
+                    <position x="988.662188" y="238.132454"></position>
+                    <position x="989.37" y="236.25"></position>
+                </graphics>
+            </arc>
+            <arc id="a32" source="p3a" target="t3a">
+                <graphics>
+                    <position x="1045.07" y="332.4"></position>
+                    <position x="1041.446534" y="333.162812"></position>
+                    <position x="1037.528935" y="333.9875"></position>
+                    <position x="1033.343906" y="334.868438"></position>
+                    <position x="1028.918148" y="335.8"></position>
+                    <position x="1024.278362" y="336.776563"></position>
+                    <position x="1019.45125" y="337.7925"></position>
+                    <position x="1014.463513" y="338.842188"></position>
+                    <position x="1009.341852" y="339.92"></position>
+                    <position x="1004.112969" y="341.020312"></position>
+                    <position x="998.803565" y="342.1375"></position>
+                    <position x="993.440341" y="343.265937"></position>
+                    <position x="988.05" y="344.4"></position>
+                </graphics>
+            </arc>
+            <arc id="a33" source="t3a" target="p3a_out">
+                <graphics>
+                    <position x="858.83" y="335.08"></position>
+                    <position x="854.733183" y="333.323397"></position>
+                    <position x="850.627963" y="331.563009"></position>
+                    <position x="846.529687" y="329.805469"></position>
+                    <position x="842.453704" y="328.057407"></position>
+                    <position x="838.415359" y="326.325457"></position>
+                    <position x="834.43" y="324.61625"></position>
+                    <position x="830.512975" y="322.936418"></position>
+                    <position x="826.67963" y="321.292593"></position>
+                    <position x="822.945313" y="319.691406"></position>
+                    <position x="819.32537" y="318.139491"></position>
+                    <position x="815.83515" y="316.643478"></position>
+                    <position x="812.49" y="315.21"></position>
+                </graphics>
+            </arc>
+            <arc id="a34" source="p3b" target="t3b">
+                <graphics>
+                    <position x="920.47" y="229.82"></position>
+                    <position x="918.72647" y="229.809994"></position>
+                    <position x="916.913426" y="229.799954"></position>
+                    <position x="915.034688" y="229.789844"></position>
+                    <position x="913.094074" y="229.77963"></position>
+                    <position x="911.095405" y="229.769277"></position>
+                    <position x="909.0425" y="229.75875"></position>
+                    <position x="906.939178" y="229.748015"></position>
+                    <position x="904.789259" y="229.737037"></position>
+                    <position x="902.596562" y="229.725781"></position>
+                    <position x="900.364907" y="229.714213"></position>
+                    <position x="898.098113" y="229.702297"></position>
+                    <position x="895.8" y="229.69"></position>
+                </graphics>
+            </arc>
+            <arc id="a35" source="t3b" target="p3b_out">
+                <graphics>
+                    <position x="785.42" y="253.86"></position>
+                    <position x="781.693958" y="256.285052"></position>
+                    <position x="777.918333" y="258.742083"></position>
+                    <position x="774.111875" y="261.218906"></position>
+                    <position x="770.293333" y="263.703333"></position>
+                    <position x="766.481458" y="266.183177"></position>
+                    <position x="762.695" y="268.64625"></position>
+                    <position x="758.952708" y="271.080365"></position>
+                    <position x="755.273333" y="273.473333"></position>
+                    <position x="751.675625" y="275.812969"></position>
+                    <position x="748.178333" y="278.087083"></position>
+                    <position x="744.800208" y="280.28349"></position>
+                    <position x="741.56" y="282.39"></position>
+                </graphics>
+            </arc>
+            <arc id="a36" source="p3c" target="t3c">
+                <graphics>
+                    <position x="876.09" y="158.08"></position>
+                    <position x="872.24228" y="154.192373"></position>
+                    <position x="867.959074" y="149.864815"></position>
+                    <position x="863.300312" y="145.157812"></position>
+                    <position x="858.325926" y="140.131852"></position>
+                    <position x="853.095845" y="134.847419"></position>
+                    <position x="847.67" y="129.365"></position>
+                    <position x="842.108322" y="123.745081"></position>
+                    <position x="836.470741" y="118.048148"></position>
+                    <position x="830.817188" y="112.334687"></position>
+                    <position x="825.207593" y="106.665185"></position>
+                    <position x="819.701887" y="101.100127"></position>
+                    <position x="814.36" y="95.7"></position>
+                </graphics>
+            </arc>
+            <arc id="a37" source="t3c" target="p3c_out">
+                <graphics>
+                    <position x="720.84" y="79.59"></position>
+                    <position x="717.622141" y="80.389468"></position>
+                    <position x="714.413796" y="81.186574"></position>
+                    <position x="711.222813" y="81.979375"></position>
+                    <position x="708.057037" y="82.765926"></position>
+                    <position x="704.924317" y="83.544282"></position>
+                    <position x="701.8325" y="84.3125"></position>
+                    <position x="698.789433" y="85.068634"></position>
+                    <position x="695.802963" y="85.810741"></position>
+                    <position x="692.880938" y="86.536875"></position>
+                    <position x="690.031204" y="87.245093"></position>
+                    <position x="687.261609" y="87.933449"></position>
+                    <position x="684.58" y="88.6"></position>
+                </graphics>
+            </arc>
+            <arc id="a38" source="p3d" target="t3d">
+                <graphics>
+                    <position x="989.7" y="199.56"></position>
+                    <position x="986.988744" y="195.676956"></position>
+                    <position x="984.01412" y="191.417315"></position>
+                    <position x="980.812344" y="186.832812"></position>
+                    <position x="977.41963" y="181.975185"></position>
+                    <position x="973.872193" y="176.896169"></position>
+                    <position x="970.20625" y="171.6475"></position>
+                    <position x="966.458015" y="166.280914"></position>
+                    <position x="962.663704" y="160.848148"></position>
+                    <position x="958.859531" y="155.400938"></position>
+                    <position x="955.081713" y="149.991019"></position>
+                    <position x="951.366464" y="144.670127"></position>
+                    <position x="947.75" y="139.49"></position>
+                </graphics>
+            </arc>
+            <arc id="a39" source="t3d" target="p3d_out">
+                <graphics>
+                    <position x="862.58" y="119.69"></position>
+                    <position x="858.092407" y="120.634815"></position>
+                    <position x="853.595926" y="121.581852"></position>
+                    <position x="849.1075" y="122.5275"></position>
+                    <position x="844.644074" y="123.468148"></position>
+                    <position x="840.222593" y="124.400185"></position>
+                    <position x="835.86" y="125.32"></position>
+                    <position x="831.573241" y="126.223981"></position>
+                    <position x="827.379259" y="127.108519"></position>
+                    <position x="823.295" y="127.97"></position>
+                    <position x="819.337407" y="128.804815"></position>
+                    <position x="815.523426" y="129.609352"></position>
+                    <position x="811.87" y="130.38"></position>
+                </graphics>
+            </arc>
+            <arc id="a40" source="p3a_out" target="t3_join">
+                <graphics>
+                    <position x="777.55" y="295.1"></position>
+                    <position x="774.115822" y="292.100787"></position>
+                    <position x="770.355741" y="288.81713"></position>
+                    <position x="766.310938" y="285.285"></position>
+                    <position x="762.022593" y="281.54037"></position>
+                    <position x="757.531887" y="277.619213"></position>
+                    <position x="752.88" y="273.5575"></position>
+                    <position x="748.108113" y="269.391204"></position>
+                    <position x="743.257407" y="265.156296"></position>
+                    <position x="738.369062" y="260.88875"></position>
+                    <position x="733.484259" y="256.624537"></position>
+                    <position x="728.644178" y="252.39963"></position>
+                    <position x="723.89" y="248.25"></position>
+                </graphics>
+            </arc>
+            <arc id="a41" source="p3b_out" target="t3_join">
+                <graphics>
+                    <position x="714.37" y="281.81"></position>
+                    <position x="713.477662" y="279.585052"></position>
+                    <position x="712.543796" y="277.257917"></position>
+                    <position x="711.573125" y="274.840156"></position>
+                    <position x="710.57037" y="272.343333"></position>
+                    <position x="709.540255" y="269.77901"></position>
+                    <position x="708.4875" y="267.15875"></position>
+                    <position x="707.416829" y="264.494115"></position>
+                    <position x="706.332963" y="261.796667"></position>
+                    <position x="705.240625" y="259.077969"></position>
+                    <position x="704.144537" y="256.349583"></position>
+                    <position x="703.049421" y="253.623073"></position>
+                    <position x="701.96" y="250.91"></position>
+                </graphics>
+            </arc>
+            <arc id="a42" source="p3c_out" target="t3_join">
+                <graphics>
+                    <position x="663.5" y="109.74"></position>
+                    <position x="664.612326" y="114.529971"></position>
+                    <position x="665.833611" y="119.788935"></position>
+                    <position x="667.147812" y="125.447969"></position>
+                    <position x="668.538889" y="131.438148"></position>
+                    <position x="669.990799" y="137.69055"></position>
+                    <position x="671.4875" y="144.13625"></position>
+                    <position x="673.012951" y="150.706325"></position>
+                    <position x="674.551111" y="157.331852"></position>
+                    <position x="676.085938" y="163.943906"></position>
+                    <position x="677.601389" y="170.473565"></position>
+                    <position x="679.081424" y="176.851904"></position>
+                    <position x="680.51" y="183.01"></position>
+                </graphics>
+            </arc>
+            <arc id="a43" source="p3d_out" target="t3_join">
+                <graphics>
+                    <position x="775.03" y="145.38"></position>
+                    <position x="771.838339" y="148.033455"></position>
+                    <position x="768.36588" y="150.920139"></position>
+                    <position x="764.646406" y="154.012031"></position>
+                    <position x="760.713704" y="157.281111"></position>
+                    <position x="756.601557" y="160.699358"></position>
+                    <position x="752.34375" y="164.23875"></position>
+                    <position x="747.974068" y="167.871267"></position>
+                    <position x="743.526296" y="171.568889"></position>
+                    <position x="739.034219" y="175.303594"></position>
+                    <position x="734.53162" y="179.047361"></position>
+                    <position x="730.052286" y="182.77217"></position>
+                    <position x="725.63" y="186.45"></position>
+                </graphics>
+            </arc>
+            <arc id="a44" source="t3_join" target="p_end">
+                <graphics>
+                    <position x="626.4" y="196.66"></position>
+                    <position x="622.769277" y="195.449763"></position>
+                    <position x="619.144213" y="194.241435"></position>
+                    <position x="615.535469" y="193.038594"></position>
+                    <position x="611.953704" y="191.844815"></position>
+                    <position x="608.409578" y="190.663675"></position>
+                    <position x="604.91375" y="189.49875"></position>
+                    <position x="601.476881" y="188.353617"></position>
+                    <position x="598.10963" y="187.231852"></position>
+                    <position x="594.822656" y="186.137031"></position>
+                    <position x="591.62662" y="185.072731"></position>
+                    <position x="588.532182" y="184.042529"></position>
+                    <position x="585.55" y="183.05"></position>
+                </graphics>
+            </arc>
+        </page>
+        <finalmarkings>
+            <marking>
+                <place idref="p_end">
+                    <text>1</text>
+                </place>
+            </marking>
+        </finalmarkings>
+    </net>
+</pnml>

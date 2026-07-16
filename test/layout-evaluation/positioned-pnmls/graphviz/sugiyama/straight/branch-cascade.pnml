@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml>
+    <net id="branch-cascade" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+        <name>
+            <text>Branch cascade</text>
+        </name>
+        <page id="page1">
+            <place id="p_start">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="40" y="176"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+                <initialMarking>
+                    <text>1</text>
+                </initialMarking>
+            </place>
+            <place id="p1a">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="302" y="139"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p1b">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="302" y="209"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p1b_mid">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="564" y="214"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p1a_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="695" y="136"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p1b_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="826" y="210"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_stage2">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1088" y="175"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p2b_mid">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1350" y="175"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p2c1">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1350" y="259"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p2c2">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1659" y="259"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p2_join">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="1968" y="175"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_stage3">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2230" y="175"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3a">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2492" y="61"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3b">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2492" y="138"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3c">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2492" y="208"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3d">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2492" y="283"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3a_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2754" y="61"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3b_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2754" y="138"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3c_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2754" y="208"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p3d_out">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="2754" y="283"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <place id="p_end">
+                <name>
+                    <text></text>
+                </name>
+                <graphics>
+                    <position x="3016" y="175"></position>
+                    <dimension x="30" y="30"></dimension>
+                </graphics>
+            </place>
+            <transition id="t1_split">
+                <name>
+                    <text>A</text>
+                </name>
+                <graphics>
+                    <position x="124" y="167"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t1a">
+                <name>
+                    <text>B</text>
+                </name>
+                <graphics>
+                    <position x="386" y="125"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t1b1">
+                <name>
+                    <text>C</text>
+                </name>
+                <graphics>
+                    <position x="386" y="209"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t1b2">
+                <name>
+                    <text>D</text>
+                </name>
+                <graphics>
+                    <position x="648" y="203"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t1_join">
+                <name>
+                    <text>E</text>
+                </name>
+                <graphics>
+                    <position x="910" y="166"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2a">
+                <name>
+                    <text>F</text>
+                </name>
+                <graphics>
+                    <position x="1612" y="87"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2b1">
+                <name>
+                    <text>G</text>
+                </name>
+                <graphics>
+                    <position x="1172" y="166"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2b2">
+                <name>
+                    <text>H</text>
+                </name>
+                <graphics>
+                    <position x="1790" y="166"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2c1">
+                <name>
+                    <text>I</text>
+                </name>
+                <graphics>
+                    <position x="1172" y="250"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2c2">
+                <name>
+                    <text>J</text>
+                </name>
+                <graphics>
+                    <position x="1434" y="250"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2c3">
+                <name>
+                    <text>K</text>
+                </name>
+                <graphics>
+                    <position x="1790" y="250"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t2_continue">
+                <name>
+                    <text>L</text>
+                </name>
+                <graphics>
+                    <position x="2052" y="166"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3_split">
+                <name>
+                    <text>M</text>
+                </name>
+                <graphics>
+                    <position x="2314" y="166"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3a">
+                <name>
+                    <text>N</text>
+                </name>
+                <graphics>
+                    <position x="2576" y="40"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3b">
+                <name>
+                    <text>O</text>
+                </name>
+                <graphics>
+                    <position x="2576" y="124"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3c">
+                <name>
+                    <text>P</text>
+                </name>
+                <graphics>
+                    <position x="2576" y="208"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3d">
+                <name>
+                    <text>Q</text>
+                </name>
+                <graphics>
+                    <position x="2576" y="292"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <transition id="t3_join">
+                <name>
+                    <text>R</text>
+                </name>
+                <graphics>
+                    <position x="2838" y="166"></position>
+                    <dimension x="124" y="48"></dimension>
+                </graphics>
+            </transition>
+            <arc id="a01" source="p_start" target="t1_split"></arc>
+            <arc id="a02" source="t1_split" target="p1a"></arc>
+            <arc id="a03" source="t1_split" target="p1b"></arc>
+            <arc id="a04" source="p1a" target="t1a"></arc>
+            <arc id="a05" source="t1a" target="p1a_out"></arc>
+            <arc id="a06" source="p1b" target="t1b1"></arc>
+            <arc id="a07" source="t1b1" target="p1b_mid"></arc>
+            <arc id="a08" source="p1b_mid" target="t1b2"></arc>
+            <arc id="a09" source="t1b2" target="p1b_out"></arc>
+            <arc id="a10" source="p1a_out" target="t1_join"></arc>
+            <arc id="a11" source="p1b_out" target="t1_join"></arc>
+            <arc id="a12" source="t1_join" target="p_stage2"></arc>
+            <arc id="a13" source="p_stage2" target="t2a"></arc>
+            <arc id="a14" source="t2a" target="p2_join"></arc>
+            <arc id="a15" source="p_stage2" target="t2b1"></arc>
+            <arc id="a16" source="t2b1" target="p2b_mid"></arc>
+            <arc id="a17" source="p2b_mid" target="t2b2"></arc>
+            <arc id="a18" source="t2b2" target="p2_join"></arc>
+            <arc id="a19" source="p_stage2" target="t2c1"></arc>
+            <arc id="a20" source="t2c1" target="p2c1"></arc>
+            <arc id="a21" source="p2c1" target="t2c2"></arc>
+            <arc id="a22" source="t2c2" target="p2c2"></arc>
+            <arc id="a23" source="p2c2" target="t2c3"></arc>
+            <arc id="a24" source="t2c3" target="p2_join"></arc>
+            <arc id="a25" source="p2_join" target="t2_continue"></arc>
+            <arc id="a26" source="t2_continue" target="p_stage3"></arc>
+            <arc id="a27" source="p_stage3" target="t3_split"></arc>
+            <arc id="a28" source="t3_split" target="p3a"></arc>
+            <arc id="a29" source="t3_split" target="p3b"></arc>
+            <arc id="a30" source="t3_split" target="p3c"></arc>
+            <arc id="a31" source="t3_split" target="p3d"></arc>
+            <arc id="a32" source="p3a" target="t3a"></arc>
+            <arc id="a33" source="t3a" target="p3a_out"></arc>
+            <arc id="a34" source="p3b" target="t3b"></arc>
+            <arc id="a35" source="t3b" target="p3b_out"></arc>
+            <arc id="a36" source="p3c" target="t3c"></arc>
+            <arc id="a37" source="t3c" target="p3c_out"></arc>
+            <arc id="a38" source="p3d" target="t3d"></arc>
+            <arc id="a39" source="t3d" target="p3d_out"></arc>
+            <arc id="a40" source="p3a_out" target="t3_join"></arc>
+            <arc id="a41" source="p3b_out" target="t3_join"></arc>
+            <arc id="a42" source="p3c_out" target="t3_join"></arc>
+            <arc id="a43" source="p3d_out" target="t3_join"></arc>
+            <arc id="a44" source="t3_join" target="p_end"></arc>
+        </page>
+        <finalmarkings>
+            <marking>
+                <place idref="p_end">
+                    <text>1</text>
+                </place>
+            </marking>
+        </finalmarkings>
+    </net>
+</pnml>
