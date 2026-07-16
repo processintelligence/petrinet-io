@@ -31,7 +31,6 @@ async function loadFixture(fileName, layoutAlgorithm = null) {
   });
 }
 
-
 onClick('js-open-pnml', () => {
   petrinetio.loadFromFile();
 });
@@ -66,10 +65,6 @@ onClick('js-auto-layout-circular', () => {
 
 onClick('js-auto-layout-force-directed', () => {
   petrinetio.runAutoLayout('force-directed');
-});
-
-onClick('js-preview-auto-structures', () => {
-  petrinetio.previewAutoLayoutStructures();
 });
 
 onClick('js-load-melanoma-treatment', async () => {
