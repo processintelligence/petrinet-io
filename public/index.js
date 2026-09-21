@@ -4,44 +4,30 @@ const petrinetio = new PetriNetIO({
   container: '#container'
 });
 
+window.petrinetio = petrinetio;
+window.dispatchEvent(new CustomEvent('petrinetio:ready', {
+  detail: { petrinetio }
+}));
 
-document.getElementById('js-open-pnml').addEventListener('click', () => {
-  petrinetio.loadFromFile();
-});
+bindAction('js-open-pnml', () => petrinetio.loadFromFile());
 
-document.getElementById('js-download-pnml').addEventListener('click', () => {
-  petrinetio.exportPNML();
-});
+bindAction('js-download-pnml', () => petrinetio.exportPNML());
 
-document.getElementById('js-download-tpn').addEventListener('click', () => {
-  petrinetio.exportTpn();
-});
+bindAction('js-download-tpn', () => petrinetio.exportTpn());
 
-document.getElementById('js-download-svg').addEventListener('click', () => {
-  petrinetio.exportSVG();
-});
+bindAction('js-download-svg', () => petrinetio.exportSVG());
 
-document.getElementById('js-download-pdf').addEventListener('click', () => {
-  petrinetio.exportPDF();
-});
+bindAction('js-download-pdf', () => petrinetio.exportPDF());
 
-document.getElementById('js-properties').addEventListener('click', () => {
-  console.log(petrinetio.getPetriNet());
-});
+bindAction('js-properties', () => console.log(petrinetio.getPetriNet()));
 
-document.getElementById('js-sugiyama').addEventListener('click', () => {
-  petrinetio.runAutoLayout('sugiyama');
-});
+bindAction('js-sugiyama', () => petrinetio.runAutoLayout('sugiyama'));
 
-document.getElementById('js-circular').addEventListener('click', () => {
-  petrinetio.runAutoLayout('circular');
-});
+bindAction('js-circular', () => petrinetio.runAutoLayout('circular'));
 
-document.getElementById('js-force').addEventListener('click', () => {
-  petrinetio.runAutoLayout('force-directed');
-});
+bindAction('js-force', () => petrinetio.runAutoLayout('force-directed'));
 
-document.getElementById('js-resize-places').addEventListener('click', () => {
+bindAction('js-resize-places', () => {
   const size = promptForElementSize('places');
   if (!size) {
     return;
@@ -49,13 +35,27 @@ document.getElementById('js-resize-places').addEventListener('click', () => {
   petrinetio.resizePlaces(size);
 });
 
-document.getElementById('js-resize-transitions').addEventListener('click', () => {
+bindAction('js-resize-transitions', () => {
   const size = promptForElementSize('transitions');
   if (!size) {
     return;
   }
   petrinetio.resizeTransitions(size);
 });
+
+function bindAction(id, action) {
+  const element = document.getElementById(id);
+  if (!element) {
+    return;
+  }
+
+  element.addEventListener('click', () => {
+    action();
+    window.dispatchEvent(new CustomEvent('petrinetio:model-action', {
+      detail: { id }
+    }));
+  });
+}
 
 function promptForElementSize(elementLabel) {
   let value = 40;
