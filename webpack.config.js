@@ -4,11 +4,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './public/index.js',
+  entry: {
+    bundle: './public/index.js',
+    'demo.bundle': './public/demo.js'
+  },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     // publicPath: '/petrinet-io/',
     publicPath: '/',
     library: {
@@ -21,7 +24,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['bundle']
     }),
     new CopyWebpackPlugin({
       patterns: [
