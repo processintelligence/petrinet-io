@@ -75,6 +75,28 @@
       min-width: 0;
     }
 
+    .static-tab {
+      background: var(--app-panel);
+      height: 100%;
+      overflow: auto;
+    }
+
+    .static-tab-content {
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 40px 32px;
+    }
+
+    .static-tab-content h2 {
+      color: var(--app-ink);
+      font-size: 1.25rem;
+      margin: 4px 0 24px;
+    }
+
+    .static-textarea textarea {
+      line-height: 1.55;
+    }
+
     .model-layout {
       display: grid;
       grid-template-columns: minmax(220px, 260px) minmax(360px, 1fr) minmax(280px, 340px);
@@ -372,7 +394,7 @@
       <v-app-bar color="primary" density="comfortable" flat>
         <div class="d-flex align-center px-4">
           <img src="dtu.png" class="brand-logo" alt="DTU">
-          <span class="brand-title">petrinet-io workspace</span>
+          <span class="brand-title">BPM 2026 Demo</span>
         </div>
         <v-spacer></v-spacer>
         <v-chip class="mr-4" color="white" label size="small" variant="outlined">
@@ -390,7 +412,12 @@
               show-arrows
               @update:model-value="handleTabChange"
             >
-              <v-tab v-for="tab in tabs" :key="tab.id" :value="tab.id">
+              <v-tab
+                v-for="tab in tabs"
+                :key="tab.id"
+                :prepend-icon="tab.type === 'static' ? 'mdi-note-text-outline' : 'mdi-vector-square'"
+                :value="tab.id"
+              >
                 {{ tab.name }}
               </v-tab>
             </v-tabs>
@@ -404,6 +431,7 @@
                     icon="mdi-pencil-outline"
                     size="small"
                     variant="text"
+                    :disabled="activeTab?.type === 'static'"
                     @click="renameActiveTab"
                   ></v-btn>
                 </template>
@@ -416,7 +444,7 @@
                     icon="mdi-close"
                     size="small"
                     variant="text"
-                    :disabled="tabs.length === 1"
+                    :disabled="activeTab?.type === 'static'"
                     @click="closeActiveTab"
                   ></v-btn>
                 </template>
@@ -430,7 +458,7 @@
                     icon="mdi-plus"
                     size="small"
                     variant="text"
-                    @click="addTab"
+                    @click="addModelTab()"
                   ></v-btn>
                 </template>
               </v-tooltip>
@@ -438,8 +466,37 @@
           </nav>
 
           <main class="tab-content">
+        <section v-show="activeTabId === 'notes'" class="static-tab">
+          <div class="static-tab-content">
+            <h1><code>petrinet-io</code> - Demo for BPM 2026</h1>
+            <p><code>petrinet-io</code> is a web-based Petri net modeling and simulation tool built on top of <code>diagram-js</code>. This library allows you to create, edit, simulate, and export Petri nets using an intuitive visual interface.</p>
+
+
+            <h3 class="text-display-large mt-3">This demo</h3>
+            <p>This demo shows a deployment of <code>petrinet-io</code> in a larger context.</p>
+            <p>At the top there are tabs that can be used to model several Petri nets at the same time, while maintaining each environment isolated from the other.</p>
+
+            <h3 class="text-display-large mt-3">Library Installation</h3>
+            <p>Use the library by installing it via npm into your application using: <code>npm install petrinet-io</code>.</p>
+
+
+            <h3 class="text-display-large mt-3">Library Usage</h3>
+            <p>To get started, just include the library and call the construction, providing the element that should contain the editor:</p>
+
+            <pre class="pa-4 mt-3 bg-grey-darken-4 rounded-lg"><code>import { PetriNetIO } from "petrinet-io";
+
+const pn = new PetriNetIO({
+	container: "#canvas",
+});
+</code></pre>
+
+            
+
+          </div>
+        </section>
+
         <section
-          v-for="tab in tabs"
+          v-for="tab in modelTabs"
           v-show="tab.id === activeTabId"
           :key="tab.id"
           class="model-layout"
@@ -676,9 +733,17 @@
     createApp({
       data() {
         return {
-          tabs: [],
-          activeTabId: null,
+          tabs: [
+            {
+              id: 'notes',
+              name: 'Intro',
+              type: 'static',
+              statusText: 'Notes'
+            }
+          ],
+          activeTabId: 'notes',
           tabCounter: 0,
+          staticText: window.localStorage.getItem('petrinet-io-demo-notes') || '',
           exportItems: [
             { type: 'pnml', title: 'PNML file', icon: 'mdi-code-tags' },
             { type: 'tpn', title: 'TPN file', icon: 'mdi-file-code-outline' },
@@ -696,12 +761,20 @@
         activeTab() {
           return this.tabs.find((tab) => tab.id === this.activeTabId) || null;
         },
+        modelTabs() {
+          return this.tabs.filter((tab) => tab.type === 'model');
+        },
         activeTabStatus() {
           return this.activeTab?.statusText || 'Modeler loading';
         }
       },
+      watch: {
+        staticText(value) {
+          window.localStorage.setItem('petrinet-io-demo-notes', value);
+        }
+      },
       mounted() {
-        this.addTab();
+        this.addModelTab(false);
       },
       beforeUnmount() {
         this.tabs.forEach((tab) => {
@@ -717,11 +790,13 @@
         activityTrackId(tabId) {
           return `activity-track-${tabId}`;
         },
-        addTab() {
+        addModelTab(activate = true) {
           this.tabCounter += 1;
           const tab = {
             id: `model-${this.tabCounter}`,
             name: `Model ${this.tabCounter}`,
+            type: 'model',
+            initialized: false,
             ready: false,
             statusText: 'Modeler loading',
             lastUpdated: 'No model loaded',
@@ -738,10 +813,16 @@
 
           this.tabs.push(tab);
           const reactiveTab = this.tabs[this.tabs.length - 1];
-          this.activeTabId = reactiveTab.id;
-          this.$nextTick(() => this.initializeTab(reactiveTab));
+          if (activate) {
+            this.activeTabId = reactiveTab.id;
+            this.$nextTick(() => this.initializeTab(reactiveTab));
+          }
         },
         initializeTab(tab) {
+          if (tab.initialized) {
+            return;
+          }
+
           if (!window.PetriNetIOModeler) {
             tab.statusText = 'Modeler unavailable';
             tab.errorMessage = 'The modeler bundle could not be loaded.';
@@ -753,6 +834,7 @@
               container: `#${this.canvasId(tab.id)}`
             });
             modelers.set(tab.id, modeler);
+            tab.initialized = true;
             tab.ready = true;
             tab.statusText = 'Ready';
             this.wireModelEvents(tab, modeler);
@@ -765,6 +847,16 @@
         },
         handleTabChange(tabId) {
           this.$nextTick(() => {
+            const tab = this.tabs.find((candidate) => candidate.id === tabId);
+            if (!tab || tab.type === 'static') {
+              return;
+            }
+
+            if (!tab.initialized) {
+              this.initializeTab(tab);
+              return;
+            }
+
             const modeler = modelers.get(tabId);
             const canvas = modeler?.getCanvas();
             if (canvas && typeof canvas.resized === 'function') {
@@ -774,7 +866,7 @@
         },
         renameActiveTab() {
           const tab = this.activeTab;
-          if (!tab) {
+          if (!tab || tab.type === 'static') {
             return;
           }
 
@@ -784,7 +876,7 @@
           }
         },
         closeActiveTab() {
-          if (this.tabs.length === 1) {
+          if (!this.activeTab || this.activeTab.type === 'static') {
             return;
           }
 
